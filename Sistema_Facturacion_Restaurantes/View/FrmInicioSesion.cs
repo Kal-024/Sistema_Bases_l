@@ -22,27 +22,27 @@ namespace Sistema_Facturacion_Restaurantes.View
         {
             DataTable dato;
             dato = CUsuario.Validar_acceso(this.txtUsuario.Text, this.txtContraseña.Text);
-
+            
             if (dato != null)
             {
                 if (dato.Rows.Count > 0)
                 {
-                    DataRow dr;
-                    dr = dato.Rows[0];
-
-                    if (dr["Resultado"].ToString() == "Acceso exitoso")
+                    if (dato.Rows[0][0].ToString() == "Acceso exitoso")
                     {
+                        string NombreUsuario = dato.Rows[0][2].ToString();
+                        string Rol = dato.Rows[0][1].ToString();
+
                         MessageBox.Show("Bienvenido al Sistema", "Sistema de Reservas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        FormMainMenu fc = new FormMainMenu();
+                        FormMainMenu fc = new FormMainMenu(NombreUsuario, Rol);
                         fc.Show();
                         this.Hide();
                     }
                     else
                     {
                         MessageBox.Show("Acceso Denegado al Sistema de Reservaciones", "Sistema de Reservas", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        //this.txtUsuario.Text = string.Empty;
-                        //this.txtContraseña.Text = string.Empty;
-                        //this.txtUsuario.Focus();
+                        this.txtUsuario.Text = string.Empty;
+                        this.txtContraseña.Text = string.Empty;
+                        this.txtUsuario.Focus();
                     }
                 }
             }
