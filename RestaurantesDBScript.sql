@@ -51,6 +51,8 @@ AS
 
 EXEC dbo.[Validar acceso]  'CMU', 'TareaCurso'
 
+GRANT EXEC ON dbo.[Validar acceso] TO adminRestaurante
+
 CREATE TABLE Sucursal
 (SucursalID int primary key identity(1,1),
 Nombre varchar(50),
