@@ -65,6 +65,7 @@ namespace Sistema_Facturacion_Restaurantes.View
             // 
             this.txtContraseña.Location = new System.Drawing.Point(201, 106);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(281, 22);
             this.txtContraseña.TabIndex = 3;
             // 
@@ -78,7 +79,7 @@ namespace Sistema_Facturacion_Restaurantes.View
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // InicioSesion
+            // FrmInicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -88,7 +89,7 @@ namespace Sistema_Facturacion_Restaurantes.View
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "InicioSesion";
+            this.Name = "FrmInicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InicioSesion";
             this.ResumeLayout(false);

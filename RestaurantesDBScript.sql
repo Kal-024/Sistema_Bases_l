@@ -6,8 +6,38 @@ GO
 
 sp_adduser adminRestaurante, adminRestaurante
 
+CREATE TABLE Sucursal
+(SucursalID int primary key identity(1,1),
+Nombre varchar(50),
+ResponsableID int,
+Telefono varchar(24),
+Departamento varchar(50),
+Direccion varchar(100))
+
+INSERT INTO Sucursal(Nombre, Telefono, Departamento, Direccion) VALUES('Centroamerica', '18001024', 'Managua', 'Modulo 24 multicentro')
+
+CREATE TABLE Empleado
+(EmpleadoID int primary key identity(1, 1),
+Cedula varchar(15),
+Nombres varchar(50),
+Apellidos varchar(50),
+Telefono varchar(24),
+Direccion varchar(100),
+SucursalID int not null FOREIGN KEY REFERENCES Sucursal(SucursalID))
+
+ALTER TABLE Sucursal
+ADD CONSTRAINT FK_Empleado_ResponsableID FOREIGN KEY (ResponsableID)
+    REFERENCES Empleado(EmpleadoID)
+
+INSERT INTO Empleado(Cedula, Nombres, Apellidos, Telefono, Direccion, SucursalID) VALUES('4503010001000L', 'Uziel Jose', 'Duarte Guillen', '83811309', 'Via Reconciliacion Norte', 1)
+
+UPDATE Sucursal SET ResponsableID = 1 WHERE SucursalID = 1
+
+SELECT * FROM Sucursal
+SELECT * FROM Empleado
+
 CREATE TABLE Usuario
-(IdUsuario int primary key identity(1, 1),
+(EmpleadoID int FOREIGN KEY REFERENCES Empleado(EmpleadoID),
 usuario varchar(80),
 contrasena varchar(80),
 rol varchar(80),
@@ -15,14 +45,15 @@ estado varchar(80))
 
 -- Procediento de almacenado para insertar el usuario
 CREATE PROCEDURE dbo.[Insertar usuario]
+@EmpleadoID int,
 @usuario varchar(50),
 @contrasena varchar(50),
 @rol varchar(50)
 AS
-	INSERT INTO Usuario(usuario, contrasena, rol, estado)
-	VALUES(@usuario, ENCRYPTBYPASSPHRASE(@contrasena, @contrasena), @rol, 'Habilitado')
+	INSERT INTO Usuario(EmpleadoID, usuario, contrasena, rol, estado)
+	VALUES(@EmpleadoID, @usuario, ENCRYPTBYPASSPHRASE(@contrasena, @contrasena), @rol, 'Habilitado')
 
-EXEC dbo.[Insertar usuario] 'CMU', 'TareaCurso', 'ADMIN'
+EXEC dbo.[Insertar usuario] 1, 'CMU', 'TareaCurso', 'ADMIN'
 
 SELECT * FROM Usuario
 
@@ -39,9 +70,10 @@ AS
 		(SELECT rol FROM Usuario
 		WHERE CAST(DECRYPTBYPASSPHRASE(@contrasena, contrasena) AS varchar(100)) = @contrasena
 		AND usuario = @usuario AND estado = 'Habilitado') Rol,
-		(SELECT IdUsuario FROM Usuario
-		WHERE CAST(DECRYPTBYPASSPHRASE(@contrasena, contrasena) AS varchar(100)) = @contrasena
-		AND usuario = @usuario AND estado = 'Habilitado') IdUsuario,
+		(SELECT E.Nombres FROM Usuario U
+		JOIN Empleado E ON E.EmpleadoID = U.EmpleadoID
+		WHERE CAST(DECRYPTBYPASSPHRASE(@contrasena, U.contrasena) AS varchar(100)) = @contrasena
+		AND U.usuario = @usuario AND U.estado = 'Habilitado') [Nombre de empleado],
 		(SELECT usuario FROM Usuario
 		WHERE CAST(DECRYPTBYPASSPHRASE(@contrasena, contrasena) AS varchar(100)) = @contrasena
 		AND usuario = @usuario AND estado = 'Habilitado') Usuario
@@ -52,27 +84,6 @@ AS
 EXEC dbo.[Validar acceso]  'CMU', 'TareaCurso'
 
 GRANT EXEC ON dbo.[Validar acceso] TO adminRestaurante
-
-CREATE TABLE Sucursal
-(SucursalID int primary key identity(1,1),
-Nombre varchar(50),
-ResponsableID int,
-Telefono varchar(24),
-Departamento varchar(50),
-Direccion varchar(100))
-
-CREATE TABLE Empleado
-(EmpleadoID int primary key identity(1, 1),
-Cedula varchar(15),
-Nombres varchar(50),
-Apellidos varchar(50),
-Telefono varchar(24),
-Direccion varchar(100),
-SucursalID int not null FOREIGN KEY REFERENCES Sucursal(SucursalID))
-
-ALTER TABLE Sucursal
-ADD CONSTRAINT FK_Empleado_ResponsableID FOREIGN KEY (ResponsableID)
-    REFERENCES Empleado(EmpleadoID)
 
 CREATE TABLE Mesa
 (MesaID int primary key identity(1, 1),
