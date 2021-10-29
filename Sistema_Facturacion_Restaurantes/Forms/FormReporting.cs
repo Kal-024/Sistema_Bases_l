@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Sistema_Facturacion_Restaurantes.Forms
 {
-    public partial class FormReporting : Form
+    public partial class FormReporting : System.Windows.Forms.Form
     {
         public FormReporting()
         {

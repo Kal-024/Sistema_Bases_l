@@ -253,6 +253,26 @@ namespace Sistema_Facturacion_Restaurantes.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sucursal {
+            get {
+                object obj = ResourceManager.GetObject("sucursal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sucursal_icon {
+            get {
+                object obj = ResourceManager.GetObject("sucursal-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap value__1_ {
             get {
                 object obj = ResourceManager.GetObject("value (1)", resourceCulture);

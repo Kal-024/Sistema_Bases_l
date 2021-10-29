@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Sistema_Facturacion_Restaurantes.Forms
 {
-    public partial class FormSetting : Form
+    public partial class FormSetting : System.Windows.Forms.Form
     {
         public FormSetting()
         {

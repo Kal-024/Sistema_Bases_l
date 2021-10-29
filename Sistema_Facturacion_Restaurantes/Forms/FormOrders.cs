@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Sistema_Facturacion_Restaurantes.Forms
 {
-    public partial class FormOrders : Form
+    public partial class FormOrders : System.Windows.Forms.Form
     {
         public FormOrders()
         {

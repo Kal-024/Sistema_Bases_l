@@ -70,11 +70,11 @@
     <Compile Include="Forms\FormOrders.Designer.cs">
       <DependentUpon>FormOrders.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormProducts.cs">
+    <Compile Include="Forms\FormSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormProducts.Designer.cs">
-      <DependentUpon>FormProducts.cs</DependentUpon>
+    <Compile Include="Forms\FormSucursal.Designer.cs">
+      <DependentUpon>FormSucursal.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormReporting.cs">
       <SubType>Form</SubType>
@@ -103,8 +103,8 @@
     <EmbeddedResource Include="Forms\FormOrders.resx">
       <DependentUpon>FormOrders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormProducts.resx">
-      <DependentUpon>FormProducts.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormSucursal.resx">
+      <DependentUpon>FormSucursal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormReporting.resx">
       <DependentUpon>FormReporting.cs</DependentUpon>
@@ -151,6 +151,7 @@
     <None Include="Resources\IU Multicolor\settings.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\IU Multicolor\sucursal.icon" />
     <None Include="Resources\IU Multicolor\value %281%29.png" />
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buttonWindows\mc-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IU Multicolor\sucursal-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
