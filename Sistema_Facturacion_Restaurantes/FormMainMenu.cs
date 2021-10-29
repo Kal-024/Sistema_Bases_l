@@ -114,7 +114,7 @@ namespace Sistema_Facturacion_Restaurantes
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormCustomers(), sender);
+            OpenChildForm(new Forms.FormPlatos(), sender);
         }
 
         private void btnReporting_Click(object sender, EventArgs e)

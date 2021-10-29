@@ -43,7 +43,7 @@
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnNotifications = new System.Windows.Forms.Button();
             this.btnReporting = new System.Windows.Forms.Button();
-            this.btnCustomer = new System.Windows.Forms.Button();
+            this.btnPlatos = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnSucursal = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
@@ -60,7 +60,7 @@
             this.panelMenu.Controls.Add(this.btnSetting);
             this.panelMenu.Controls.Add(this.btnNotifications);
             this.panelMenu.Controls.Add(this.btnReporting);
-            this.panelMenu.Controls.Add(this.btnCustomer);
+            this.panelMenu.Controls.Add(this.btnPlatos);
             this.panelMenu.Controls.Add(this.btnOrders);
             this.panelMenu.Controls.Add(this.btnSucursal);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -267,25 +267,25 @@
             this.btnReporting.UseVisualStyleBackColor = true;
             this.btnReporting.Click += new System.EventHandler(this.btnReporting_Click);
             // 
-            // btnCustomer
+            // btnPlatos
             // 
-            this.btnCustomer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCustomer.FlatAppearance.BorderSize = 0;
-            this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomer.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCustomer.Image = global::Sistema_Facturacion_Restaurantes.Properties.Resources.value__1_;
-            this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomer.Location = new System.Drawing.Point(0, 200);
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnCustomer.Size = new System.Drawing.Size(200, 60);
-            this.btnCustomer.TabIndex = 3;
-            this.btnCustomer.Text = "   Customer";
-            this.btnCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCustomer.UseVisualStyleBackColor = true;
-            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            this.btnPlatos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPlatos.FlatAppearance.BorderSize = 0;
+            this.btnPlatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlatos.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPlatos.Image = global::Sistema_Facturacion_Restaurantes.Properties.Resources.dish_icon;
+            this.btnPlatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlatos.Location = new System.Drawing.Point(0, 200);
+            this.btnPlatos.Name = "btnPlatos";
+            this.btnPlatos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnPlatos.Size = new System.Drawing.Size(200, 60);
+            this.btnPlatos.TabIndex = 3;
+            this.btnPlatos.Text = "   Platos";
+            this.btnPlatos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlatos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPlatos.UseVisualStyleBackColor = true;
+            this.btnPlatos.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnOrders
             // 
@@ -301,7 +301,7 @@
             this.btnOrders.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnOrders.Size = new System.Drawing.Size(200, 60);
             this.btnOrders.TabIndex = 2;
-            this.btnOrders.Text = "   Orders";
+            this.btnOrders.Text = "   Ordenes";
             this.btnOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnOrders.UseVisualStyleBackColor = true;
@@ -359,7 +359,7 @@
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button btnNotifications;
         private System.Windows.Forms.Button btnReporting;
-        private System.Windows.Forms.Button btnCustomer;
+        private System.Windows.Forms.Button btnPlatos;
         private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelTitleBar;

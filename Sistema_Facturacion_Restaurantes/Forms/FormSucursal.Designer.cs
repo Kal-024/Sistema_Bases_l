@@ -33,17 +33,17 @@
             this.Eliminar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblResponsable = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSucursal = new System.Windows.Forms.DataGridView();
             this.lblDepartamento = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cmbDepartamento = new System.Windows.Forms.ComboBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
+            this.cmbResponsable = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,26 +98,19 @@
             this.lblResponsable.TabIndex = 4;
             this.lblResponsable.Text = "Responsable:";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 128);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtNombre.Location = new System.Drawing.Point(112, 128);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(121, 20);
+            this.txtNombre.TabIndex = 5;
             // 
-            // textBox2
+            // txtTelefono
             // 
-            this.textBox2.Location = new System.Drawing.Point(112, 159);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 6;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(112, 194);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtTelefono.Location = new System.Drawing.Point(112, 194);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(121, 20);
+            this.txtTelefono.TabIndex = 8;
             // 
             // lblTelefono
             // 
@@ -168,21 +161,21 @@
             this.lblDepartamento.TabIndex = 14;
             this.lblDepartamento.Text = "Departamento:";
             // 
-            // comboBox1
+            // cmbDepartamento
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(112, 230);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 15;
+            this.cmbDepartamento.FormattingEnabled = true;
+            this.cmbDepartamento.Location = new System.Drawing.Point(112, 230);
+            this.cmbDepartamento.Name = "cmbDepartamento";
+            this.cmbDepartamento.Size = new System.Drawing.Size(121, 21);
+            this.cmbDepartamento.TabIndex = 15;
             // 
-            // textBox4
+            // txtDireccion
             // 
-            this.textBox4.Location = new System.Drawing.Point(112, 267);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(165, 77);
-            this.textBox4.TabIndex = 17;
+            this.txtDireccion.Location = new System.Drawing.Point(112, 267);
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(165, 77);
+            this.txtDireccion.TabIndex = 17;
             // 
             // lblDireccion
             // 
@@ -193,29 +186,37 @@
             this.lblDireccion.TabIndex = 16;
             this.lblDireccion.Text = "Dirección:";
             // 
+            // cmbResponsable
+            // 
+            this.cmbResponsable.FormattingEnabled = true;
+            this.cmbResponsable.Location = new System.Drawing.Point(112, 162);
+            this.cmbResponsable.Name = "cmbResponsable";
+            this.cmbResponsable.Size = new System.Drawing.Size(121, 21);
+            this.cmbResponsable.TabIndex = 18;
+            // 
             // FormSucursal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.cmbResponsable);
+            this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.lblDireccion);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbDepartamento);
             this.Controls.Add(this.lblDepartamento);
             this.Controls.Add(this.dgvSucursal);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblTelefono);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblResponsable);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.Eliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
             this.Name = "FormSucursal";
-            this.Text = "FormSucursal";
+            this.Text = "FormSucursales";
             this.Load += new System.EventHandler(this.FormProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursal)).EndInit();
             this.ResumeLayout(false);
@@ -230,16 +231,16 @@
         private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblResponsable;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvSucursal;
         private System.Windows.Forms.Label lblDepartamento;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox cmbDepartamento;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.ComboBox cmbResponsable;
     }
 }
