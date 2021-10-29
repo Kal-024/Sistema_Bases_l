@@ -18,11 +18,19 @@ namespace Sistema_Facturacion_Restaurantes
         private Random random;
         private int tempIndex;
         private Form activeForm;
+        //Datos de usuario
+        string NombreUsuario;
+        string Rol;
 
         //Constructor
-        public FormMainMenu()
+        public FormMainMenu(string NombredeUsuario, String RolUsuario)
         {
             InitializeComponent();
+
+            NombreUsuario = NombredeUsuario;
+            Rol = RolUsuario;
+            //this.lblNombreUsuario.Text = NombreUsuario;
+
             random = new Random();
             btnCloseChildForm.Visible = false;
             //Ocultar los botones de ventana

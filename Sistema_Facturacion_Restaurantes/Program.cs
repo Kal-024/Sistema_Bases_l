@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema_Facturacion_Restaurantes.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Sistema_Facturacion_Restaurantes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMainMenu());
+            Application.Run(new FrmInicioSesion());
         }
     }
 }
