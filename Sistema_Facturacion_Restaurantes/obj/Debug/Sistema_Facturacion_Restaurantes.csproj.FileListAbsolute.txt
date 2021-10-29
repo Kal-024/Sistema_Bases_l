@@ -15,3 +15,20 @@ C:\Users\Usuario\source\repos\Sistema_Facturacion_Restaurantes\Sistema_Facturaci
 C:\Users\Usuario\source\repos\Sistema_Facturacion_Restaurantes\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormOrders.resources
 C:\Users\Usuario\source\repos\Sistema_Facturacion_Restaurantes\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormReporting.resources
 C:\Users\Usuario\source\repos\Sistema_Facturacion_Restaurantes\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormSetting.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.csprojAssemblyReference.cache
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.FormMainMenu.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormCustomers.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormNotifications.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormOrders.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormProducts.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormReporting.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormSetting.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Properties.Resources.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.csproj.GenerateResource.cache
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.csproj.CoreCompileInputs.cache
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.exe
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.pdb
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.View.FrmInicioSesion.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\bin\Debug\Sistema_Facturacion_Restaurantes.exe.config
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\bin\Debug\Sistema_Facturacion_Restaurantes.exe
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\bin\Debug\Sistema_Facturacion_Restaurantes.pdb
