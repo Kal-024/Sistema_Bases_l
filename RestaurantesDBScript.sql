@@ -224,14 +224,12 @@ EXEC AgregarLocalidad 17, 'Tola'
 GO
 CREATE PROCEDURE MostrarLocalidad
 AS
-	SELECT LM.Municipio + ', ' + O.NombreDepartamento AS [Cuidad-Departamento]
+	SELECT LM.Municipio + ', ' + O.NombreDepartamento AS [Cuidad-Departamento], LM.LocalidadID
 	FROM LocalidadMunicipio LM
 	JOIN Departamento O ON O.DepartamentoID = LM.DepartamentoID
 	ORDER BY LM.Municipio + ', ' + O.NombreDepartamento ASC
 
 EXEC MostrarLocalidad
--- 97 es el LocalidadID de Managua, Managua
-SELECT * FROM LocalidadMunicipio WHERE LocalidadID = 97
 
 CREATE TABLE Sucursal
 (SucursalID int primary key identity(1,1),
@@ -250,13 +248,15 @@ Nombres varchar(50),
 Apellidos varchar(50),
 Telefono varchar(24),
 Direccion varchar(100),
-SucursalID int not null FOREIGN KEY REFERENCES Sucursal(SucursalID))
+SucursalID int FOREIGN KEY REFERENCES Sucursal(SucursalID))
 
 ALTER TABLE Sucursal
 ADD CONSTRAINT FK_Empleado_ResponsableID FOREIGN KEY (ResponsableID)
     REFERENCES Empleado(EmpleadoID)
 
 INSERT INTO Empleado(Cedula, Nombres, Apellidos, Telefono, Direccion, SucursalID) VALUES('4503010001000L', 'Uziel Jose', 'Duarte Guillen', '83811309', 'Via Reconciliacion Norte', 1)
+INSERT INTO Empleado(Cedula, Nombres, Apellidos, Telefono, Direccion) VALUES('0010000000000C', 'Harbey Caleb', 'Vilchez Tapia', '88888888', 'Masaya')
+INSERT INTO Empleado(Cedula, Nombres, Apellidos, Telefono, Direccion) VALUES('1000000000000M', 'Rodian Josue', 'Matey Martinez', '12345678', 'Managua')
 
 UPDATE Sucursal SET ResponsableID = 1 WHERE SucursalID = 1
 
@@ -282,7 +282,6 @@ AS
 
 EXEC dbo.[Insertar usuario] 1, 'CMU', 'TareaCurso', 'ADMIN'
 
-SELECT * FROM Empleado
 GO
 -- Procedimiento de almacenado para validar el acceso al sistema
 CREATE PROCEDURE dbo.[Validar acceso]
@@ -311,6 +310,7 @@ AS
 EXEC dbo.[Validar acceso]  'CMU', 'TareaCurso'
 
 GRANT EXEC ON dbo.[Validar acceso] TO adminRestaurante
+GRANT EXEC ON dbo.MostrarLocalidad TO adminRestaurante
 
 CREATE TABLE Mesa
 (MesaID int primary key identity(1, 1),
@@ -382,3 +382,50 @@ CantidadAsistente int,
 FechaReserva datetime,
 FechaLlegada datetime,
 AtencionEspecial int)
+GO
+
+CREATE PROC MostrarSucuarsal
+AS
+	SELECT S.SucursalID, E.Nombres Responsable, S.Nombre [Nombre de sucursal], S.Telefono, LC.Municipio + ', ' + D.NombreDepartamento Ubicacion, S.Direccion
+	FROM Sucursal S
+	INNER JOIN Empleado E ON S.ResponsableID = E.EmpleadoID
+	INNER JOIN LocalidadMunicipio LC ON LC.LocalidadID = S.LocalidadID 
+	INNER JOIN Departamento D ON D.DepartamentoID = LC.DepartamentoID
+
+GRANT EXEC ON dbo.MostrarSucuarsal TO adminRestaurante
+GO
+
+CREATE PROC MostrarEmpleado
+AS
+	SELECT Nombres, EmpleadoID
+	FROM Empleado
+
+GRANT EXEC ON dbo.MostrarEmpleado TO adminRestaurante
+GO
+
+CREATE PROC AgregarSucursal @Nombre varchar(50), @ResponsableID int, @Telefono varchar(24), @LocalidadID int, @Direccion varchar(100)
+AS
+	INSERT INTO Sucursal(Nombre, ResponsableID, Telefono, LocalidadID, Direccion) VALUES(@Nombre, @ResponsableID, @Telefono, @LocalidadID, @Direccion)
+
+GRANT EXEC ON dbo.AgregarSucursal TO adminRestaurante
+GO
+
+CREATE PROC ElimanarSucursal @SucursalID int
+AS
+	DELETE
+	FROM Sucursal
+	WHERE SucursalID = @SucursalID
+
+GRANT EXEC ON dbo.ElimanarSucursal TO adminRestaurante
+GO
+
+CREATE PROC ActualizarSucursal @SucursalID int, @Nombre varchar(50), @ResponsableID int, @Telefono varchar(24), @LocalidadID int, @Direccion varchar(100)
+AS
+	UPDATE Sucursal	SET Nombre = @Nombre, ResponsableID = @ResponsableID, Telefono = @Telefono, LocalidadID = @LocalidadID, Direccion = @Direccion
+	WHERE SucursalID = @SucursalID
+
+GRANT EXEC ON dbo.ActualizarSucursal TO adminRestaurante
+GO
+
+exec ActualizarSucursal 1, "Centroamerica", 1, "123456789", 97, "Modulo 24 multicentro"
+exec MostrarLocalidad
