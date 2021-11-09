@@ -59,5 +59,126 @@ namespace Sistema_Facturacion_Restaurantes.Data
             }
             return dtEmpleados;
         }
+
+        public DataTable CargarMesero(int SucursalID)
+        {
+            DataTable dtMeseros = new DataTable("Mesero");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "CargarMeseroPorSucursal";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                // Parámetros del Procedimiento Almacenado
+                SqlParameter Nombre = new SqlParameter();
+                Nombre.ParameterName = "@SucursalID";
+                Nombre.SqlDbType = SqlDbType.Int;
+                Nombre.Value = SucursalID;
+                SqlCmd.Parameters.Add(Nombre);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtMeseros);
+
+            }
+            catch (Exception ex)
+            {
+                dtMeseros = null;
+            }
+            return dtMeseros;
+        }
+
+        public DataTable CargarSucursal()
+        {
+            DataTable dtSucursal = new DataTable("Sucursales");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "CargarSucursal";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtSucursal);
+
+            }
+            catch (Exception ex)
+            {
+                dtSucursal = null;
+            }
+            return dtSucursal;
+        }
+
+        public DataTable CargarMesas(int SucursalID)
+        {
+            DataTable dtMeseros = new DataTable("Mesero");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "CargarMesasPorSucursal";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                // Parámetros del Procedimiento Almacenado
+                SqlParameter Nombre = new SqlParameter();
+                Nombre.ParameterName = "@SucursalID";
+                Nombre.SqlDbType = SqlDbType.Int;
+                Nombre.Value = SucursalID;
+                SqlCmd.Parameters.Add(Nombre);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtMeseros);
+
+            }
+            catch (Exception ex)
+            {
+                dtMeseros = null;
+            }
+            return dtMeseros;
+        }
+
+        public DataTable CargarOrden(int SucursalID)
+        {
+            DataTable dtOrdenes = new DataTable("Mesero");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "MostrarOrdenPorSucursal";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                // Parámetros del Procedimiento Almacenado
+                SqlParameter Nombre = new SqlParameter();
+                Nombre.ParameterName = "@SucursalID";
+                Nombre.SqlDbType = SqlDbType.Int;
+                Nombre.Value = SucursalID;
+                SqlCmd.Parameters.Add(Nombre);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtOrdenes);
+
+            }
+            catch (Exception ex)
+            {
+                dtOrdenes = null;
+            }
+            return dtOrdenes;
+        }
     }
 }

@@ -190,6 +190,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.Controls.Add(this.lblResponsable);
             this.Controls.Add(this.lblNombre);
             this.Name = "FrmSucursalFilds";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSucursalFilds";
             this.Load += new System.EventHandler(this.FrmSucursalFilds_Load);
             this.flowLayoutPanel1.ResumeLayout(false);

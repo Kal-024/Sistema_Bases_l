@@ -19,5 +19,25 @@ namespace Sistema_Facturacion_Restaurantes.Controller
         {
             return new DComboxes().CargarEmpleados();
         }
+
+        public static DataTable CargarMesero(int SucursalID)
+        {
+            return new DComboxes().CargarMesero(SucursalID);
+        }
+
+        public static DataTable CargarSucursal()
+        {
+            return new DComboxes().CargarSucursal();
+        }
+
+        public static DataTable CargarMesas(int SucursalID)
+        {
+            return new DComboxes().CargarMesas(SucursalID);
+        }
+
+        public static DataTable CargarOrden(int SucursalID)
+        {
+            return new DComboxes().CargarOrden(SucursalID);
+        }
     }
 }

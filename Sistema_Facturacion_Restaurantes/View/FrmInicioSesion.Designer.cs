@@ -41,18 +41,18 @@ namespace Sistema_Facturacion_Restaurantes.View
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(59, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 17);
+            this.label1.Size = new System.Drawing.Size(119, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario de la DB";
+            this.label1.Text = "Usuario de la DB:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 111);
+            this.label2.Location = new System.Drawing.Point(93, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 17);
+            this.label2.Size = new System.Drawing.Size(85, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Contraseña";
+            this.label2.Text = "Contraseña:";
             // 
             // txtUsuario
             // 
@@ -73,7 +73,7 @@ namespace Sistema_Facturacion_Restaurantes.View
             // 
             this.btnAceptar.Location = new System.Drawing.Point(297, 172);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(75, 38);
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;

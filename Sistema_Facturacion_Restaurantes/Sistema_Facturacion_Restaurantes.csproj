@@ -55,11 +55,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CCliente.cs" />
     <Compile Include="Controller\CComboxes.cs" />
+    <Compile Include="Controller\COrden.cs" />
     <Compile Include="Controller\CSucursal.cs" />
     <Compile Include="Controller\CUsuario.cs" />
     <Compile Include="Data\Conexion.cs" />
+    <Compile Include="Data\DCliente.cs" />
     <Compile Include="Data\DComboxes.cs" />
+    <Compile Include="Data\DOrden.cs" />
     <Compile Include="Data\DSucursal.cs" />
     <Compile Include="Data\DUsuario.cs" />
     <Compile Include="FormMainMenu.cs">
@@ -80,11 +84,11 @@
     <Compile Include="Forms\FormNotifications.Designer.cs">
       <DependentUpon>FormNotifications.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormOrders.cs">
+    <Compile Include="Forms\FrmOrdenCatalogo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormOrders.Designer.cs">
-      <DependentUpon>FormOrders.cs</DependentUpon>
+    <Compile Include="Forms\FrmOrdenCatalogo.Designer.cs">
+      <DependentUpon>FrmOrdenCatalogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormSucursal.cs">
       <SubType>Form</SubType>
@@ -104,11 +108,29 @@
     <Compile Include="Forms\FormSetting.Designer.cs">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCliente.Designer.cs">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmClienteCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmClienteCatalogo.Designer.cs">
+      <DependentUpon>FrmClienteCatalogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmSucursalFilds.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmSucursalFilds.Designer.cs">
       <DependentUpon>FrmSucursalFilds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmOrden.Designer.cs">
+      <DependentUpon>FrmOrden.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,8 +150,8 @@
     <EmbeddedResource Include="Forms\FormNotifications.resx">
       <DependentUpon>FormNotifications.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormOrders.resx">
-      <DependentUpon>FormOrders.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmOrdenCatalogo.resx">
+      <DependentUpon>FrmOrdenCatalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSucursal.resx">
       <DependentUpon>FormSucursal.cs</DependentUpon>
@@ -140,8 +162,17 @@
     <EmbeddedResource Include="Forms\FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCliente.resx">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmClienteCatalogo.resx">
+      <DependentUpon>FrmClienteCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSucursalFilds.resx">
       <DependentUpon>FrmSucursalFilds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmOrden.resx">
+      <DependentUpon>FrmOrden.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

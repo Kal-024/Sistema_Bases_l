@@ -55,3 +55,7 @@ C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\bin\Deb
 C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormPlatos.resources
 C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormSucursal.resources
 C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmSucursalFilds.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmCliente.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmClienteCatalogo.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmOrdenCatalogo.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmOrden.resources
