@@ -117,33 +117,14 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
         }
 
-        public void fillSpaces(string Responsable, string NombreSucursal, string Telefono, string Ubicacion, string Direccion)
+        public void fillSpaces(int Responsable, string NombreSucursal, string Telefono, int LocalidadID, string Direccion)
         {
             txtNombre.Text = NombreSucursal;
             txtTelefono.Text = Telefono;
             txtDireccion.Text = Direccion;
 
-            int index = 0;
-            //Cargar los comboxes con los datos iniciales
-            foreach(DataRow item in CComboxes.CargarDepartamentos().Rows)
-            {
-                if ((string)item[0] == Ubicacion)
-                {
-                    cmbDepartamento.SelectedIndex = index;
-                    break;
-                }
-                ++index;
-            }
-            index = 0;
-            foreach (DataRow item in CComboxes.CargarEmpleados().Rows)
-            {
-                if((string)item[0] == Responsable)
-                {
-                    cmbResponsable.SelectedIndex = index;
-                    break;
-                }
-                ++index;
-            }
+            cmbResponsable.SelectedValue = Responsable;
+            cmbDepartamento.SelectedValue = LocalidadID;
         }
     }
 }

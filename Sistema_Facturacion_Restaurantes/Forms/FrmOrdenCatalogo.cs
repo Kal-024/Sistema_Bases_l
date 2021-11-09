@@ -80,15 +80,18 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
             // Respaldo de los datos iniciales
             int OrdenID = (int)this.dgvOrdenes.CurrentRow.Cells[0].Value;
-            string Mesero = Convert.ToString(this.dgvOrdenes.CurrentRow.Cells[1].Value);
-            int MesaID = (int) this.dgvOrdenes.CurrentRow.Cells[2].Value;
-            int ClienteID = (int) this.dgvOrdenes.CurrentRow.Cells[4].Value;
-            string FechaRealizacion = Convert.ToString(this.dgvOrdenes.CurrentRow.Cells[6].Value);
+
+            DataRow[] SelectedRow = CComboxes.MostrarOrdenForeignKey(SucursalID).Select("OrdenID = " + OrdenID);
+
+            int MeseroID = (int) SelectedRow[0][1];
+            int MesaID = (int)SelectedRow[0][2];
+            int ClienteID = (int)SelectedRow[0][3];
+            string FechaRealizacion = Convert.ToString(this.dgvOrdenes.CurrentRow.Cells[4].Value);
 
             // Llamada al form que contine los datos de entrada del 'objeto' Sucursal
             FrmOrden frmOrden = new FrmOrden(SucursalID);
             frmOrden.isUpdate = true;
-            frmOrden.fillSpaces(Mesero, MesaID, ClienteID, FechaRealizacion);
+            frmOrden.fillSpaces(MeseroID, MesaID, ClienteID, FechaRealizacion);
             frmOrden.EditableOrdenID = OrdenID;
             frmOrden.ShowDialog();
             this.dgvOrdenes.DataSource = CComboxes.CargarOrden(SucursalID);

@@ -91,6 +91,7 @@ EmpleadoID int not null FOREIGN KEY REFERENCES Empleado(EmpleadoID),
 MesaID int not null FOREIGN KEY REFERENCES Mesa(MesaID),
 ClienteID int not null FOREIGN KEY REFERENCES Cliente(ClienteID),
 FechaRealizacion datetime)
+ALTER TABLE Orden ALTER COLUMN ClienteID int NULL
 
 CREATE TABLE OrdenDetalleComida
 (OrdenID int not null,
@@ -532,14 +533,17 @@ GO
 
 CREATE PROC AgregarOrden @EmpleadoID int, @MesaID int, @ClienteID int, @FechaRealizacion datetime
 AS
-	INSERT INTO Orden(EmpleadoID, MesaID, ClienteID, FechaRealizacion) VALUES(@EmpleadoID, @MesaID, @ClienteID, CONVERT(VARCHAR(30), @FechaRealizacion, 121))
+	IF @ClienteID = 0
+		INSERT INTO Orden(EmpleadoID, MesaID, FechaRealizacion) VALUES(@EmpleadoID, @MesaID, CONVERT(VARCHAR(30), @FechaRealizacion, 121))
+	ELSE
+		INSERT INTO Orden(EmpleadoID, MesaID, ClienteID, FechaRealizacion) VALUES(@EmpleadoID, @MesaID, @ClienteID, CONVERT(VARCHAR(30), @FechaRealizacion, 121))
 
 GRANT EXEC ON dbo.AgregarOrden TO adminRestaurante
 GO
 
-CREATE PROC MostrarOrdenPorSucursal @SucursalID int
+CREATE PROC MostrarOrdenFKPorSucursal @SucursalID int
 AS
-	SELECT O.OrdenID, E.Nombres Mesero, M.MesaID, M.Area + CONCAT(M.CantidadAsiento, ' asientos, ')+ S.Nombre Mesa, C.ClienteID, C.Nombres, O.FechaRealizacion
+	SELECT O.OrdenID, E.EmpleadoID, M.MesaID, C.ClienteID
 	FROM Orden O
 	INNER JOIN Mesa M ON M.MesaID = O.MesaID
 	INNER JOIN Sucursal S ON S.SucursalID = M.SucursalID
@@ -547,7 +551,7 @@ AS
 	INNER JOIN Cliente C ON C.ClienteID = O.ClienteID
 	WHERE S.SucursalID = @SucursalID AND M.SucursalID = @SucursalID
 
-GRANT EXEC ON dbo.MostrarOrdenPorSucursal TO adminRestaurante
+GRANT EXEC ON dbo.MostrarOrdenFKPorSucursal TO adminRestaurante
 GO
 --EXEC AgregarOrden 1, 1, 1, '2021-11-08 11:18:11.96'
 -- Actualizar un cliente
@@ -560,14 +564,44 @@ GRANT EXEC ON dbo.ActualizarCliente TO adminRestaurante
 GO
 
 -- Eliminar un cliente
-
+-- exec MostrarOrdenFKPorSucursal 1
 -- Actualizar Orden
 CREATE PROC ActualizarOrden @OrdenID int, @EmpleadoID int, @MesaID int, @ClienteID int, @FechaRealizacion datetime
 AS
-	UPDATE Orden SET EmpleadoID = @EmpleadoID, MesaID = @MesaID, ClienteID = @ClienteID, FechaRealizacion = CONVERT(VARCHAR(30), @FechaRealizacion, 121)
-	WHERE OrdenID = @OrdenID
+	IF @ClienteID = 0
+		UPDATE Orden SET EmpleadoID = @EmpleadoID, MesaID = @MesaID, ClienteID = Null, FechaRealizacion = CONVERT(VARCHAR(30), @FechaRealizacion, 121)
+		WHERE OrdenID = @OrdenID
+	ELSE
+		UPDATE Orden SET EmpleadoID = @EmpleadoID, MesaID = @MesaID, ClienteID = @ClienteID, FechaRealizacion = CONVERT(VARCHAR(30), @FechaRealizacion, 121)
+		WHERE OrdenID = @OrdenID
 
 GRANT EXEC ON dbo.ActualizarOrden TO adminRestaurante
 GO
+
 --exec MostrarOrdenPorSucursal 1
 -- Eliminar Orden
+-- Mostraremos solo la informacion importante de las ordenes (sin ID)
+CREATE PROC MostrarOrdenBasicoPorSucursal @SucursalID int
+AS
+	SELECT O.OrdenID, E.Nombres Mesero, M.Area + CONCAT(M.CantidadAsiento, ' asientos, ')+ S.Nombre Mesa,
+	IIF(O.ClienteID = NULL, 'Contado', C.Nombres + ' ' + C.Apellidos) Cliente,
+	O.FechaRealizacion, 0 Monto
+	FROM Orden O
+	INNER JOIN Mesa M ON M.MesaID = O.MesaID
+	INNER JOIN Sucursal S ON S.SucursalID = M.SucursalID
+	INNER JOIN Empleado E ON E.EmpleadoID = O.EmpleadoID
+	INNER JOIN Cliente C ON C.ClienteID = O.ClienteID OR O.ClienteID = NULL
+	WHERE S.SucursalID = @SucursalID AND M.SucursalID = @SucursalID
+
+GRANT EXEC ON dbo.MostrarOrdenBasicoPorSucursal TO adminRestaurante
+GO
+
+CREATE PROC MostrarSucursalFK
+AS
+		SELECT SucursalID, ResponsableID, LocalidadID
+		FROM Sucursal
+
+GRANT EXEC ON dbo.MostrarSucursalFK TO adminRestaurante
+GO
+-- exec MostrarSucursalFK
+-- select * from Orden

@@ -84,16 +84,19 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
             // Respaldo de los datos iniciales
             int SucursalID = (int) this.dgvSucursal.CurrentRow.Cells[0].Value;
-            string Responsable = Convert.ToString(this.dgvSucursal.CurrentRow.Cells[1].Value);
             string NombreSucursal = Convert.ToString(this.dgvSucursal.CurrentRow.Cells[2].Value);
             string Telefono = Convert.ToString(this.dgvSucursal.CurrentRow.Cells[3].Value);
-            string Ubicacion = Convert.ToString(this.dgvSucursal.CurrentRow.Cells[4].Value);
             string Direccion = Convert.ToString(this.dgvSucursal.CurrentRow.Cells[5].Value);
-            
+
+            DataRow[] SelectedRow = CComboxes.MostrarSucursalForeignKey().Select("SucursalID = " + SucursalID);
+
+            int ResponsableID = (int)SelectedRow[0][1];
+            int LocalidadID = (int)SelectedRow[0][2];
+
             // Llamada al form que contine los datos de entrada del 'objeto' Sucursal
             FrmSucursalFilds frmSucursalFilds = new FrmSucursalFilds();
             frmSucursalFilds.isUpdate = true;
-            frmSucursalFilds.fillSpaces(Responsable, NombreSucursal, Telefono, Ubicacion, Direccion);
+            frmSucursalFilds.fillSpaces(ResponsableID, NombreSucursal, Telefono, LocalidadID, Direccion);
             frmSucursalFilds.EditableSucursalID = SucursalID;
             frmSucursalFilds.ShowDialog();
             this.dgvSucursal.DataSource = CSucursal.MostrarSucursal();

@@ -39,5 +39,15 @@ namespace Sistema_Facturacion_Restaurantes.Controller
         {
             return new DComboxes().CargarOrden(SucursalID);
         }
+
+        public static DataTable MostrarOrdenForeignKey(int SucursalID)
+        {
+            return new DComboxes().MostrarOrdenForeignKey(SucursalID);
+        }
+
+        public static DataTable MostrarSucursalForeignKey()
+        {
+            return new DComboxes().MostrarSucursalForeignKey();
+        }
     }
 }

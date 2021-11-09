@@ -64,9 +64,9 @@ namespace Sistema_Facturacion_Restaurantes.Forms
                 // Get combobox selection (in handler)
                 int EmpleadoID = ((KeyValuePair<int, string>)this.cmbMeseros.SelectedItem).Key;
                 int MesaID = ((KeyValuePair<int, string>)this.cmbMesas.SelectedItem).Key;
-                int Cliente = rbtnCredito.Checked ? ClienteID : 5;
+                int Cliente = rbtnCredito.Checked ? ClienteID : 0;
                 string FechaRealizacion = dtpFecha.Value.ToString();
-
+                
                 string rpta = "";
                 if (isUpdate)
                 {
@@ -104,32 +104,14 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             // No se puede hacer lo de arriba porque OrdenID es una llave foranea, entonces las ordenes con cliente ID = 5 quieren
             // decir que la orden se pago al contado
             if (rbtnContado.Checked)
-                ClienteID = 5;
+                ClienteID = 0;
         }
 
-        public void fillSpaces(string Mesero, int MesaID, int ClienteID, string FechaRealizacion)
+        public void fillSpaces(int MeseroID, int MesaID, int ClienteID, string FechaRealizacion)
         {
-            int index = 0;
             //Cargar los comboxes con los datos iniciales
-            foreach (DataRow item in CComboxes.CargarMesero(SucursalID).Rows)
-            {
-                if ((string)item[0] == Mesero)
-                {
-                    cmbMeseros.SelectedIndex = index;
-                    break;
-                }
-                ++index;
-            }
-            index = 0;
-            foreach (DataRow item in CComboxes.CargarMesas(SucursalID).Rows)
-            {
-                if (((KeyValuePair<int, string>)this.cmbMeseros.SelectedItem).Key == MesaID)
-                {
-                    cmbMesas.SelectedIndex = index;
-                    break;
-                }
-                ++index;
-            }
+            cmbMeseros.SelectedValue = MeseroID;
+            cmbMesas.SelectedValue = MesaID;
             this.ClienteID = ClienteID;
             DateTime fr = Convert.ToDateTime(FechaRealizacion);
             dtpFecha.Value = fr.AddDays(0);

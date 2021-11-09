@@ -160,7 +160,7 @@ namespace Sistema_Facturacion_Restaurantes.Data
                 // Creando un objeto SQLCommand que llamará al procedimiento almacenado
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "MostrarOrdenPorSucursal";
+                SqlCmd.CommandText = "MostrarOrdenBasicoPorSucursal";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 // Parámetros del Procedimiento Almacenado
@@ -169,6 +169,63 @@ namespace Sistema_Facturacion_Restaurantes.Data
                 Nombre.SqlDbType = SqlDbType.Int;
                 Nombre.Value = SucursalID;
                 SqlCmd.Parameters.Add(Nombre);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtOrdenes);
+
+            }
+            catch (Exception ex)
+            {
+                dtOrdenes = null;
+            }
+            return dtOrdenes;
+        }
+
+        public DataTable MostrarOrdenForeignKey(int SucursalID)
+        {
+            DataTable dtOrdenes = new DataTable("Mesero");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "MostrarOrdenFKPorSucursal";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                // Parámetros del Procedimiento Almacenado
+                SqlParameter Nombre = new SqlParameter();
+                Nombre.ParameterName = "@SucursalID";
+                Nombre.SqlDbType = SqlDbType.Int;
+                Nombre.Value = SucursalID;
+                SqlCmd.Parameters.Add(Nombre);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtOrdenes);
+
+            }
+            catch (Exception ex)
+            {
+                dtOrdenes = null;
+            }
+            return dtOrdenes;
+        }
+
+        public DataTable MostrarSucursalForeignKey()
+        {
+            DataTable dtOrdenes = new DataTable("SucursalFK");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "MostrarSucursalFK";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(dtOrdenes);
