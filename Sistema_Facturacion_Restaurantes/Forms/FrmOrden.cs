@@ -14,7 +14,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
     public partial class FrmOrden : Form
     {
         int SucursalID = 0;
-        public int ClienteID = 5;
+        public int ClienteID = 0;
         public Boolean isUpdate = false;
         public int EditableOrdenID = 0;
 

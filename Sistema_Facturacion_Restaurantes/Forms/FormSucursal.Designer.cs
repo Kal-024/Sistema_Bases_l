@@ -33,6 +33,8 @@
             this.Eliminar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSucursal = new System.Windows.Forms.DataGridView();
+            this.btnEmpleados = new System.Windows.Forms.Button();
+            this.btnMesas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,15 +97,45 @@
             this.dgvSucursal.Location = new System.Drawing.Point(25, 71);
             this.dgvSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSucursal.Name = "dgvSucursal";
+            this.dgvSucursal.ReadOnly = true;
             this.dgvSucursal.RowHeadersWidth = 51;
             this.dgvSucursal.Size = new System.Drawing.Size(971, 352);
             this.dgvSucursal.TabIndex = 13;
+            this.dgvSucursal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSucursal_CellContentClick);
+            // 
+            // btnEmpleados
+            // 
+            this.btnEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpleados.Location = new System.Drawing.Point(25, 443);
+            this.btnEmpleados.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Size = new System.Drawing.Size(117, 48);
+            this.btnEmpleados.TabIndex = 14;
+            this.btnEmpleados.Text = "Empleados";
+            this.btnEmpleados.UseVisualStyleBackColor = true;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            // 
+            // btnMesas
+            // 
+            this.btnMesas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesas.Location = new System.Drawing.Point(176, 443);
+            this.btnMesas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMesas.Name = "btnMesas";
+            this.btnMesas.Size = new System.Drawing.Size(117, 48);
+            this.btnMesas.TabIndex = 15;
+            this.btnMesas.Text = "Mesas";
+            this.btnMesas.UseVisualStyleBackColor = true;
+            this.btnMesas.Click += new System.EventHandler(this.btnMesas_Click);
             // 
             // FormSucursal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnMesas);
+            this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.dgvSucursal);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Eliminar);
@@ -126,5 +158,7 @@
         private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvSucursal;
+        private System.Windows.Forms.Button btnEmpleados;
+        private System.Windows.Forms.Button btnMesas;
     }
 }

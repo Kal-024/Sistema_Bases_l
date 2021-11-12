@@ -550,9 +550,17 @@ AS
 	INNER JOIN Empleado E ON E.EmpleadoID = O.EmpleadoID
 	INNER JOIN Cliente C ON C.ClienteID = O.ClienteID
 	WHERE S.SucursalID = @SucursalID AND M.SucursalID = @SucursalID
+	UNION ALL
+	SELECT O.OrdenID, E.EmpleadoID, M.MesaID, 0 Cliente
+	FROM Orden O
+	INNER JOIN Mesa M ON M.MesaID = O.MesaID
+	INNER JOIN Sucursal S ON S.SucursalID = M.SucursalID
+	INNER JOIN Empleado E ON E.EmpleadoID = O.EmpleadoID
+	WHERE S.SucursalID = @SucursalID AND O.ClienteID IS NULL
 
 GRANT EXEC ON dbo.MostrarOrdenFKPorSucursal TO adminRestaurante
 GO
+
 --EXEC AgregarOrden 1, 1, 1, '2021-11-08 11:18:11.96'
 -- Actualizar un cliente
 CREATE PROC ActualizarCliente @ClienteID int, @Cedula varchar(15), @Nombres varchar(50), @Apellidos varchar(50), @Telefono varchar(24)
@@ -583,15 +591,24 @@ GO
 -- Mostraremos solo la informacion importante de las ordenes (sin ID)
 CREATE PROC MostrarOrdenBasicoPorSucursal @SucursalID int
 AS
-	SELECT O.OrdenID, E.Nombres Mesero, M.Area + CONCAT(M.CantidadAsiento, ' asientos, ')+ S.Nombre Mesa,
-	IIF(O.ClienteID = NULL, 'Contado', C.Nombres + ' ' + C.Apellidos) Cliente,
-	O.FechaRealizacion, 0 Monto
+	SELECT * FROM
+	(SELECT O.OrdenID, E.Nombres Mesero, M.Area + CONCAT(M.CantidadAsiento, ' asientos, ')+ S.Nombre Mesa,
+	C.Nombres + ' ' + C.Apellidos Cliente, O.FechaRealizacion, 0 Monto
 	FROM Orden O
 	INNER JOIN Mesa M ON M.MesaID = O.MesaID
 	INNER JOIN Sucursal S ON S.SucursalID = M.SucursalID
 	INNER JOIN Empleado E ON E.EmpleadoID = O.EmpleadoID
 	INNER JOIN Cliente C ON C.ClienteID = O.ClienteID OR O.ClienteID = NULL
-	WHERE S.SucursalID = @SucursalID AND M.SucursalID = @SucursalID
+	WHERE S.SucursalID = @SucursalID
+	UNION ALL
+	SELECT O.OrdenID, E.Nombres Mesero, M.Area + CONCAT(M.CantidadAsiento, ' asientos, ')+ S.Nombre Mesa,
+	'Contado' Cliente, O.FechaRealizacion, 0 Monto
+	FROM Orden O
+	INNER JOIN Mesa M ON M.MesaID = O.MesaID
+	INNER JOIN Sucursal S ON S.SucursalID = M.SucursalID
+	INNER JOIN Empleado E ON E.EmpleadoID = O.EmpleadoID
+	WHERE S.SucursalID = @SucursalID AND O.ClienteID IS NULL) Ordenes
+	ORDER BY Ordenes.FechaRealizacion
 
 GRANT EXEC ON dbo.MostrarOrdenBasicoPorSucursal TO adminRestaurante
 GO
@@ -604,4 +621,65 @@ AS
 GRANT EXEC ON dbo.MostrarSucursalFK TO adminRestaurante
 GO
 -- exec MostrarSucursalFK
--- select * from Orden
+-- select * from Orden, SELECT * FROM Mesa, select * from Sucursal, select * from Empleado
+-- exec MostrarOrdenBasicoPorSucursal
+-- exec MostrarOrdenFKPorSucursal 1
+
+CREATE PROC AgregarEmpleado @Cedula varchar(15), @Nombres varchar(50), @Apellidos varchar(50), @Cargo varchar(50), @Telefono varchar(24), @Direccion varchar(100), @SucursalID int
+AS
+	INSERT INTO Empleado(Cedula, Nombres, Apellidos, Cargo, Telefono, Direccion, SucursalID)
+	VALUES(@Cedula, @Nombres, @Apellidos, @Cargo, @Telefono, @Direccion, @SucursalID)
+
+GRANT EXEC ON dbo.AgregarEmpleado TO adminRestaurante
+GO
+
+--exec AgregarEmpleado '23213213H', 'Simon', 'Miranda', 'Chef', '65235665', 'Polanco', 4
+--exec AgregarEmpleado '23213213H', 'Aniseto', 'Prieto', 'Mesero', '89555665', 'Polanco', 4
+
+CREATE PROC ActualizarEmpleado @EmpleadoID int, @Cedula varchar(15), @Nombres varchar(50), @Apellidos varchar(50), @Cargo varchar(50), @Telefono varchar(24), @Direccion varchar(100), @SucursalID int
+AS
+	UPDATE Empleado
+	SET Cedula = @Cedula, Nombres = @Nombres, Apellidos = @Apellidos, Cargo = @Cargo, Telefono = @Telefono, Direccion = @Direccion, SucursalID = @SucursalID
+	WHERE EmpleadoID = @EmpleadoID
+
+GRANT EXEC ON dbo.ActualizarEmpleado TO adminRestaurante
+GO
+--exec ActualizarEmpleado 23, '12345678901234', 'Gilberto', 'del Calabozo', 'Mesero', '88888888', 'Farmaton', 1
+
+CREATE PROC AgregarMesa @CantidadAsiento int, @Area varchar(30), @SucursalID int
+AS
+	INSERT INTO Mesa(CantidadAsiento, Area, SucursalID) VALUES(@CantidadAsiento, @Area, @SucursalID)
+
+GRANT EXEC ON dbo.AgregarMesa TO adminRestaurante
+GO
+
+CREATE PROC ActualizarMesa @MesaID int, @CantidadAsiento int, @Area varchar(30), @SucursalID int
+AS
+	UPDATE Mesa
+	SET CantidadAsiento = @CantidadAsiento, Area = @Area, SucursalID = @SucursalID
+	WHERE MesaID = @MesaID
+
+GRANT EXEC ON dbo.ActualizarMesa TO adminRestaurante
+GO
+--exec AgregarMesa 2, 'Teraza', 4
+-- select * from Mesa
+-- EXEC ActualizarMesa 25, 4, 'Terraza', 4
+
+CREATE PROC MostrarEmpleadoPorSucursal @SucursalID int
+AS
+	SELECT EmpleadoID, Cedula, Nombres, Apellidos, Cargo, Telefono, Direccion
+	FROM Empleado
+	WHERE SucursalID = @SucursalID
+
+GRANT EXEC ON dbo.MostrarEmpleadoPorSucursal TO adminRestaurante
+GO
+
+CREATE PROC MostrarMesaPorSucursal @SucursalID int
+AS
+	SELECT MesaID, CantidadAsiento, Area
+	FROM Mesa
+	WHERE SucursalID = @SucursalID
+
+GRANT EXEC ON dbo.MostrarMesaPorSucursal TO adminRestaurante
+GO
+-- exec MostrarMesaPorSucursal 1

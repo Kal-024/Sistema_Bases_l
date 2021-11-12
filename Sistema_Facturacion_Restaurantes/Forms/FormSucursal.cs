@@ -101,5 +101,38 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             frmSucursalFilds.ShowDialog();
             this.dgvSucursal.DataSource = CSucursal.MostrarSucursal();
         }
+
+        private void dgvSucursal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            if (dgvSucursal.Rows.Count == 0 || dgvSucursal.CurrentCell.RowIndex < 0)
+            {
+                MessageBox.Show("Para actualizar un registro debe seleccionar una fila");
+                return;
+            }
+            else
+            {
+                FrmEmpleadoCatalogo frmEmpleadoCatalogo = new FrmEmpleadoCatalogo((int)this.dgvSucursal.CurrentRow.Cells[0].Value);
+                frmEmpleadoCatalogo.ShowDialog();
+            }
+        }
+
+        private void btnMesas_Click(object sender, EventArgs e)
+        {
+            if (dgvSucursal.Rows.Count == 0 || dgvSucursal.CurrentCell.RowIndex < 0)
+            {
+                MessageBox.Show("Para actualizar un registro debe seleccionar una fila");
+                return;
+            }
+            else
+            {
+                FrmMesaCatalogo frmMesaCatalogo = new FrmMesaCatalogo((int)this.dgvSucursal.CurrentRow.Cells[0].Value);
+                frmMesaCatalogo.ShowDialog();
+            }
+        }
     }
 }

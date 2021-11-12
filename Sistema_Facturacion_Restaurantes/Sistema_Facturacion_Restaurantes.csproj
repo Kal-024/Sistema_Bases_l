@@ -57,12 +57,16 @@
   <ItemGroup>
     <Compile Include="Controller\CCliente.cs" />
     <Compile Include="Controller\CComboxes.cs" />
+    <Compile Include="Controller\CEmpleado.cs" />
+    <Compile Include="Controller\CMesa.cs" />
     <Compile Include="Controller\COrden.cs" />
     <Compile Include="Controller\CSucursal.cs" />
     <Compile Include="Controller\CUsuario.cs" />
     <Compile Include="Data\Conexion.cs" />
     <Compile Include="Data\DCliente.cs" />
     <Compile Include="Data\DComboxes.cs" />
+    <Compile Include="Data\DEmpleado.cs" />
+    <Compile Include="Data\DMesa.cs" />
     <Compile Include="Data\DOrden.cs" />
     <Compile Include="Data\DSucursal.cs" />
     <Compile Include="Data\DUsuario.cs" />
@@ -83,6 +87,30 @@
     </Compile>
     <Compile Include="Forms\FormNotifications.Designer.cs">
       <DependentUpon>FormNotifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEmpleado.Designer.cs">
+      <DependentUpon>FrmEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEmpleadoCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEmpleadoCatalogo.Designer.cs">
+      <DependentUpon>FrmEmpleadoCatalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMesa.Designer.cs">
+      <DependentUpon>FrmMesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMesaCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMesaCatalogo.Designer.cs">
+      <DependentUpon>FrmMesaCatalogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmOrdenCatalogo.cs">
       <SubType>Form</SubType>
@@ -149,6 +177,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormNotifications.resx">
       <DependentUpon>FormNotifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEmpleado.resx">
+      <DependentUpon>FrmEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEmpleadoCatalogo.resx">
+      <DependentUpon>FrmEmpleadoCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMesa.resx">
+      <DependentUpon>FrmMesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMesaCatalogo.resx">
+      <DependentUpon>FrmMesaCatalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmOrdenCatalogo.resx">
       <DependentUpon>FrmOrdenCatalogo.cs</DependentUpon>
