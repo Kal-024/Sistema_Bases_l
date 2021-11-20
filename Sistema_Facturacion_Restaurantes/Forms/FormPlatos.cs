@@ -37,5 +37,11 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             label4.ForeColor = ThemeColor.SecondaryColor;
             label5.ForeColor = ThemeColor.PrimaryColor;
         }
+
+        private void btnProveedor_Click(object sender, EventArgs e)
+        {
+            FrmProveedorCatalogo pc = new FrmProveedorCatalogo();
+            pc.ShowDialog();
+        }
     }
 }

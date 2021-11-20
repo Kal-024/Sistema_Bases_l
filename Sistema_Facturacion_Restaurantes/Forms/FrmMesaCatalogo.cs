@@ -20,6 +20,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             InitializeComponent();
             SucursalID = Sucursal;
             dgvMesa.DataSource = CMesa.MostrarMesaPorSucursal(SucursalID);
+            this.dgvMesa.Columns[0].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,6 +35,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             frmMesa.SucursalID = SucursalID;
             frmMesa.ShowDialog();
             this.dgvMesa.DataSource = CMesa.MostrarMesaPorSucursal(SucursalID);
+            this.dgvMesa.Columns[0].Visible = false;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -57,6 +59,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             frmMesa.SucursalID = SucursalID;
             frmMesa.ShowDialog();
             this.dgvMesa.DataSource = CMesa.MostrarMesaPorSucursal(SucursalID);
+            this.dgvMesa.Columns[0].Visible = false;
         }
     }
 }

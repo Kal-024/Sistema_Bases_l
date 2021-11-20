@@ -19,6 +19,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             InitializeComponent();
             SucursalID = Sucursal;
             this.dgvEmpleados.DataSource = CEmpleado.MostrarEmpleadoPorSucursal(SucursalID);
+            this.dgvEmpleados.Columns[0].Visible = false;
         }
 
         private void btnSeleccionarCliente_Click(object sender, EventArgs e)
@@ -33,6 +34,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             frmEmpleado.SucursalID = SucursalID;
             frmEmpleado.ShowDialog();
             this.dgvEmpleados.DataSource = CEmpleado.MostrarEmpleadoPorSucursal(SucursalID);
+            this.dgvEmpleados.Columns[0].Visible = false;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -60,10 +62,16 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             frmEmpleado.SucursalID = SucursalID;
             frmEmpleado.ShowDialog();
             this.dgvEmpleados.DataSource = CEmpleado.MostrarEmpleadoPorSucursal(SucursalID);
+            this.dgvEmpleados.Columns[0].Visible = false;
         }
 
         private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
+
+        private void FrmEmpleadoCatalogo_Load(object sender, EventArgs e)
+        {
+            this.dgvEmpleados.Columns[0].Visible = false;
         }
     }
 }

@@ -61,6 +61,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             SucursalID = ((KeyValuePair<int, string>)this.cmbSucursal.SelectedItem).Key;
             // Cargar las ordenes de la sucursar selecionada
             dgvOrdenes.DataSource = CComboxes.CargarOrden(SucursalID);
+            this.dgvOrdenes.Columns[0].Visible = false;
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -68,6 +69,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             o.isUpdate = false;
             o.ShowDialog();
             dgvOrdenes.DataSource = CComboxes.CargarOrden(SucursalID);
+            this.dgvOrdenes.Columns[0].Visible = false;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -95,6 +97,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             frmOrden.EditableOrdenID = OrdenID;
             frmOrden.ShowDialog();
             this.dgvOrdenes.DataSource = CComboxes.CargarOrden(SucursalID);
+            this.dgvOrdenes.Columns[0].Visible = false;
         }
     }
 }

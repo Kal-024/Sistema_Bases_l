@@ -50,6 +50,7 @@
             this.btnEliminarI = new System.Windows.Forms.Button();
             this.btnActualizarI = new System.Windows.Forms.Button();
             this.btnAgregarI = new System.Windows.Forms.Button();
+            this.btnProveedor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumos)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPlatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlatos.Location = new System.Drawing.Point(523, 100);
-            this.dgvPlatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPlatos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPlatos.Name = "dgvPlatos";
             this.dgvPlatos.RowHeadersWidth = 51;
             this.dgvPlatos.Size = new System.Drawing.Size(476, 336);
@@ -102,7 +103,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(160, 100);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(219, 88);
@@ -111,7 +112,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(160, 62);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(160, 22);
             this.txtNombre.TabIndex = 19;
@@ -141,7 +142,7 @@
             this.btnEliminarP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarP.Location = new System.Drawing.Point(845, 455);
-            this.btnEliminarP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminarP.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarP.Name = "btnEliminarP";
             this.btnEliminarP.Size = new System.Drawing.Size(153, 48);
             this.btnEliminarP.TabIndex = 16;
@@ -153,7 +154,7 @@
             this.btnActualizarP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnActualizarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarP.Location = new System.Drawing.Point(684, 455);
-            this.btnActualizarP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizarP.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizarP.Name = "btnActualizarP";
             this.btnActualizarP.Size = new System.Drawing.Size(153, 48);
             this.btnActualizarP.TabIndex = 15;
@@ -165,7 +166,7 @@
             this.btnAgregarP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarP.Location = new System.Drawing.Point(523, 455);
-            this.btnAgregarP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregarP.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarP.Name = "btnAgregarP";
             this.btnAgregarP.Size = new System.Drawing.Size(153, 48);
             this.btnAgregarP.TabIndex = 14;
@@ -181,7 +182,7 @@
             "Ejecutivos",
             "Bebidas"});
             this.cmbCategoria.Location = new System.Drawing.Point(160, 209);
-            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(160, 24);
             this.cmbCategoria.TabIndex = 29;
@@ -189,7 +190,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(160, 255);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(160, 22);
             this.txtPrecio.TabIndex = 31;
@@ -207,7 +208,7 @@
             // txtNombreIngrediente
             // 
             this.txtNombreIngrediente.Location = new System.Drawing.Point(160, 348);
-            this.txtNombreIngrediente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreIngrediente.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreIngrediente.Name = "txtNombreIngrediente";
             this.txtNombreIngrediente.Size = new System.Drawing.Size(160, 22);
             this.txtNombreIngrediente.TabIndex = 33;
@@ -225,7 +226,7 @@
             // txtProveedor
             // 
             this.txtProveedor.Location = new System.Drawing.Point(160, 393);
-            this.txtProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.txtProveedor.Name = "txtProveedor";
             this.txtProveedor.Size = new System.Drawing.Size(160, 22);
             this.txtProveedor.TabIndex = 35;
@@ -246,7 +247,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvInsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInsumos.Location = new System.Drawing.Point(41, 425);
-            this.dgvInsumos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvInsumos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvInsumos.Name = "dgvInsumos";
             this.dgvInsumos.RowHeadersWidth = 51;
             this.dgvInsumos.Size = new System.Drawing.Size(376, 81);
@@ -257,7 +258,7 @@
             this.btnEliminarI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEliminarI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarI.Location = new System.Drawing.Point(297, 513);
-            this.btnEliminarI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminarI.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarI.Name = "btnEliminarI";
             this.btnEliminarI.Size = new System.Drawing.Size(120, 31);
             this.btnEliminarI.TabIndex = 39;
@@ -269,7 +270,7 @@
             this.btnActualizarI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnActualizarI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarI.Location = new System.Drawing.Point(169, 513);
-            this.btnActualizarI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizarI.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizarI.Name = "btnActualizarI";
             this.btnActualizarI.Size = new System.Drawing.Size(120, 31);
             this.btnActualizarI.TabIndex = 38;
@@ -281,18 +282,29 @@
             this.btnAgregarI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAgregarI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarI.Location = new System.Drawing.Point(41, 513);
-            this.btnAgregarI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregarI.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarI.Name = "btnAgregarI";
             this.btnAgregarI.Size = new System.Drawing.Size(120, 31);
             this.btnAgregarI.TabIndex = 37;
             this.btnAgregarI.Text = "Agregar";
             this.btnAgregarI.UseVisualStyleBackColor = true;
             // 
+            // btnProveedor
+            // 
+            this.btnProveedor.Location = new System.Drawing.Point(358, 258);
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.Size = new System.Drawing.Size(123, 42);
+            this.btnProveedor.TabIndex = 43;
+            this.btnProveedor.Text = "Proveedor";
+            this.btnProveedor.UseVisualStyleBackColor = true;
+            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
+            // 
             // FormPlatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnProveedor);
             this.Controls.Add(this.btnEliminarI);
             this.Controls.Add(this.btnActualizarI);
             this.Controls.Add(this.btnAgregarI);
@@ -315,7 +327,7 @@
             this.Controls.Add(this.btnEliminarP);
             this.Controls.Add(this.btnActualizarP);
             this.Controls.Add(this.btnAgregarP);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPlatos";
             this.Text = "FormPlatos";
             this.Load += new System.EventHandler(this.FormCustomers_Load);
@@ -350,5 +362,6 @@
         private System.Windows.Forms.Button btnEliminarI;
         private System.Windows.Forms.Button btnActualizarI;
         private System.Windows.Forms.Button btnAgregarI;
+        private System.Windows.Forms.Button btnProveedor;
     }
 }

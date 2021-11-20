@@ -683,3 +683,16 @@ AS
 GRANT EXEC ON dbo.MostrarMesaPorSucursal TO adminRestaurante
 GO
 -- exec MostrarMesaPorSucursal 1
+
+-- exec AgregarProveedor 'Leterago', '223321233', 97, 'Enec Central'
+CREATE PROC MostrarProveedor
+AS
+	SELECT P.ProveedorID, P.NombreCompania , LM.Municipio + ', ' + D.NombreDepartamento Ubicacion, P.Telefono, P.Direccion
+	FROM Proveedor P
+	INNER JOIN LocalidadMunicipio LM
+	ON LM.LocalidadID = P.LocalidadID
+	INNER JOIN Departamento D
+	ON D.DepartamentoID = LM.DepartamentoID
+
+GRANT EXEC ON dbo.MostrarProveedor TO adminRestaurante
+GO

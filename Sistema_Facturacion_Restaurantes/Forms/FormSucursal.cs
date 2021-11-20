@@ -25,6 +25,8 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
             //Cargar la el dgvSucursal
             this.dgvSucursal.DataSource = CSucursal.MostrarSucursal();
+            this.dgvSucursal.Columns[0].Visible = false;
+            //this.dgvSucursal.AutoResizeColumns();
         }
 
         private void LoadTheme()
@@ -54,6 +56,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             frmSucursalFilds.isUpdate = false;
             frmSucursalFilds.ShowDialog();
             this.dgvSucursal.DataSource = CSucursal.MostrarSucursal();
+            this.dgvSucursal.Columns[0].Visible = false;
         }
         private void Eliminar_Click(object sender, EventArgs e)
         {
@@ -71,6 +74,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
                 else
                     MessageBox.Show("Sucursal no eliminada", "Sistema de Reservas", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.dgvSucursal.DataSource = CSucursal.MostrarSucursal();
+                this.dgvSucursal.Columns[0].Visible = false;
             }
         }
 
@@ -100,6 +104,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             frmSucursalFilds.EditableSucursalID = SucursalID;
             frmSucursalFilds.ShowDialog();
             this.dgvSucursal.DataSource = CSucursal.MostrarSucursal();
+            this.dgvSucursal.Columns[0].Visible = false;
         }
 
         private void dgvSucursal_CellContentClick(object sender, DataGridViewCellEventArgs e)

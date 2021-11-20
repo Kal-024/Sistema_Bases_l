@@ -103,6 +103,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.Name = "FrmEmpleadoCatalogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Empleados";
+            this.Load += new System.EventHandler(this.FrmEmpleadoCatalogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.ResumeLayout(false);
 

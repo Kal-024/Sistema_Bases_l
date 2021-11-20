@@ -17,6 +17,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
         {
             InitializeComponent();
             this.dgvCliente.DataSource = CCliente.MostrarCliente();
+            this.dgvCliente.Columns[0].Visible = false;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -25,6 +26,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             frmCliente.isUpdate = false;
             frmCliente.ShowDialog();
             this.dgvCliente.DataSource = CCliente.MostrarCliente();
+            this.dgvCliente.Columns[0].Visible = false;
         }
 
         private void btnSeleccionarCliente_Click(object sender, EventArgs e)
@@ -64,6 +66,12 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             frmCliente.EditableClienteID = ClienteID;
             frmCliente.ShowDialog();
             this.dgvCliente.DataSource = CCliente.MostrarCliente();
+            this.dgvCliente.Columns[0].Visible = false;
+        }
+
+        private void FrmClienteCatalogo_Load(object sender, EventArgs e)
+        {
+            this.dgvCliente.Columns[0].Visible = false;
         }
     }
 }
