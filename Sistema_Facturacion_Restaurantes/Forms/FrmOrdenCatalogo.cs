@@ -14,8 +14,10 @@ namespace Sistema_Facturacion_Restaurantes.Forms
     public partial class FrmOrdenCatalogo : System.Windows.Forms.Form
     {
         int SucursalID;
-        public FrmOrdenCatalogo()
+        String rol;
+        public FrmOrdenCatalogo(String rolUsuario)
         {
+            rol = rolUsuario; 
             InitializeComponent();
             // Cargar el cmb comodin Sucursal
             Dictionary<int, string> Sucursales = new Dictionary<int, string>();
@@ -65,7 +67,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            FrmOrden o = new FrmOrden(SucursalID);
+            FrmOrden o = new FrmOrden(SucursalID,rol);
             o.isUpdate = false;
             o.ShowDialog();
             dgvOrdenes.DataSource = CComboxes.CargarOrden(SucursalID);
@@ -91,7 +93,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             string FechaRealizacion = Convert.ToString(this.dgvOrdenes.CurrentRow.Cells[4].Value);
 
             // Llamada al form que contine los datos de entrada del 'objeto' Sucursal
-            FrmOrden frmOrden = new FrmOrden(SucursalID);
+            FrmOrden frmOrden = new FrmOrden(SucursalID,rol);
             frmOrden.isUpdate = true;
             frmOrden.fillSpaces(MeseroID, MesaID, ClienteID, FechaRealizacion);
             frmOrden.EditableOrdenID = OrdenID;

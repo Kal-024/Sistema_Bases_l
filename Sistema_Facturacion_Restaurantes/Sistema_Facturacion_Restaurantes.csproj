@@ -90,6 +90,12 @@
     <Compile Include="Forms\FormNotifications.Designer.cs">
       <DependentUpon>FormNotifications.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmConfig.Designer.cs">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormNotifications.resx">
       <DependentUpon>FormNotifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmConfig.resx">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>

@@ -14,13 +14,38 @@ namespace Sistema_Facturacion_Restaurantes.Forms
     public partial class FrmMesaCatalogo : Form
     {
         public int SucursalID;
-        
-        public FrmMesaCatalogo(int Sucursal)
+        String rol;
+        public FrmMesaCatalogo(int Sucursal,String RolUsuario)
         {
             InitializeComponent();
             SucursalID = Sucursal;
             dgvMesa.DataSource = CMesa.MostrarMesaPorSucursal(SucursalID);
             this.dgvMesa.Columns[0].Visible = false;
+            rol = RolUsuario;
+        
+            switch (rol)
+            {
+                case "Recepcionista":
+                    {
+                        btnAgregar.Hide();
+                        btnActualizar.Hide();
+                        btnEliminar.Hide();
+                        break;
+                    }
+                case "Jefe Cocina":
+                    {
+                        btnAgregar.Hide();
+                        btnActualizar.Hide();
+                        btnEliminar.Hide();
+                        break;
+                    }
+                case "Chef":
+                    {
+
+                        break;
+                    }
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)

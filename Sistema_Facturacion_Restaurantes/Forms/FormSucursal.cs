@@ -14,9 +14,39 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 {
     public partial class FormSucursal : System.Windows.Forms.Form
     {
-        public FormSucursal()
+        String rol;
+        public FormSucursal(String RolUsuario)
         {
             InitializeComponent();
+
+            rol = RolUsuario;
+ 
+            switch (rol)
+            {
+                case "Recepcionista":
+                    {
+                        btnAgregar.Enabled = false;
+                        btnActualizar.Enabled = false;
+                        btnEliminar.Enabled = false;
+                        btnEmpleados.Hide();
+                        break;
+                    }
+                case "Jefe Cocina":
+                    {
+                        btnAgregar.Enabled = false;
+                        btnActualizar.Enabled = false;
+                        btnEliminar.Enabled = false;
+                        btnEmpleados.Hide();
+                        break;
+                    }
+                case "Chef":
+                    {
+
+                        break;
+                    }
+
+            }
+
         }
 
         private void FormProducts_Load(object sender, EventArgs e)
@@ -135,7 +165,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             }
             else
             {
-                FrmMesaCatalogo frmMesaCatalogo = new FrmMesaCatalogo((int)this.dgvSucursal.CurrentRow.Cells[0].Value);
+                FrmMesaCatalogo frmMesaCatalogo = new FrmMesaCatalogo((int)this.dgvSucursal.CurrentRow.Cells[0].Value,rol);
                 frmMesaCatalogo.ShowDialog();
             }
         }

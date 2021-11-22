@@ -30,7 +30,7 @@
         {
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.Eliminar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSucursal = new System.Windows.Forms.DataGridView();
             this.btnEmpleados = new System.Windows.Forms.Button();
@@ -41,6 +41,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar.BackColor = System.Drawing.Color.Yellow;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Location = new System.Drawing.Point(520, 443);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
@@ -48,7 +49,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(153, 48);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
@@ -64,18 +65,18 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // Eliminar
+            // btnEliminar
             // 
-            this.Eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminar.Location = new System.Drawing.Point(843, 443);
-            this.Eliminar.Margin = new System.Windows.Forms.Padding(4);
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Size = new System.Drawing.Size(153, 48);
-            this.Eliminar.TabIndex = 2;
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.UseVisualStyleBackColor = true;
-            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Location = new System.Drawing.Point(843, 443);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(153, 48);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // label5
             // 
@@ -140,7 +141,7 @@
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.dgvSucursal);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.Eliminar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -157,7 +158,7 @@
 
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button Eliminar;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvSucursal;
         private System.Windows.Forms.Button btnEmpleados;

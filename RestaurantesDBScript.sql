@@ -409,6 +409,8 @@ AS
 EXEC dbo.[Insertar usuario] 1, 'Uziel', 'duarte', 'ADMIN'
 EXEC dbo.[Insertar usuario] 2, 'Caleb', 'vilchez', 'ADMIN'
 EXEC dbo.[Insertar usuario] 3, 'Rodian', 'matey', 'ADMIN'
+EXEC dbo.[Insertar usuario]  39,'Samantha','cruz','Recepcionista'
+EXEC dbo.[Insertar usuario]  26,'Eliseo','lara','Chef'
 GO
 -- Procedimiento de almacenado para validar el acceso al sistema
 CREATE PROCEDURE dbo.[Validar acceso]

@@ -13,11 +13,33 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 {
     public partial class FrmClienteCatalogo : Form
     {
-        public FrmClienteCatalogo()
+        String rol;
+        public FrmClienteCatalogo(String rolUsuario)
         {
+            rol = rolUsuario;
             InitializeComponent();
             this.dgvCliente.DataSource = CCliente.MostrarCliente();
             this.dgvCliente.Columns[0].Visible = false;
+
+            switch (rol)
+            {
+                case "Recepcionista":
+                    {
+                        btnEliminar.Enabled = false;
+                        break;
+                    }
+                case "Jefe Cocina":
+                    {
+                        btnEliminar.Enabled = false;
+                        break;
+                    }
+                case "Chef":
+                    {
+
+                        break;
+                    }
+            }
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
