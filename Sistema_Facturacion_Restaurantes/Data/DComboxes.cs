@@ -237,5 +237,52 @@ namespace Sistema_Facturacion_Restaurantes.Data
             }
             return dtOrdenes;
         }
+
+        public DataTable CargarReserva(int SucursalID)
+        {
+            DataTable dtReserva = new DataTable("Reserva");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "MostrarReservaBasicoPorSucursal";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                // Parámetros del Procedimiento Almacenado
+                SqlParameter parameter = new SqlParameter();
+                parameter.ParameterName = "@SucursalID";
+                parameter.SqlDbType = SqlDbType.Int;
+                parameter.Value = SucursalID;
+                SqlCmd.Parameters.Add(parameter);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtReserva);
+
+            }
+            catch (Exception ex)
+            {
+                dtReserva = null;
+            }
+            return dtReserva;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

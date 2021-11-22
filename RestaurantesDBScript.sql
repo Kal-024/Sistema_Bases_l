@@ -698,3 +698,18 @@ AS
 
 GRANT EXEC ON dbo.MostrarProveedor TO adminRestaurante
 GO
+------------------------------
+
+Create PROC MostrarReservaBasicoPorSucursal @SucursalID int
+AS
+Select R.ReservaID,  M.Area+ ' ' + CONCAT(M.CantidadAsiento, ' asientos, ') +  S.Nombre  as Mesa, CONCAT(C.Nombres, ' '+C.Apellidos) as Cliente,
+R.CantidadAsistente,R.FechaReserva,R.FechaLlegada,R.AtencionEspecial
+From Reserva as R 
+inner join Mesa as M  on R.MesaID = M.MesaID 
+inner join Sucursal as S on M.SucursalID = S.SucursalID
+inner join Cliente as C on R.ClienteID = C.ClienteID
+Where M.SucursalID = @SucursalID
+
+GRANT EXEC ON dbo.MostrarReservaBasicoPorSucursal TO adminRestaurante
+
+

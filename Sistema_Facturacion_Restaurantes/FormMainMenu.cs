@@ -54,7 +54,7 @@ namespace Sistema_Facturacion_Restaurantes
                         btnEmpleados.Hide();
                         btnClientes.Hide();
                         btnReport.Hide();
-                        btnConfig.Hide();
+                        btnReservar.Hide();
                         break;
                     }
 
@@ -216,14 +216,19 @@ namespace Sistema_Facturacion_Restaurantes
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnConfig_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.FrmConfig(NombreUsuario,Rol), sender);
-        }
-
         private void btnClientes_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FrmCliente(), sender);
+        }
+
+        private void btnReservar_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.frmReserva(), sender);
+        }
+
+        private void btnConfig_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FrmConfig(NombreUsuario, Rol), sender);
         }
     }
 }

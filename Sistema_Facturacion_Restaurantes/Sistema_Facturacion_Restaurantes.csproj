@@ -70,6 +70,7 @@
     <Compile Include="Data\DMesa.cs" />
     <Compile Include="Data\DOrden.cs" />
     <Compile Include="Data\DProveedor.cs" />
+    <Compile Include="Data\DReservar.cs" />
     <Compile Include="Data\DSucursal.cs" />
     <Compile Include="Data\DUsuario.cs" />
     <Compile Include="FormMainMenu.cs">
@@ -174,6 +175,12 @@
     <Compile Include="Forms\FrmProveedorCatalogo.Designer.cs">
       <DependentUpon>FrmProveedorCatalogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReserva.Designer.cs">
+      <DependentUpon>frmReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmSucursalFilds.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmProveedorCatalogo.resx">
       <DependentUpon>FrmProveedorCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReserva.resx">
+      <DependentUpon>frmReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSucursalFilds.resx">
       <DependentUpon>FrmSucursalFilds.cs</DependentUpon>
