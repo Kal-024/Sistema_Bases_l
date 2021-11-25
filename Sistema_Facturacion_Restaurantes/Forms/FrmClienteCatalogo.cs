@@ -14,9 +14,11 @@ namespace Sistema_Facturacion_Restaurantes.Forms
     public partial class FrmClienteCatalogo : Form
     {
         String rol;
-        public FrmClienteCatalogo(String rolUsuario)
+        Object obj;
+        public FrmClienteCatalogo(String rolUsuario,Object o)
         {
             rol = rolUsuario;
+            obj = o;
             InitializeComponent();
             this.dgvCliente.DataSource = CCliente.MostrarCliente();
             this.dgvCliente.Columns[0].Visible = false;
@@ -60,10 +62,26 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             }
             // Estableco el valor de la variable cliente del form padre (FrmOrden Orden)
             // Para acceder a esas varables deben tener el operador de acceso public o metodos para accederlas
+
             int Cliente = (int) this.dgvCliente.CurrentRow.Cells[0].Value;
-            FrmOrden Orden = Owner as FrmOrden;
-            Orden.ClienteID = Cliente;
-            this.Dispose();
+            Console.WriteLine(obj.GetType() == typeof(FrmOrden));
+            //Console.WriteLine(frmType.GetType().Name);
+            //Console.WriteLine(frmType.GetType());
+
+            //Aqui he cambiado un poco para poder usarlo en otro form
+            if (obj.GetType() == typeof(FrmOrden))
+            { 
+                FrmOrden Orden = Owner as FrmOrden;
+                Orden.ClienteID = Cliente;
+                this.Dispose();
+            }
+            if (obj.GetType() == typeof(frmSaveReserva))
+            {
+                frmSaveReserva reserva= Owner as frmSaveReserva;
+                reserva.ClienteID = Cliente;
+                this.Dispose();
+            }
+
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

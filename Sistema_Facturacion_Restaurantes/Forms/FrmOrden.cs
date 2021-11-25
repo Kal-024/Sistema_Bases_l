@@ -48,9 +48,10 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
         private void rbtnCredito_CheckedChanged(object sender, EventArgs e)
         {
+            FrmOrden c = new FrmOrden(SucursalID,rol);
             if(rbtnCredito.Checked)
             {
-                FrmClienteCatalogo cc = new FrmClienteCatalogo(rol);
+                FrmClienteCatalogo cc = new FrmClienteCatalogo(rol,this);
                 // Le indicamos a VS que cc va a formar de este form (FrmOrden) desde donde lo instanciamos
                 // es decir que cc sera hijo de FrmOrden
                 this.AddOwnedForm(cc);
@@ -117,6 +118,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             DateTime fr = Convert.ToDateTime(FechaRealizacion);
             dtpFecha.Value = fr.AddDays(0);
         }
+        
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

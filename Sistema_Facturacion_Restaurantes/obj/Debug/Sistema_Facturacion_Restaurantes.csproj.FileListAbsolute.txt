@@ -28,3 +28,4 @@ C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Deb
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.csproj.AssemblyReference.cache
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmConfig.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.frmReserva.resources
+C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.frmSaveReserva.resources

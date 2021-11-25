@@ -34,5 +34,14 @@ namespace Sistema_Facturacion_Restaurantes.Controller
         {
             return new DMesa().MostrarMesaPorSucursal(SucursalID);
         }
+
+        public static DataTable LoadTableAvailableForSucursal(int SucursalID)
+        {
+            return new DMesa().LoadTableAvailableForSucursall(SucursalID);
+        }
+
+
+
+
     }
 }

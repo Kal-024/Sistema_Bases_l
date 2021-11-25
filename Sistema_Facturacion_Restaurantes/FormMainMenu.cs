@@ -223,7 +223,7 @@ namespace Sistema_Facturacion_Restaurantes
 
         private void btnReservar_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.frmReserva(), sender);
+            OpenChildForm(new Forms.frmReserva(Rol), sender);
         }
 
         private void btnConfig_Click_1(object sender, EventArgs e)

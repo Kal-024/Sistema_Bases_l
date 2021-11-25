@@ -55,6 +55,11 @@ namespace Sistema_Facturacion_Restaurantes.Controller
             return new DComboxes().CargarReserva(SucursalID);
         }
 
+        public static DataTable MostrarReservaForeignKey(int reservaID)
+        {
+            return new DComboxes().MostrarReservaForeignKey(reservaID);
+        }
+        
 
     }
 }

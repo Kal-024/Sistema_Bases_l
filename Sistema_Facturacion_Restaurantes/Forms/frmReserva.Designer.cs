@@ -102,6 +102,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.btnReservar.TabIndex = 40;
             this.btnReservar.Text = "Reservar";
             this.btnReservar.UseVisualStyleBackColor = true;
+            this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
             // 
             // label5
             // 
@@ -125,6 +126,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.btnActualizar.TabIndex = 42;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 

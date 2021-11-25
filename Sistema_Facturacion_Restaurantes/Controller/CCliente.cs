@@ -26,6 +26,12 @@ namespace Sistema_Facturacion_Restaurantes.Controller
             return new DCliente().MostrarClientes();
         }
 
+
+        public static DataTable MostrarNombreCliente(int ClienteID)
+        {
+            return new DCliente().MostrarNombreCliente(ClienteID);
+        }
+
         public static string Actualizar(int ClienteID, string Cedula, string Nombres, string Apellidos, string Telefono)
         {
             DCliente Obj = new DCliente();

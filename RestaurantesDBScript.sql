@@ -712,4 +712,60 @@ Where M.SucursalID = @SucursalID
 
 GRANT EXEC ON dbo.MostrarReservaBasicoPorSucursal TO adminRestaurante
 
+go
+Create Procedure FindClienteFirstAndLastName @ClienteID int 
+as
+Select C.Nombres + ' ' + C.Apellidos
+from Cliente as C
+where C.ClienteID  =@ClienteID
+
+GRANT EXEC ON dbo.MostrarReservaBasicoPorSucursal TO adminRestaurante
+go
+
+
+Create Procedure LoadTableAvailableForSucursal @SucursalID  int
+as
+Select M.Area + ', ' + CONCAT(M.CantidadAsiento, ' asientos'),M.MesaID 
+From Mesa as M
+where M.MesaID not in(Select R.MesaID From Reserva as R) and M.SucursalID = @SucursalID
+
+
+GRANT EXEC ON LoadTableAvailableForSucursal TO adminRestaurante
+GO
+
+Create procedure AgregarReserva @MesaID int, @ClienteID int , @CantidadA int , @fechaR datetime , @fechaL datetime, @AtencionE int
+as 
+insert into Reserva values (@MesaID, @ClienteID, @CantidadA, @fechaR, @fechaL,@AtencionE)
+
+GRANT EXEC ON LoadTableAvailableForSucursal TO adminRestaurante
+
+GO
+
+Create Procedure MostrarReservasFKporSucursal @ReservaID int
+as
+Select R.MesaID , R.ClienteID 
+from Reserva as R 
+where ReservaID = @ReservaID
+
+GRANT EXEC ON MostrarReservasFKporSucursal TO adminRestaurante
+
+Create procedure ActualizarReserva @ReservaID int,@MesaID int, @ClienteID int , @CantidadA int , @fechaR datetime , @fechaL datetime, @AtencionE int
+as
+Update Reserva 
+set MesaID = @MesaID , ClienteID = @ClienteID , CantidadAsistente = @CantidadA, FechaReserva = @fechaR , FechaLlegada = @fechaL , AtencionEspecial = @AtencionE
+where ReservaID = @ReservaID
+
+
+GRANT EXEC ON ActualizarReserva TO adminRestaurante
+
+
+
+
+
+
+
+
+
+
+
 

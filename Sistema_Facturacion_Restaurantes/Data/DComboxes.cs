@@ -270,8 +270,43 @@ namespace Sistema_Facturacion_Restaurantes.Data
             return dtReserva;
         }
 
+        public DataTable MostrarReservaForeignKey(int reservaID)
+        {
+            DataTable dtReservas = new DataTable("Reserva");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "MostrarReservasFKporSucursal";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                // Parámetros del Procedimiento Almacenado
+                SqlParameter Nombre = new SqlParameter();
+                Nombre.ParameterName = "@ReservaID";
+                Nombre.SqlDbType = SqlDbType.Int;
+                Nombre.Value = reservaID;
+                SqlCmd.Parameters.Add(Nombre);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtReservas);
+
+            }
+            catch (Exception ex)
+            {
+                dtReservas = null;
+            }
+            return dtReservas;
+        }
 
 
+
+
+
+        
 
 
 

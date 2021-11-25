@@ -61,6 +61,7 @@
     <Compile Include="Controller\CMesa.cs" />
     <Compile Include="Controller\COrden.cs" />
     <Compile Include="Controller\CProveedor.cs" />
+    <Compile Include="Controller\CReserva.cs" />
     <Compile Include="Controller\CSucursal.cs" />
     <Compile Include="Controller\CUsuario.cs" />
     <Compile Include="Data\Conexion.cs" />
@@ -181,6 +182,12 @@
     <Compile Include="Forms\frmReserva.Designer.cs">
       <DependentUpon>frmReserva.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmSaveReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSaveReserva.Designer.cs">
+      <DependentUpon>frmSaveReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmSucursalFilds.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmReserva.resx">
       <DependentUpon>frmReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSaveReserva.resx">
+      <DependentUpon>frmSaveReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSucursalFilds.resx">
       <DependentUpon>FrmSucursalFilds.cs</DependentUpon>
