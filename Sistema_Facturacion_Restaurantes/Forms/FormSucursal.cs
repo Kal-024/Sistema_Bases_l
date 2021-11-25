@@ -42,7 +42,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
                 }
             }
             //label4.ForeColor = ThemeColor.SecondaryColor;
-            //label5.ForeColor = ThemeColor.PrimaryColor;
+            label5.ForeColor = ThemeColor.PrimaryColor;
         }
 
         private void cmbDepartamento_SelectedIndexChanged(object sender, EventArgs e)

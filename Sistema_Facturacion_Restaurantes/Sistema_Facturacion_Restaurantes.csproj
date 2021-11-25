@@ -55,20 +55,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CBebida.cs" />
+    <Compile Include="Controller\CBebidasDeOrden.cs" />
     <Compile Include="Controller\CCliente.cs" />
     <Compile Include="Controller\CComboxes.cs" />
+    <Compile Include="Controller\CComidasDeOrden.cs" />
     <Compile Include="Controller\CEmpleado.cs" />
+    <Compile Include="Controller\CInsumo.cs" />
     <Compile Include="Controller\CMesa.cs" />
     <Compile Include="Controller\COrden.cs" />
+    <Compile Include="Controller\CPlato.cs" />
+    <Compile Include="Controller\CPlatoInsumo.cs" />
     <Compile Include="Controller\CProveedor.cs" />
     <Compile Include="Controller\CSucursal.cs" />
     <Compile Include="Controller\CUsuario.cs" />
+    <Compile Include="Data\DBebidasDePlato.cs" />
+    <Compile Include="Data\DComidasDePlato.cs" />
+    <Compile Include="Data\DInsumo.cs" />
+    <Compile Include="Data\DPlatoInsumo.cs" />
+    <Compile Include="Data\DBebida.cs" />
     <Compile Include="Data\Conexion.cs" />
     <Compile Include="Data\DCliente.cs" />
     <Compile Include="Data\DComboxes.cs" />
     <Compile Include="Data\DEmpleado.cs" />
     <Compile Include="Data\DMesa.cs" />
     <Compile Include="Data\DOrden.cs" />
+    <Compile Include="Data\DPlato.cs" />
     <Compile Include="Data\DProveedor.cs" />
     <Compile Include="Data\DSucursal.cs" />
     <Compile Include="Data\DUsuario.cs" />
@@ -77,6 +89,18 @@
     </Compile>
     <Compile Include="FormMainMenu.Designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmBebidaDeOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmBebidaDeOrden.Designer.cs">
+      <DependentUpon>FrmBebidaDeOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmBebidaDeOrdenCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmBebidaDeOrdenCatalogo.Designer.cs">
+      <DependentUpon>FrmBebidaDeOrdenCatalogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormPlatos.cs">
       <SubType>Form</SubType>
@@ -90,6 +114,24 @@
     <Compile Include="Forms\FormNotifications.Designer.cs">
       <DependentUpon>FormNotifications.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmBebida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmBebida.Designer.cs">
+      <DependentUpon>FrmBebida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmComidaDeOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmComidaDeOrden.Designer.cs">
+      <DependentUpon>FrmComidaDeOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmComidasDeOrdenCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmComidasDeOrdenCatalogo.Designer.cs">
+      <DependentUpon>FrmComidasDeOrdenCatalogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +143,18 @@
     </Compile>
     <Compile Include="Forms\FrmEmpleadoCatalogo.Designer.cs">
       <DependentUpon>FrmEmpleadoCatalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmInsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmInsumo.Designer.cs">
+      <DependentUpon>FrmInsumo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmInsumoCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmInsumoCatalogo.Designer.cs">
+      <DependentUpon>FrmInsumoCatalogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmMesa.cs">
       <SubType>Form</SubType>
@@ -156,6 +210,12 @@
     <Compile Include="Forms\FrmPlato.Designer.cs">
       <DependentUpon>FrmPlato.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmPlatoIngredientesCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPlatoIngredientesCatalogo.Designer.cs">
+      <DependentUpon>FrmPlatoIngredientesCatalogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,17 +252,38 @@
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmBebidaDeOrden.resx">
+      <DependentUpon>FrmBebidaDeOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmBebidaDeOrdenCatalogo.resx">
+      <DependentUpon>FrmBebidaDeOrdenCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPlatos.resx">
       <DependentUpon>FormPlatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormNotifications.resx">
       <DependentUpon>FormNotifications.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmBebida.resx">
+      <DependentUpon>FrmBebida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmComidaDeOrden.resx">
+      <DependentUpon>FrmComidaDeOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmComidasDeOrdenCatalogo.resx">
+      <DependentUpon>FrmComidasDeOrdenCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmEmpleadoCatalogo.resx">
       <DependentUpon>FrmEmpleadoCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmInsumo.resx">
+      <DependentUpon>FrmInsumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmInsumoCatalogo.resx">
+      <DependentUpon>FrmInsumoCatalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMesa.resx">
       <DependentUpon>FrmMesa.cs</DependentUpon>
@@ -230,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmPlato.resx">
       <DependentUpon>FrmPlato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPlatoIngredientesCatalogo.resx">
+      <DependentUpon>FrmPlatoIngredientesCatalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmProveedor.resx">
       <DependentUpon>FrmProveedor.cs</DependentUpon>

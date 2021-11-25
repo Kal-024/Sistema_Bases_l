@@ -10,11 +10,13 @@ namespace Sistema_Facturacion_Restaurantes.Data
 {
     class DProveedor
     {
+        private int ProveedorID;
         private string NombreCompania;
         private string Telefono;
         private int LocalidadID;
         private string Direccion;
 
+        public int proveedorID { get => ProveedorID; set => ProveedorID = value; }
         public string nombre { get => NombreCompania; set => NombreCompania = value; }
         public string telefono { get => Telefono; set => Telefono = value; }
         public int localidadID { get => LocalidadID; set => LocalidadID= value; }
@@ -61,6 +63,70 @@ namespace Sistema_Facturacion_Restaurantes.Data
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 // Parámetros del Procedimiento Almacenado
+                SqlParameter Nombre = new SqlParameter();
+                Nombre.ParameterName = "@NombreCompania";
+                Nombre.SqlDbType = SqlDbType.VarChar;
+                Nombre.Size = 100;
+                Nombre.Value = proveedor.NombreCompania;
+                SqlCmd.Parameters.Add(Nombre);
+
+                SqlParameter Telefono = new SqlParameter();
+                Telefono.ParameterName = "@Telefono";
+                Telefono.SqlDbType = SqlDbType.VarChar;
+                Telefono.Size = 24;
+                Telefono.Value = proveedor.Telefono;
+                SqlCmd.Parameters.Add(Telefono);
+
+                SqlParameter Direccion = new SqlParameter();
+                Direccion.ParameterName = "@Direccion";
+                Direccion.SqlDbType = SqlDbType.VarChar;
+                Direccion.Size = 150;
+                Direccion.Value = proveedor.Direccion;
+                SqlCmd.Parameters.Add(Direccion);
+
+                SqlParameter LocalidadID = new SqlParameter();
+                LocalidadID.ParameterName = "@LocalidadID";
+                LocalidadID.SqlDbType = SqlDbType.Int;
+                LocalidadID.Value = proveedor.LocalidadID;
+                SqlCmd.Parameters.Add(LocalidadID);
+
+                //Ejecutamos nuestro comando
+                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return rpta;
+        }
+
+        public string Actualizar(DProveedor proveedor)
+        {
+            string rpta = "";
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                //Código
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+                //Establecer el Comando
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "ActualizarProveedor";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                // Parámetros del Procedimiento Almacenado
+                SqlParameter ProveedorID = new SqlParameter();
+                ProveedorID.ParameterName = "@ProveedorID";
+                ProveedorID.SqlDbType = SqlDbType.Int;
+                ProveedorID.Value = proveedor.ProveedorID;
+                SqlCmd.Parameters.Add(ProveedorID);
+
                 SqlParameter Nombre = new SqlParameter();
                 Nombre.ParameterName = "@NombreCompania";
                 Nombre.SqlDbType = SqlDbType.VarChar;

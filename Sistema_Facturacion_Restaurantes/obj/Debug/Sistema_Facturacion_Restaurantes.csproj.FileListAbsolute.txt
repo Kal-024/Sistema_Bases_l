@@ -66,3 +66,12 @@ C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sis
 C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmPlato.resources
 C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmProveedor.resources
 C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmProveedorCatalogo.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmBebida.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmPlatoIngredientesCatalogo.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmInsumo.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmInsumoCatalogo.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmComidasDeOrden.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmComidaDeOrden.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmComidasDeOrdenCatalogo.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmBebidaDeOrdenCatalogo.resources
+C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmBebidaDeOrden.resources
