@@ -29,8 +29,37 @@ namespace Sistema_Facturacion_Restaurantes
 
             NombreUsuario = NombredeUsuario;
             Rol = RolUsuario;
-            //this.lblNombreUsuario.Text = NombreUsuario;
 
+            switch (Rol)
+            {
+                case "Recepcionista":
+                    {
+                        btnClientes.Hide();
+                        btnEmpleados.Hide();
+                        btnProveedores.Hide();
+                        btnReport.Hide();
+                        break;
+                    }
+                case "Jefe Cocina":
+                    {
+                        btnClientes.Hide();
+                        btnEmpleados.Hide();
+                        btnReport.Hide();
+                        break;
+                    }
+                case "Chef":
+                    {
+                        btnSucursal.Hide();
+                        btnOrders.Hide();
+                        btnEmpleados.Hide();
+                        btnClientes.Hide();
+                        btnReport.Hide();
+                        btnReservar.Hide();
+                        break;
+                    }
+
+            }
+           
             random = new Random();
             btnCloseChildForm.Visible = false;
             //Ocultar los botones de ventana
@@ -112,12 +141,12 @@ namespace Sistema_Facturacion_Restaurantes
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormSucursal(), sender);
+            OpenChildForm(new Forms.FormSucursal(Rol), sender);
         }
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FrmOrdenCatalogo(), sender);
+            OpenChildForm(new Forms.FrmOrdenCatalogo(Rol), sender);
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
@@ -185,6 +214,21 @@ namespace Sistema_Facturacion_Restaurantes
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FrmCliente(), sender);
+        }
+
+        private void btnReservar_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.frmReserva(Rol), sender);
+        }
+
+        private void btnConfig_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FrmConfig(NombreUsuario, Rol), sender);
         }
     }
 }

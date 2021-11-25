@@ -409,6 +409,8 @@ AS
 EXEC dbo.[Insertar usuario] 1, 'Uziel', 'duarte', 'ADMIN'
 EXEC dbo.[Insertar usuario] 2, 'Caleb', 'vilchez', 'ADMIN'
 EXEC dbo.[Insertar usuario] 3, 'Rodian', 'matey', 'ADMIN'
+EXEC dbo.[Insertar usuario]  39,'Samantha','cruz','Recepcionista'
+EXEC dbo.[Insertar usuario]  26,'Eliseo','lara','Chef'
 GO
 -- Procedimiento de almacenado para validar el acceso al sistema
 CREATE PROCEDURE dbo.[Validar acceso]
@@ -738,6 +740,7 @@ AS
 
 GRANT EXEC ON dbo.MostrarProveedor TO adminRestaurante
 GO
+<<<<<<< HEAD
 --exec MostrarProveedor
 CREATE PROC ActualizarProveedor @ProveedorID int, @NombreCompania varchar(100), @Telefono varchar (24), @LocalidadID int, @Direccion varchar(150)
 AS
@@ -970,3 +973,76 @@ GO
 -- select distinct O.OrdenID
 -- from Orden O
 -- inner join OrdenDetalleBebida DC ON DC.OrdenID = O.OrdenID
+=======
+------------------------------
+
+Create PROC MostrarReservaBasicoPorSucursal @SucursalID int
+AS
+Select R.ReservaID,  M.Area+ ' ' + CONCAT(M.CantidadAsiento, ' asientos, ') +  S.Nombre  as Mesa, CONCAT(C.Nombres, ' '+C.Apellidos) as Cliente,
+R.CantidadAsistente,R.FechaReserva,R.FechaLlegada,R.AtencionEspecial
+From Reserva as R 
+inner join Mesa as M  on R.MesaID = M.MesaID 
+inner join Sucursal as S on M.SucursalID = S.SucursalID
+inner join Cliente as C on R.ClienteID = C.ClienteID
+Where M.SucursalID = @SucursalID
+
+GRANT EXEC ON dbo.MostrarReservaBasicoPorSucursal TO adminRestaurante
+
+go
+Create Procedure FindClienteFirstAndLastName @ClienteID int 
+as
+Select C.Nombres + ' ' + C.Apellidos
+from Cliente as C
+where C.ClienteID  =@ClienteID
+
+GRANT EXEC ON dbo.MostrarReservaBasicoPorSucursal TO adminRestaurante
+go
+
+
+Create Procedure LoadTableAvailableForSucursal @SucursalID  int
+as
+Select M.Area + ', ' + CONCAT(M.CantidadAsiento, ' asientos'),M.MesaID 
+From Mesa as M
+where M.MesaID not in(Select R.MesaID From Reserva as R) and M.SucursalID = @SucursalID
+
+
+GRANT EXEC ON LoadTableAvailableForSucursal TO adminRestaurante
+GO
+
+Create procedure AgregarReserva @MesaID int, @ClienteID int , @CantidadA int , @fechaR datetime , @fechaL datetime, @AtencionE int
+as 
+insert into Reserva values (@MesaID, @ClienteID, @CantidadA, @fechaR, @fechaL,@AtencionE)
+
+GRANT EXEC ON LoadTableAvailableForSucursal TO adminRestaurante
+
+GO
+
+Create Procedure MostrarReservasFKporSucursal @ReservaID int
+as
+Select R.MesaID , R.ClienteID 
+from Reserva as R 
+where ReservaID = @ReservaID
+
+GRANT EXEC ON MostrarReservasFKporSucursal TO adminRestaurante
+
+Create procedure ActualizarReserva @ReservaID int,@MesaID int, @ClienteID int , @CantidadA int , @fechaR datetime , @fechaL datetime, @AtencionE int
+as
+Update Reserva 
+set MesaID = @MesaID , ClienteID = @ClienteID , CantidadAsistente = @CantidadA, FechaReserva = @fechaR , FechaLlegada = @fechaL , AtencionEspecial = @AtencionE
+where ReservaID = @ReservaID
+
+
+GRANT EXEC ON ActualizarReserva TO adminRestaurante
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> UserFeatures

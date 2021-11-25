@@ -22,6 +22,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             cmbCargo.Items.Add("Chef");
             cmbCargo.Items.Add("Mesero");
             cmbCargo.Items.Add("Responsable");
+            cmbCargo.Items.Add("Recepcionista");
             cmbCargo.SelectedIndex = 0;
         }
 

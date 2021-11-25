@@ -30,7 +30,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
         private void InitializeComponent()
         {
             this.dgvMesa = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -51,14 +51,14 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.dgvMesa.Size = new System.Drawing.Size(652, 307);
             this.dgvMesa.TabIndex = 15;
             // 
-            // btnCancelar
+            // btnEliminar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(559, 351);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(113, 40);
-            this.btnCancelar.TabIndex = 20;
-            this.btnCancelar.Text = "Eliminar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Location = new System.Drawing.Point(559, 351);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(113, 40);
+            this.btnEliminar.TabIndex = 20;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnActualizar
             // 
@@ -96,7 +96,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 418);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvMesa);
@@ -111,7 +111,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
         #endregion
 
         private System.Windows.Forms.DataGridView dgvMesa;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button button1;

@@ -160,5 +160,40 @@ namespace Sistema_Facturacion_Restaurantes.Data
             }
             return dtEmpleados;
         }
+        
+        public DataTable LoadTableAvailableForSucursall(int SucursalIDP)
+        {
+            DataTable dtSucursal = new DataTable("Mesas");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "LoadTableAvailableForSucursal";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                // Parámetros del Procedimiento Almacenado
+                SqlParameter SucursalID = new SqlParameter();
+                SucursalID.ParameterName = "@SucursalID";
+                SucursalID.SqlDbType = SqlDbType.Int;
+                SucursalID.Value = SucursalIDP;
+                SqlCmd.Parameters.Add(SucursalID);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtSucursal);
+
+            }
+            catch (Exception ex)
+            {
+                dtSucursal = null;
+            }
+            return dtSucursal;
+        }
+
+
+
     }
 }

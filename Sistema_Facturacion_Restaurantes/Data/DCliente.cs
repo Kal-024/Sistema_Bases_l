@@ -171,5 +171,44 @@ namespace Sistema_Facturacion_Restaurantes.Data
             }
             return rpta;
         }
+
+
+        public DataTable MostrarNombreCliente(int clienteID)
+        {
+            DataTable dtCliente = new DataTable("Clientes");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "FindClienteFirstAndLastName";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                // Parámetros del Procedimiento Almacenado
+                //@ClienteID int
+                SqlParameter ClienteID = new SqlParameter();
+                ClienteID.ParameterName = "@ClienteID";
+                ClienteID.SqlDbType = SqlDbType.Int;
+                ClienteID.Value = clienteID;
+                SqlCmd.Parameters.Add(ClienteID);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtCliente);
+
+            }
+            catch (Exception ex)
+            {
+                dtCliente = null;
+            }
+            return dtCliente;
+        }
+
+
+
+
+
     }
 }

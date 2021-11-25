@@ -23,6 +23,8 @@ namespace Sistema_Facturacion_Restaurantes.Forms
         {
             InitializeComponent();
             CargarCombobox();
+           
+
         }
 
         private void CargarCombobox()
