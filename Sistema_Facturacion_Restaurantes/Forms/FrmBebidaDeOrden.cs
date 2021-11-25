@@ -107,7 +107,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
         private void btnBebida_Click(object sender, EventArgs e)
         {
-            FormReporting pc = new FormReporting();
+            formBebidas pc = new formBebidas();
             pc.AgregarBebidaAOrden = true;
             this.AddOwnedForm(pc);
             pc.Show();

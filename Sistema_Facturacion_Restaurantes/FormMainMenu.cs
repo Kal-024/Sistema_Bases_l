@@ -156,7 +156,7 @@ namespace Sistema_Facturacion_Restaurantes
 
         private void btnReporting_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormReporting(), sender);
+            OpenChildForm(new Forms.formBebidas(), sender);
         }
 
         private void btnNotifications_Click(object sender, EventArgs e)
@@ -218,7 +218,7 @@ namespace Sistema_Facturacion_Restaurantes
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FrmCliente(), sender);
+            OpenChildForm(new Forms.FrmCliente(), sender);    //Pendiente pero no dificil de hacer
         }
 
         private void btnReservar_Click(object sender, EventArgs e)
@@ -230,5 +230,38 @@ namespace Sistema_Facturacion_Restaurantes
         {
             OpenChildForm(new Forms.FrmConfig(NombreUsuario, Rol), sender);
         }
+
+        private void btnSucursal_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormSucursal(Rol), sender);
+        }
+
+        private void btnPlatos_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormPlatos(), sender);
+        }
+
+        private void btnBebidas_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.formBebidas(), sender);   //Pendiente no abre el correcto aún 
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            //OpenChildForm(new Forms.FrmEmpleadoCatalogo(), sender);     //Pendiente Fácil de Hacer
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FrmProveedorCatalogo(), sender);
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            //OpenChildForm(new Forms.(), sender);    //Pendiente la parte de Caleb
+        }
+
+
+
     }
 }

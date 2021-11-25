@@ -1034,15 +1034,15 @@ where ReservaID = @ReservaID
 
 GRANT EXEC ON ActualizarReserva TO adminRestaurante
 
+GRANT Select  ON  Mesa TO adminRestaurante
+
+GRANT Select  ON  Sucursal TO adminRestaurante
+sp_helpuser
+
+
+ALTER USER adminRestaurante
+WITH LOGIN = adminRestaurante
 
 
 
-
-
-
-
-
-
-
-
->>>>>>> UserFeatures
+Select * From Cliente

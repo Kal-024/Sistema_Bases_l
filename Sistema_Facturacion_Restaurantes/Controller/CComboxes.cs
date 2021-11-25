@@ -50,7 +50,6 @@ namespace Sistema_Facturacion_Restaurantes.Controller
             return new DComboxes().MostrarSucursalForeignKey();
         }
 
-<<<<<<< HEAD
         public static DataTable MostrarProveedorForeignKey()
         {
             return new DComboxes().MostrarProveedorForeignKey();
@@ -70,7 +69,7 @@ namespace Sistema_Facturacion_Restaurantes.Controller
         {
             return new DComboxes().OrdenDetalleComidaForeignKey();
         }
-=======
+
         public static DataTable CargarReserva(int SucursalID)
         {
             return new DComboxes().CargarReserva(SucursalID);
@@ -81,7 +80,5 @@ namespace Sistema_Facturacion_Restaurantes.Controller
             return new DComboxes().MostrarReservaForeignKey(reservaID);
         }
         
-
->>>>>>> UserFeatures
     }
 }

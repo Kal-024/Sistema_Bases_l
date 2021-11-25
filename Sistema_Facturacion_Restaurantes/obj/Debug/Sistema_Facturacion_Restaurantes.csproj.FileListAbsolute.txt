@@ -2,21 +2,27 @@ C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\bin\Deb
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\bin\Debug\Sistema_Facturacion_Restaurantes.exe
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\bin\Debug\Sistema_Facturacion_Restaurantes.pdb
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.FormMainMenu.resources
+C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmBebidaDeOrden.resources
+C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmBebidaDeOrdenCatalogo.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormPlatos.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormNotifications.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmEmpleado.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmEmpleadoCatalogo.resources
+C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmInsumo.resources
+C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmInsumoCatalogo.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmMesa.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmMesaCatalogo.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmOrdenCatalogo.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormSucursal.resources
-C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormReporting.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormSetting.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmCliente.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmClienteCatalogo.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmPlato.resources
+C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmPlatoIngredientesCatalogo.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmProveedor.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmProveedorCatalogo.resources
+C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.frmReserva.resources
+C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.frmSaveReserva.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmSucursalFilds.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmOrden.resources
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Properties.Resources.resources
@@ -25,36 +31,5 @@ C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Deb
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.exe
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.pdb
-<<<<<<< HEAD
-C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\bin\Debug\Sistema_Facturacion_Restaurantes.exe.config
-C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\bin\Debug\Sistema_Facturacion_Restaurantes.exe
-C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\bin\Debug\Sistema_Facturacion_Restaurantes.pdb
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormPlatos.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FormSucursal.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmSucursalFilds.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmCliente.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmClienteCatalogo.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmOrdenCatalogo.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmOrden.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmEmpleadoCatalogo.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmEmpleado.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmMesa.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmMesaCatalogo.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmPlato.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmProveedor.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmProveedorCatalogo.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmBebida.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmPlatoIngredientesCatalogo.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmInsumo.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmInsumoCatalogo.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmComidasDeOrden.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmComidaDeOrden.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmComidasDeOrdenCatalogo.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmBebidaDeOrdenCatalogo.resources
-C:\Users\duart\Documents\Uziel\UNI-RUPAP\db\Trabajo de curso\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmBebidaDeOrden.resources
-=======
 C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.csproj.AssemblyReference.cache
-C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.FrmConfig.resources
-C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.frmReserva.resources
-C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.frmSaveReserva.resources
->>>>>>> UserFeatures
+C:\Users\LENOVO\Desktop\Sistema_Bases_l\Sistema_Facturacion_Restaurantes\obj\Debug\Sistema_Facturacion_Restaurantes.Forms.formBebidas.resources

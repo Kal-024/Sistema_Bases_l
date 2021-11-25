@@ -238,32 +238,42 @@ namespace Sistema_Facturacion_Restaurantes.Data
             return dtOrdenes;
         }
 
-<<<<<<< HEAD
         public DataTable MostrarProveedorForeignKey()
         {
             DataTable dtOrdenes = new DataTable("SucursalFK");
             SqlConnection SqlCon = new SqlConnection();
-            
-=======
-        public DataTable CargarReserva(int SucursalID)
-        {
-            DataTable dtReserva = new DataTable("Reserva");
-            SqlConnection SqlCon = new SqlConnection();
 
->>>>>>> UserFeatures
             try
             {    // Cargando el conexión al servidor
                 SqlCon.ConnectionString = Conexion.Cn;
                 // Creando un objeto SQLCommand que llamará al procedimiento almacenado
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-<<<<<<< HEAD
                 SqlCmd.CommandText = "ProveedorFK";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(dtOrdenes);
-=======
+
+            }
+            catch (Exception ex)
+            {
+                dtOrdenes = null;
+            }
+            return dtOrdenes;
+        }
+
+        public DataTable CargarReserva(int SucursalID)
+        {
+            DataTable dtReserva = new DataTable("Reserva");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
                 SqlCmd.CommandText = "MostrarReservaBasicoPorSucursal";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
@@ -276,45 +286,52 @@ namespace Sistema_Facturacion_Restaurantes.Data
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(dtReserva);
->>>>>>> UserFeatures
 
             }
             catch (Exception ex)
             {
-<<<<<<< HEAD
-                dtOrdenes = null;
-            }
-            return dtOrdenes;
-        }
-
-        public DataTable MostrarBebidaForeignKey()
-        {
-            DataTable dtOrdenes = new DataTable("SucursalFK");
-=======
                 dtReserva = null;
             }
             return dtReserva;
         }
 
-        public DataTable MostrarReservaForeignKey(int reservaID)
+        public DataTable MostrarBebidaForeignKey()
         {
-            DataTable dtReservas = new DataTable("Reserva");
->>>>>>> UserFeatures
+            DataTable dtOrdenes = new DataTable("SucursalFK");
             SqlConnection SqlCon = new SqlConnection();
 
             try
-            {    // Cargando el conexión al servidor
+            {       // Cargando el conexión al servidor
                 SqlCon.ConnectionString = Conexion.Cn;
                 // Creando un objeto SQLCommand que llamará al procedimiento almacenado
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-<<<<<<< HEAD
                 SqlCmd.CommandText = "BebidaFK";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(dtOrdenes);
-=======
+
+            }
+            catch (Exception ex)
+            {
+                dtOrdenes = null;
+            }
+            return dtOrdenes;
+
+        }
+
+        public DataTable MostrarReservaForeignKey(int reservaID)
+        {
+            DataTable dtReservas = new DataTable("Reserva");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {        // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
                 SqlCmd.CommandText = "MostrarReservasFKporSucursal";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
@@ -327,15 +344,13 @@ namespace Sistema_Facturacion_Restaurantes.Data
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(dtReservas);
->>>>>>> UserFeatures
 
             }
             catch (Exception ex)
             {
-<<<<<<< HEAD
-                dtOrdenes = null;
+                dtReservas = null;
             }
-            return dtOrdenes;
+            return dtReservas;
         }
 
         public DataTable MostrarInsumoForeignKey()
@@ -387,29 +402,6 @@ namespace Sistema_Facturacion_Restaurantes.Data
             }
             return dtOrdenes;
         }
-=======
-                dtReservas = null;
-            }
-            return dtReservas;
-        }
 
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> UserFeatures
     }
 }

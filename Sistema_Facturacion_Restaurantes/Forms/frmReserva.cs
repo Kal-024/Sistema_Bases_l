@@ -54,16 +54,16 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
             DataTable SelectedRow = CMesa.LoadTableAvailableForSucursal(sucursalId);
             bool hasRows = SelectedRow.Rows.GetEnumerator().MoveNext();
-            if(!hasRows)
+            if (!hasRows)
             {
                 MessageBox.Show("No hay mesas disponibles para Reservar");
                 return;
             }
             //DataTable dataConfirm = CMesa.LoadTableAvailableForSucursal(sucursalId);
             //Console.WriteLine(dataConfirm.Rows);
-           
 
-            frmSaveReserva o = new frmSaveReserva(sucursalId,rol,0);
+
+            frmSaveReserva o = new frmSaveReserva(sucursalId, rol, 0);
             o.isUpdate = false;
             o.ShowDialog();
             dgvReservar.DataSource = CComboxes.CargarReserva(sucursalId);
@@ -83,23 +83,24 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             int reservaID = (int)this.dgvReservar.CurrentRow.Cells[0].Value;
 
             DataTable tableF = CComboxes.MostrarReservaForeignKey(reservaID);
-            
+
             int mesaID = (int)tableF.Rows[0][0];
             int clienteID = (int)tableF.Rows[0][1];
-            
+
             int cantidadA = (int)this.dgvReservar.CurrentRow.Cells[3].Value;
             string fechaR = Convert.ToString(this.dgvReservar.CurrentRow.Cells[4].Value);
             string fechaL = Convert.ToString(this.dgvReservar.CurrentRow.Cells[5].Value);
             int atencionE = (int)this.dgvReservar.CurrentRow.Cells[6].Value;
 
             // Llamada al form que contine los datos de entrada del 'objeto' Sucursal
-            frmSaveReserva frmSave = new frmSaveReserva(sucursalId, rol,mesaID);
+            frmSaveReserva frmSave = new frmSaveReserva(sucursalId, rol, mesaID);
             frmSave.isUpdate = true;
-            frmSave.fillSpaces(mesaID, clienteID, cantidadA,fechaR,fechaL,atencionE);
+            frmSave.fillSpaces(mesaID, clienteID, cantidadA, fechaR, fechaL, atencionE);
             frmSave.EditableReservaID = reservaID;
             frmSave.ShowDialog();
             dgvReservar.DataSource = CComboxes.CargarReserva(sucursalId);
             this.dgvReservar.Columns[0].Visible = false;
         }
+
     }
 }

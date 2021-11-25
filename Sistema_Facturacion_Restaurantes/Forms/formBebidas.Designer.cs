@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Facturacion_Restaurantes.Forms
 {
-    partial class FormReporting
+    partial class formBebidas
     {
         /// <summary>
         /// Required designer variable.

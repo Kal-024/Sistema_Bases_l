@@ -188,11 +188,11 @@
     <Compile Include="Forms\FormSucursal.Designer.cs">
       <DependentUpon>FormSucursal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormReporting.cs">
+    <Compile Include="Forms\formBebidas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormReporting.Designer.cs">
-      <DependentUpon>FormReporting.cs</DependentUpon>
+    <Compile Include="Forms\formBebidas.Designer.cs">
+      <DependentUpon>formBebidas.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormSetting.cs">
       <SubType>Form</SubType>
@@ -308,8 +308,8 @@
     <EmbeddedResource Include="Forms\FormSucursal.resx">
       <DependentUpon>FormSucursal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormReporting.resx">
-      <DependentUpon>FormReporting.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\formBebidas.resx">
+      <DependentUpon>formBebidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>

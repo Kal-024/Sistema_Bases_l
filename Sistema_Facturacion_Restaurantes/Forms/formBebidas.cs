@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Sistema_Facturacion_Restaurantes.Forms
 {
-    public partial class FormReporting : System.Windows.Forms.Form
+    public partial class formBebidas : System.Windows.Forms.Form
     {
         public Boolean AgregarBebidaAOrden = false;
-        public FormReporting()
+        public formBebidas()
         {
             InitializeComponent();
             this.dgvBebidas.DataSource = CBebida.MostrarBebida();
