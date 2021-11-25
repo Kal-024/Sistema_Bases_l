@@ -50,6 +50,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             frmBebidaDeOrden.fillSpaces(BebidaNombre, Cantidad);
             frmBebidaDeOrden.OrdenID = OrdenID; // Esta es la orden que voy a actualizar. Seria equivalente a la variable editable que he usado en otros casos
             frmBebidaDeOrden.OldBebidaID = BebidaID;
+            frmBebidaDeOrden.BebidaID = BebidaID;
             frmBebidaDeOrden.ShowDialog();
             this.dgvBebidas.DataSource = CBebidasDeOrden.Mostrar(OrdenID);
             this.dgvBebidas.Columns[0].Visible = false;

@@ -950,12 +950,22 @@ GO
 -- exec MostrarBebidasDeOrden 1
 CREATE PROC ActualizarBebidaDePlato @OrdenID int, @OldBebidaID int, @NewBebidaID int, @Cantidad int
 AS
-	UPDATE OrdenDetalleBebida
-	SET BebidaID = @NewBebidaID, Cantidad = @Cantidad
-	WHERE OrdenID = @OrdenID AND BebidaID = @OldBebidaID
+	IF(@OldBebidaID != @NewBebidaID)
+	BEGIN
+		UPDATE OrdenDetalleBebida
+		SET BebidaID = @NewBebidaID, Cantidad = @Cantidad
+		WHERE OrdenID = @OrdenID AND BebidaID = @OldBebidaID
+	END
+	ELSE
+	BEGIN
+		UPDATE OrdenDetalleBebida
+		SET Cantidad = @Cantidad
+		WHERE OrdenID = @OrdenID AND BebidaID = @OldBebidaID
+	END
 
 GRANT EXEC ON dbo.ActualizarBebidaDePlato TO adminRestaurante
 GO
+--DROP PROC ActualizarBebidaDePlato
 -- exec ActualizarBebidaDePlato 1, 1, 2, 5
 -- select distinct O.OrdenID
 -- from Orden O
