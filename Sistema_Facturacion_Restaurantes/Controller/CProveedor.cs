@@ -24,5 +24,16 @@ namespace Sistema_Facturacion_Restaurantes.Controller
             Obj.direccion = Direccion;
             return Obj.Insertar(Obj);
         }
+
+        public static string Actualizar(int ProveedorID, string NombreCompania, string Telefono, int LocalidadID, string Direccion)
+        {
+            DProveedor Obj = new DProveedor();
+            Obj.proveedorID = ProveedorID;
+            Obj.nombre = NombreCompania;
+            Obj.telefono = Telefono;
+            Obj.localidadID = LocalidadID;
+            Obj.direccion = Direccion;
+            return Obj.Actualizar(Obj);
+        }
     }
 }

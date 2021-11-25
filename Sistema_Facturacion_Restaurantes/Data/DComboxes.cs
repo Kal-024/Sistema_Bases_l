@@ -237,5 +237,105 @@ namespace Sistema_Facturacion_Restaurantes.Data
             }
             return dtOrdenes;
         }
+
+        public DataTable MostrarProveedorForeignKey()
+        {
+            DataTable dtOrdenes = new DataTable("SucursalFK");
+            SqlConnection SqlCon = new SqlConnection();
+            
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "ProveedorFK";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtOrdenes);
+
+            }
+            catch (Exception ex)
+            {
+                dtOrdenes = null;
+            }
+            return dtOrdenes;
+        }
+
+        public DataTable MostrarBebidaForeignKey()
+        {
+            DataTable dtOrdenes = new DataTable("SucursalFK");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "BebidaFK";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtOrdenes);
+
+            }
+            catch (Exception ex)
+            {
+                dtOrdenes = null;
+            }
+            return dtOrdenes;
+        }
+
+        public DataTable MostrarInsumoForeignKey()
+        {
+            DataTable dtOrdenes = new DataTable("InsumoFK");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "InsumoPK";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtOrdenes);
+
+            }
+            catch (Exception ex)
+            {
+                dtOrdenes = null;
+            }
+            return dtOrdenes;
+        }
+
+        public DataTable OrdenDetalleComidaForeignKey()
+        {
+            DataTable dtOrdenes = new DataTable("OrdenDetalleComidaFK");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "OrdenDetalleComidaFK";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtOrdenes);
+
+            }
+            catch (Exception ex)
+            {
+                dtOrdenes = null;
+            }
+            return dtOrdenes;
+        }
     }
 }

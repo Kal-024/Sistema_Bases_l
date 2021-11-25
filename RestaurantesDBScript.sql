@@ -593,26 +593,68 @@ CREATE PROC MostrarOrdenBasicoPorSucursal @SucursalID int
 AS
 	SELECT * FROM
 	(SELECT O.OrdenID, E.Nombres Mesero, M.Area + CONCAT(M.CantidadAsiento, ' asientos, ')+ S.Nombre Mesa,
-	C.Nombres + ' ' + C.Apellidos Cliente, O.FechaRealizacion, 0 Monto
+	C.Nombres + ' ' + C.Apellidos Cliente, O.FechaRealizacion, Temp.Monto
 	FROM Orden O
 	INNER JOIN Mesa M ON M.MesaID = O.MesaID
 	INNER JOIN Sucursal S ON S.SucursalID = M.SucursalID
 	INNER JOIN Empleado E ON E.EmpleadoID = O.EmpleadoID
 	INNER JOIN Cliente C ON C.ClienteID = O.ClienteID OR O.ClienteID = NULL
+	INNER JOIN (SELECT OrdenID, SUM(Importe) Monto
+				FROM
+				(
+				(SELECT O.OrdenID, SUM(P.Precio * ODC.Cantidad) Importe
+				FROM Orden O
+				INNER JOIN OrdenDetalleComida ODC ON ODC.OrdenID = O.OrdenID
+				INNER JOIN Plato P ON ODC.PlatoID = P.PlatoID
+				GROUP BY O.OrdenID)
+				UNION ALL
+				(SELECT O.OrdenID, SUM(B.Precio * ODB.Cantidad) Importe
+				FROM Orden O
+				INNER JOIN OrdenDetalleBebida ODB ON ODB.OrdenID = O.OrdenID
+				INNER JOIN Bebida B ON ODB.BebidaID = B.BebidaID
+				GROUP BY O.OrdenID)
+				UNION ALL
+				select OrdenID, 0 Monto
+				from Orden
+				where OrdenID not in (select distinct OrdenID from OrdenDetalleComida union all select OrdenID from OrdenDetalleBebida)
+				) t
+				GROUP BY OrdenID) Temp
+	ON Temp.OrdenID = O.OrdenID
 	WHERE S.SucursalID = @SucursalID
 	UNION ALL
 	SELECT O.OrdenID, E.Nombres Mesero, M.Area + CONCAT(M.CantidadAsiento, ' asientos, ')+ S.Nombre Mesa,
-	'Contado' Cliente, O.FechaRealizacion, 0 Monto
+	'Contado' Cliente, O.FechaRealizacion, Temp.Monto
 	FROM Orden O
 	INNER JOIN Mesa M ON M.MesaID = O.MesaID
 	INNER JOIN Sucursal S ON S.SucursalID = M.SucursalID
 	INNER JOIN Empleado E ON E.EmpleadoID = O.EmpleadoID
+	INNER JOIN (SELECT OrdenID, SUM(Importe) Monto
+				FROM
+				(
+				(SELECT O.OrdenID, SUM(P.Precio * ODC.Cantidad) Importe
+				FROM Orden O
+				INNER JOIN OrdenDetalleComida ODC ON ODC.OrdenID = O.OrdenID
+				INNER JOIN Plato P ON ODC.PlatoID = P.PlatoID
+				GROUP BY O.OrdenID)
+				UNION ALL
+				(SELECT O.OrdenID, SUM(B.Precio * ODB.Cantidad) Importe
+				FROM Orden O
+				INNER JOIN OrdenDetalleBebida ODB ON ODB.OrdenID = O.OrdenID
+				INNER JOIN Bebida B ON ODB.BebidaID = B.BebidaID
+				GROUP BY O.OrdenID)
+				UNION ALL
+				select OrdenID, 0 Monto
+				from Orden
+				where OrdenID not in (select distinct OrdenID from OrdenDetalleComida union all select OrdenID from OrdenDetalleBebida)
+				) t
+				GROUP BY OrdenID) Temp
+	ON Temp.OrdenID = O.OrdenID
 	WHERE S.SucursalID = @SucursalID AND O.ClienteID IS NULL) Ordenes
 	ORDER BY Ordenes.FechaRealizacion
 
 GRANT EXEC ON dbo.MostrarOrdenBasicoPorSucursal TO adminRestaurante
 GO
-
+-- drop proc MostrarOrdenBasicoPorSucursal
 CREATE PROC MostrarSucursalFK
 AS
 		SELECT SucursalID, ResponsableID, LocalidadID
@@ -696,3 +738,235 @@ AS
 
 GRANT EXEC ON dbo.MostrarProveedor TO adminRestaurante
 GO
+--exec MostrarProveedor
+CREATE PROC ActualizarProveedor @ProveedorID int, @NombreCompania varchar(100), @Telefono varchar (24), @LocalidadID int, @Direccion varchar(150)
+AS
+	UPDATE Proveedor
+	SET NombreCompania = @NombreCompania, Telefono = @Telefono, LocalidadID = @LocalidadID, Direccion = @Direccion
+	WHERE ProveedorID = @ProveedorID
+
+GRANT EXEC ON dbo.ActualizarProveedor TO adminRestaurante
+GO
+-- exec ActualizarProveedor 1, 'Leterago', '88888888', 97, 'Carretera vieja Leon'
+
+CREATE PROC ProveedorFK
+AS
+	SELECT ProveedorID, LocalidadID
+	FROM Proveedor
+
+GRANT EXEC ON dbo.ProveedorFK TO adminRestaurante
+GO
+--exec ProveedorFK
+CREATE PROC AgregarBebida @Nombre varchar(100), @ProveedorID int, @Precio money
+AS
+	INSERT INTO Bebida(Nombre, ProveedorID, Precio) VALUES(@Nombre, @ProveedorID, @Precio)
+
+GRANT EXEC ON dbo.AgregarBebida TO adminRestaurante
+GO
+
+-- exec AgregarBebida 'Hi-Ci', 1, 25
+CREATE PROC MostrarBebida
+AS
+	SELECT B.BebidaID, B.Nombre, P.NombreCompania + ', ' + LM.Municipio + ', ' + D.NombreDepartamento Proveedor, B.Precio
+	FROM Bebida B
+	INNER JOIN Proveedor P ON B.ProveedorID = P.ProveedorID
+	INNER JOIN LocalidadMunicipio LM ON LM.LocalidadID = P.LocalidadID
+	INNER JOIN Departamento D ON D.DepartamentoID = LM.DepartamentoID
+
+GRANT EXEC ON dbo.MostrarBebida TO adminRestaurante
+GO
+-- exec MostrarBebida
+CREATE PROC ActualizarBebida @BebidaID int, @Nombre varchar(100), @ProveedorID int, @Precio money
+AS
+	UPDATE Bebida
+	SET Nombre = @Nombre, ProveedorID = @ProveedorID, Precio = @Precio
+	WHERE BebidaID = @BebidaID
+
+GRANT EXEC ON dbo.ActualizarBebida TO adminRestaurante
+GO
+--EXEC ActualizarBebida 1, 'Hi-Ci', 1005, 25
+
+CREATE PROC BebidaFK
+AS
+	SELECT BebidaID, ProveedorID
+	FROM Bebida
+
+GRANT EXEC ON dbo.BebidaFK TO adminRestaurante
+GO
+
+-- Elimino la Columna IngredienteID para crea una table detalle de Plato y Insumo
+alter table Plato drop constraint [FK__Plato__Ingredien__3A81B327]
+alter table Plato drop column [IngredienteID]
+GO
+
+CREATE PROC AgregarPlato @Nombre varchar(100), @Categoria varchar(100), @Descripcion varchar(150), @Precio money
+AS
+	INSERT INTO Plato(Nombre, Categoria, Descripcion, Precio) VALUES(@Nombre, @Categoria, @Descripcion, @Precio)
+
+GRANT EXEC ON dbo.AgregarPlato TO adminRestaurante
+GO
+-- EXEC AgregarPlato 'Beef Steak', 'Platos principales', 'Encebollado', 350
+CREATE PROC MostrarPlato
+AS
+	Select * from Plato
+
+GRANT EXEC ON dbo.MostrarPlato TO adminRestaurante
+GO
+
+CREATE PROC ActualizarPlato @PlatoID int, @Nombre varchar(100), @Categoria varchar(100), @Descripcion varchar(150), @Precio money
+AS
+	UPDATE Plato
+	SET Nombre = @Nombre, Categoria = @Categoria, Descripcion = @Descripcion, Precio = @Precio
+	WHERE PlatoID = @PlatoID
+
+GRANT EXEC ON dbo.ActualizarPlato TO adminRestaurante
+GO
+-- EXEC ActualizarPlato 2, 'Camaron empanizado', 'Platos principales', 'Del Xolotlan', 400
+
+CREATE TABLE PlatoInsumoDetalle
+(PlatoId int NOT NULL,
+InsumoId int NOT NULL,
+CONSTRAINT PK_PlatoInsumoDetalle PRIMARY KEY (PlatoID, InsumoId),
+CONSTRAINT FK_PlatoInsumoDetalle_Plato FOREIGN KEY (PlatoId) REFERENCES Plato(PlatoId),
+CONSTRAINT FK_PlatoInsumoDetalle_Insumo FOREIGN KEY (InsumoId) REFERENCES Insumo(InsumoId))
+-- select * from PlatoInsumoDetalle
+-- select * from Insumo
+/************************INSUMOS*************************************/
+GO
+CREATE PROC AgregarIngrediente @NombreIngrediente varchar(50), @ProveedorID int
+AS
+	INSERT INTO Insumo(NombreIngrediente, ProveedorID) VALUES(@NombreIngrediente, @ProveedorID)
+
+GRANT EXEC ON dbo.AgregarIngrediente TO adminRestaurante
+GO
+-- EXEC AgregarIngrediente 'Salsa de tomate', 1
+-- EXEC AgregarIngrediente 'Zanahoria', 2
+CREATE PROC MostrarInsumo
+AS
+	SELECT I.InsumoId, I.NombreIngrediente, P.NombreCompania Proveedor
+	FROM Insumo I
+	INNER JOIN Proveedor P ON P.ProveedorID = I.ProveedorID
+
+GRANT EXEC ON dbo.MostrarInsumo TO adminRestaurante
+GO
+-- exec MostrarInsumo
+CREATE PROC ActualizarInsumo @InsumoID int, @NombreIngrediente varchar(50), @ProveedorID int
+AS
+	UPDATE Insumo
+	SET NombreIngrediente = @NombreIngrediente, ProveedorID = @ProveedorID
+	WHERE InsumoId = @InsumoID
+	
+GRANT EXEC ON dbo.ActualizarInsumo TO adminRestaurante
+GO
+-- EXEC ActualizarInsumo 1, 'Salsa de tomate', 2
+CREATE PROC InsumoPK
+AS
+	SELECT InsumoId, ProveedorID
+	FROM Insumo
+
+GRANT EXEC ON dbo.InsumoPK TO adminRestaurante
+GO
+/***************************PLATOINSUMODETALLE*****************************/
+-- SELECT * FROM PlatoInsumoDetalle
+CREATE PROC AgregarPlatoInsumoDetalle @PlatoID int, @InsumoID int
+AS
+	INSERT INTO PlatoInsumoDetalle(PlatoId, InsumoId) VALUES(@PlatoID, @InsumoID)
+
+GRANT EXEC ON dbo.AgregarPlatoInsumoDetalle TO adminRestaurante
+GO
+-- EXEC AgregarPlatoInsumoDetalle 1, 1
+CREATE PROC MostrarPlatoInsumoDetalle @PlatoID int
+AS
+	SELECT I.InsumoId, P.Nombre Plato, I.NombreIngrediente
+	FROM PlatoInsumoDetalle PID
+	INNER JOIN Plato P ON P.PlatoID = PID.PlatoId
+	INNER JOIN Insumo I ON I.InsumoId = PID.InsumoId
+	WHERE PID.PlatoId = @PlatoID
+
+GRANT EXEC ON dbo.MostrarPlatoInsumoDetalle TO adminRestaurante
+GO
+
+-- exec MostrarPlatoInsumoDetalle 1
+-- select * from Plato
+-- select * from OrdenDetalleComida
+/************************MOSTRAR, AGREGAR, ACTUALIZAR COMIDAS DE UNA ORDEN*****************************/
+CREATE PROC AgregarCamidaAOrden @OrdenID int, @PlatoID int, @Cantidad int
+AS
+	INSERT INTO OrdenDetalleComida(OrdenID, PlatoID, Cantidad) VALUES(@OrdenID, @PlatoID, @Cantidad)
+
+GRANT EXEC ON dbo.AgregarCamidaAOrden TO adminRestaurante
+GO
+
+-- exec AgregarCamidaAOrden 1, 1, 2
+-- exec AgregarCamidaAOrden 1, 2, 2
+
+CREATE PROC MostrarComidasDeOrden @OrdenID int
+AS
+	SELECT P.PlatoID, P.Nombre Plato, ODC.Cantidad
+	FROM OrdenDetalleComida ODC
+	INNER JOIN Plato P ON P.PlatoID = ODC.PlatoID
+	WHERE ODC.OrdenID = @OrdenID
+
+GRANT EXEC ON dbo.MostrarComidasDeOrden TO adminRestaurante
+GO
+
+-- exec MostrarComidasDeOrden 9
+CREATE PROC ActualizarComidaDePlato @OrdenID int, @OldPlatoID int, @NewPlatoID int, @Cantidad int
+AS
+	UPDATE OrdenDetalleComida
+	SET PlatoID = @NewPlatoID, Cantidad = @Cantidad
+	WHERE OrdenID = @OrdenID AND PlatoID = @OldPlatoID
+
+GRANT EXEC ON dbo.ActualizarComidaDePlato TO adminRestaurante
+GO
+
+-- exec ActualizarComidaDePlato 1, 3, 2, 2
+-- El Proc de abajo no es necesario
+CREATE PROC OrdenDetalleComidaFK
+AS
+	SELECT OrdenID, PlatoID
+	FROM OrdenDetalleComida
+
+GRANT EXEC ON dbo.OrdenDetalleComidaFK TO adminRestaurante
+GO
+/********************************OrdenBebidaDetalles*************************************/
+-- select * from OrdenDetalleBebida
+CREATE PROC AgregarBebidaAOrden @OrdenID int, @BebidaID int, @Cantidad int
+AS
+	INSERT INTO OrdenDetalleBebida(OrdenID, BebidaID, Cantidad) VALUES(@OrdenID, @BebidaID, @Cantidad)
+
+GRANT EXEC ON dbo.AgregarBebidaAOrden TO adminRestaurante
+GO
+-- exec AgregarBebidaAOrden 1, 1, 3
+CREATE PROC MostrarBebidasDeOrden @OrdenID int
+AS
+	SELECT B.BebidaID, B.Nombre Bebida, ODB.Cantidad
+	FROM OrdenDetalleBebida ODB
+	INNER JOIN Bebida B ON B.BebidaID = ODB.BebidaID
+	WHERE ODB.OrdenID = @OrdenID
+
+GRANT EXEC ON dbo.MostrarBebidasDeOrden TO adminRestaurante
+GO
+-- exec MostrarBebidasDeOrden 1
+CREATE PROC ActualizarBebidaDePlato @OrdenID int, @OldBebidaID int, @NewBebidaID int, @Cantidad int
+AS
+	IF(@OldBebidaID != @NewBebidaID)
+	BEGIN
+		UPDATE OrdenDetalleBebida
+		SET BebidaID = @NewBebidaID, Cantidad = @Cantidad
+		WHERE OrdenID = @OrdenID AND BebidaID = @OldBebidaID
+	END
+	ELSE
+	BEGIN
+		UPDATE OrdenDetalleBebida
+		SET Cantidad = @Cantidad
+		WHERE OrdenID = @OrdenID AND BebidaID = @OldBebidaID
+	END
+
+GRANT EXEC ON dbo.ActualizarBebidaDePlato TO adminRestaurante
+GO
+--DROP PROC ActualizarBebidaDePlato
+-- exec ActualizarBebidaDePlato 1, 1, 2, 5
+-- select distinct O.OrdenID
+-- from Orden O
+-- inner join OrdenDetalleBebida DC ON DC.OrdenID = O.OrdenID

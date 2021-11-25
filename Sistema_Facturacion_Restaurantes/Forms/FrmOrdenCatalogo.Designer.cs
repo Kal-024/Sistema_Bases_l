@@ -35,6 +35,8 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbSucursal = new System.Windows.Forms.ComboBox();
+            this.btnComida = new System.Windows.Forms.Button();
+            this.btnBebidas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,11 +123,39 @@
             this.cmbSucursal.TabIndex = 39;
             this.cmbSucursal.SelectedIndexChanged += new System.EventHandler(this.cmbSucursal_SelectedIndexChanged);
             // 
+            // btnComida
+            // 
+            this.btnComida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnComida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComida.Location = new System.Drawing.Point(24, 458);
+            this.btnComida.Margin = new System.Windows.Forms.Padding(4);
+            this.btnComida.Name = "btnComida";
+            this.btnComida.Size = new System.Drawing.Size(131, 48);
+            this.btnComida.TabIndex = 40;
+            this.btnComida.Text = "Comidas";
+            this.btnComida.UseVisualStyleBackColor = true;
+            this.btnComida.Click += new System.EventHandler(this.btnComida_Click);
+            // 
+            // btnBebidas
+            // 
+            this.btnBebidas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBebidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBebidas.Location = new System.Drawing.Point(196, 458);
+            this.btnBebidas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBebidas.Name = "btnBebidas";
+            this.btnBebidas.Size = new System.Drawing.Size(131, 48);
+            this.btnBebidas.TabIndex = 41;
+            this.btnBebidas.Text = "Bebidas";
+            this.btnBebidas.UseVisualStyleBackColor = true;
+            this.btnBebidas.Click += new System.EventHandler(this.btnBebidas_Click);
+            // 
             // FrmOrdenCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 554);
+            this.Controls.Add(this.btnBebidas);
+            this.Controls.Add(this.btnComida);
             this.Controls.Add(this.cmbSucursal);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dgvOrdenes);
@@ -153,5 +183,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbSucursal;
+        private System.Windows.Forms.Button btnComida;
+        private System.Windows.Forms.Button btnBebidas;
     }
 }

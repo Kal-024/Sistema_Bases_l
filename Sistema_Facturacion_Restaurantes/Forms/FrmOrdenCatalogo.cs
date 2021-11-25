@@ -99,5 +99,41 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.dgvOrdenes.DataSource = CComboxes.CargarOrden(SucursalID);
             this.dgvOrdenes.Columns[0].Visible = false;
         }
+
+        private void btnComida_Click(object sender, EventArgs e)
+        {
+            if (dgvOrdenes.Rows.Count == 0 || dgvOrdenes.CurrentCell.RowIndex < 0)
+            {
+                MessageBox.Show("Para actualizar un registro debe seleccionar una fila");
+                return;
+            }
+
+            // Respaldo de los datos iniciales
+            int OrdenID = (int)this.dgvOrdenes.CurrentRow.Cells[0].Value;
+
+            FrmComidasDeOrdenCatalogo co = new FrmComidasDeOrdenCatalogo(OrdenID);
+            co.ShowDialog();
+
+            dgvOrdenes.DataSource = CComboxes.CargarOrden(SucursalID);
+            this.dgvOrdenes.Columns[0].Visible = false;
+        }
+
+        private void btnBebidas_Click(object sender, EventArgs e)
+        {
+            if (dgvOrdenes.Rows.Count == 0 || dgvOrdenes.CurrentCell.RowIndex < 0)
+            {
+                MessageBox.Show("Para actualizar un registro debe seleccionar una fila");
+                return;
+            }
+
+            // Respaldo de los datos iniciales
+            int OrdenID = (int)this.dgvOrdenes.CurrentRow.Cells[0].Value;
+
+            FrmBebidaDeOrdenCatalogo co = new FrmBebidaDeOrdenCatalogo(OrdenID);
+            co.ShowDialog();
+
+            dgvOrdenes.DataSource = CComboxes.CargarOrden(SucursalID);
+            this.dgvOrdenes.Columns[0].Visible = false;
+        }
     }
 }

@@ -62,12 +62,12 @@ namespace Sistema_Facturacion_Restaurantes.Forms
                     }
                     else
                     {
-                        //rpta = CSucursal.Actualizar(EditableSucursalID, txtNombre.Text, KeyEmpleadoID, txtTelefono.Text, KeyDepartamentoID, txtDireccion.Text);
+                        rpta = CProveedor.Actualizar(EditableProveedorID, txtNombre.Text, txtTelefono.Text, LocalidadID, txtDireccion.Text);
 
-                        //if (rpta.Equals("OK"))
-                        //    MessageBox.Show("Datos actualizados exitosamente", "Sistema de Reservas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //else
-                        //    MessageBox.Show(rpta, "Sistema de Reservas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (rpta.Equals("OK"))
+                            MessageBox.Show("Datos actualizados exitosamente", "Sistema de Reservas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                            MessageBox.Show(rpta, "Sistema de Reservas", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }

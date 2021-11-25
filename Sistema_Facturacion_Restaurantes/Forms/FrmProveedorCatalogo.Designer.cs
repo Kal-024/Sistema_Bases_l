@@ -34,7 +34,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnSeleccionarCliente = new System.Windows.Forms.Button();
+            this.btnSeleccionarProveedor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +60,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.flowLayoutPanel1.Controls.Add(this.btnCancelar);
             this.flowLayoutPanel1.Controls.Add(this.btnActualizar);
             this.flowLayoutPanel1.Controls.Add(this.btnAgregar);
-            this.flowLayoutPanel1.Controls.Add(this.btnSeleccionarCliente);
+            this.flowLayoutPanel1.Controls.Add(this.btnSeleccionarProveedor);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 391);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -85,6 +85,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.btnActualizar.TabIndex = 16;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAgregar
             // 
@@ -96,14 +97,15 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // btnSeleccionarCliente
+            // btnSeleccionarProveedor
             // 
-            this.btnSeleccionarCliente.Location = new System.Drawing.Point(299, 3);
-            this.btnSeleccionarCliente.Name = "btnSeleccionarCliente";
-            this.btnSeleccionarCliente.Size = new System.Drawing.Size(141, 40);
-            this.btnSeleccionarCliente.TabIndex = 18;
-            this.btnSeleccionarCliente.Text = "Seleccionar Cliente";
-            this.btnSeleccionarCliente.UseVisualStyleBackColor = true;
+            this.btnSeleccionarProveedor.Location = new System.Drawing.Point(266, 3);
+            this.btnSeleccionarProveedor.Name = "btnSeleccionarProveedor";
+            this.btnSeleccionarProveedor.Size = new System.Drawing.Size(174, 40);
+            this.btnSeleccionarProveedor.TabIndex = 18;
+            this.btnSeleccionarProveedor.Text = "Seleccionar proveedor";
+            this.btnSeleccionarProveedor.UseVisualStyleBackColor = true;
+            this.btnSeleccionarProveedor.Click += new System.EventHandler(this.btnSeleccionarProveedor_Click);
             // 
             // FrmProveedorCatalogo
             // 
@@ -127,6 +129,6 @@ namespace Sistema_Facturacion_Restaurantes.Forms
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnSeleccionarCliente;
+        private System.Windows.Forms.Button btnSeleccionarProveedor;
     }
 }

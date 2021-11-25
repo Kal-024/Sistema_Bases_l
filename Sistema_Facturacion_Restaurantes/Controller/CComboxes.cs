@@ -49,5 +49,25 @@ namespace Sistema_Facturacion_Restaurantes.Controller
         {
             return new DComboxes().MostrarSucursalForeignKey();
         }
+
+        public static DataTable MostrarProveedorForeignKey()
+        {
+            return new DComboxes().MostrarProveedorForeignKey();
+        }
+
+        public static DataTable MostrarBebidaForeignKey()
+        {
+            return new DComboxes().MostrarBebidaForeignKey();
+        }
+
+        public static DataTable MostrarInsumoForeignKey()
+        {
+            return new DComboxes().MostrarInsumoForeignKey();
+        }
+
+        public static DataTable OrdenDetalleComidaForeignKey()
+        {
+            return new DComboxes().OrdenDetalleComidaForeignKey();
+        }
     }
 }
