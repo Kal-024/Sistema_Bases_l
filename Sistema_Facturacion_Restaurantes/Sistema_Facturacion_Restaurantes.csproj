@@ -280,10 +280,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\DataReporte.Designer.cs">
+    <Compile Include="Reportes\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataReporte.xsd</DependentUpon>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\FrmReportes.cs">
       <SubType>Form</SubType>
@@ -387,7 +387,7 @@
     <EmbeddedResource Include="Reportes\FrmReportes.resx">
       <DependentUpon>FrmReportes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\Reporte.rdlc" />
     <EmbeddedResource Include="View\FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,16 +406,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Reportes\DataReporte.xsc">
-      <DependentUpon>DataReporte.xsd</DependentUpon>
+    <None Include="Reportes\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\DataReporte.xsd">
+    <None Include="Reportes\DataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataReporte.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Reportes\DataReporte.xss">
-      <DependentUpon>DataReporte.xsd</DependentUpon>
+    <None Include="Reportes\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="Resources\IU Multicolor\shopping-cart %281%29.png" />
   </ItemGroup>
