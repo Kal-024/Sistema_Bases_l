@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnConfig = new System.Windows.Forms.Button();
             this.btnReservar = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ttButtonMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -74,9 +76,8 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(267, 836);
+            this.panelMenu.Size = new System.Drawing.Size(200, 609);
             this.panelMenu.TabIndex = 0;
             // 
             // btnConfig
@@ -87,11 +88,10 @@
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfig.Location = new System.Drawing.Point(0, 764);
-            this.btnConfig.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfig.Location = new System.Drawing.Point(0, 620);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnConfig.Size = new System.Drawing.Size(267, 74);
+            this.btnConfig.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnConfig.Size = new System.Drawing.Size(200, 60);
             this.btnConfig.TabIndex = 11;
             this.btnConfig.Text = "   Configuraciones";
             this.btnConfig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -107,11 +107,10 @@
             this.btnReservar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReservar.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnReservar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReservar.Location = new System.Drawing.Point(0, 690);
-            this.btnReservar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReservar.Location = new System.Drawing.Point(0, 560);
             this.btnReservar.Name = "btnReservar";
-            this.btnReservar.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnReservar.Size = new System.Drawing.Size(267, 74);
+            this.btnReservar.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnReservar.Size = new System.Drawing.Size(200, 60);
             this.btnReservar.TabIndex = 10;
             this.btnReservar.Text = "   Reservar";
             this.btnReservar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -127,11 +126,10 @@
             this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(0, 616);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReport.Location = new System.Drawing.Point(0, 500);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnReport.Size = new System.Drawing.Size(267, 74);
+            this.btnReport.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnReport.Size = new System.Drawing.Size(200, 60);
             this.btnReport.TabIndex = 9;
             this.btnReport.Text = "   Reportes";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,11 +145,10 @@
             this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(0, 542);
-            this.btnProveedores.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProveedores.Location = new System.Drawing.Point(0, 440);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnProveedores.Size = new System.Drawing.Size(267, 74);
+            this.btnProveedores.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnProveedores.Size = new System.Drawing.Size(200, 60);
             this.btnProveedores.TabIndex = 8;
             this.btnProveedores.Text = "   Proveedores";
             this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,11 +164,10 @@
             this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 468);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClientes.Location = new System.Drawing.Point(0, 380);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnClientes.Size = new System.Drawing.Size(267, 74);
+            this.btnClientes.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnClientes.Size = new System.Drawing.Size(200, 60);
             this.btnClientes.TabIndex = 7;
             this.btnClientes.Text = "   Clientes";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -187,11 +183,10 @@
             this.btnEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleados.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 394);
-            this.btnEmpleados.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 320);
             this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnEmpleados.Size = new System.Drawing.Size(267, 74);
+            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnEmpleados.Size = new System.Drawing.Size(200, 60);
             this.btnEmpleados.TabIndex = 6;
             this.btnEmpleados.Text = "   Empleados";
             this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -207,11 +202,10 @@
             this.btnBebidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBebidas.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnBebidas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBebidas.Location = new System.Drawing.Point(0, 320);
-            this.btnBebidas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBebidas.Location = new System.Drawing.Point(0, 260);
             this.btnBebidas.Name = "btnBebidas";
-            this.btnBebidas.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnBebidas.Size = new System.Drawing.Size(267, 74);
+            this.btnBebidas.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnBebidas.Size = new System.Drawing.Size(200, 60);
             this.btnBebidas.TabIndex = 4;
             this.btnBebidas.Text = "   Bebidas";
             this.btnBebidas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -228,11 +222,10 @@
             this.btnPlatos.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnPlatos.Image = global::Sistema_Facturacion_Restaurantes.Properties.Resources.dish_icon;
             this.btnPlatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlatos.Location = new System.Drawing.Point(0, 246);
-            this.btnPlatos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPlatos.Location = new System.Drawing.Point(0, 200);
             this.btnPlatos.Name = "btnPlatos";
-            this.btnPlatos.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnPlatos.Size = new System.Drawing.Size(267, 74);
+            this.btnPlatos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnPlatos.Size = new System.Drawing.Size(200, 60);
             this.btnPlatos.TabIndex = 3;
             this.btnPlatos.Text = "   Platos";
             this.btnPlatos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -249,11 +242,10 @@
             this.btnOrders.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnOrders.Image = global::Sistema_Facturacion_Restaurantes.Properties.Resources.shopping_list;
             this.btnOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrders.Location = new System.Drawing.Point(0, 172);
-            this.btnOrders.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOrders.Location = new System.Drawing.Point(0, 140);
             this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnOrders.Size = new System.Drawing.Size(267, 74);
+            this.btnOrders.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnOrders.Size = new System.Drawing.Size(200, 60);
             this.btnOrders.TabIndex = 2;
             this.btnOrders.Text = "   Ordenes";
             this.btnOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -270,11 +262,10 @@
             this.btnSucursal.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSucursal.Image = global::Sistema_Facturacion_Restaurantes.Properties.Resources.sucursal;
             this.btnSucursal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSucursal.Location = new System.Drawing.Point(0, 98);
-            this.btnSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSucursal.Location = new System.Drawing.Point(0, 80);
             this.btnSucursal.Name = "btnSucursal";
-            this.btnSucursal.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnSucursal.Size = new System.Drawing.Size(267, 74);
+            this.btnSucursal.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnSucursal.Size = new System.Drawing.Size(200, 60);
             this.btnSucursal.TabIndex = 1;
             this.btnSucursal.Text = "   Sucursal";
             this.btnSucursal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -288,9 +279,8 @@
             this.panelLogo.Controls.Add(this.label1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(267, 98);
+            this.panelLogo.Size = new System.Drawing.Size(200, 80);
             this.panelLogo.TabIndex = 0;
             // 
             // label1
@@ -298,10 +288,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(16, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 25);
+            this.label1.Size = new System.Drawing.Size(180, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gestión de Restaurante";
             // 
@@ -312,10 +301,9 @@
             this.panelTitleBar.Controls.Add(this.btnCloseChildForm);
             this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(267, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4);
+            this.panelTitleBar.Location = new System.Drawing.Point(200, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1072, 98);
+            this.panelTitleBar.Size = new System.Drawing.Size(804, 80);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -326,10 +314,9 @@
             this.panelWindowsButtons.Controls.Add(this.btnClose);
             this.panelWindowsButtons.Controls.Add(this.btnMinimize);
             this.panelWindowsButtons.Controls.Add(this.btnMaximize);
-            this.panelWindowsButtons.Location = new System.Drawing.Point(925, 0);
-            this.panelWindowsButtons.Margin = new System.Windows.Forms.Padding(4);
+            this.panelWindowsButtons.Location = new System.Drawing.Point(694, 0);
             this.panelWindowsButtons.Name = "panelWindowsButtons";
-            this.panelWindowsButtons.Size = new System.Drawing.Size(147, 42);
+            this.panelWindowsButtons.Size = new System.Drawing.Size(110, 34);
             this.panelWindowsButtons.TabIndex = 5;
             // 
             // btnClose
@@ -340,10 +327,9 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Image = global::Sistema_Facturacion_Restaurantes.Properties.Resources.mc_red;
-            this.btnClose.Location = new System.Drawing.Point(107, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Location = new System.Drawing.Point(80, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 37);
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 2;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -356,10 +342,9 @@
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
             this.btnMinimize.Image = global::Sistema_Facturacion_Restaurantes.Properties.Resources.mc_green;
-            this.btnMinimize.Location = new System.Drawing.Point(11, 0);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMinimize.Location = new System.Drawing.Point(8, 0);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(40, 37);
+            this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.TabIndex = 4;
             this.btnMinimize.UseVisualStyleBackColor = true;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
@@ -372,10 +357,9 @@
             this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaximize.ForeColor = System.Drawing.Color.White;
             this.btnMaximize.Image = global::Sistema_Facturacion_Restaurantes.Properties.Resources.mc_yellw;
-            this.btnMaximize.Location = new System.Drawing.Point(59, 0);
-            this.btnMaximize.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMaximize.Location = new System.Drawing.Point(44, 0);
             this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(40, 37);
+            this.btnMaximize.Size = new System.Drawing.Size(30, 30);
             this.btnMaximize.TabIndex = 3;
             this.btnMaximize.UseVisualStyleBackColor = true;
             this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
@@ -387,9 +371,8 @@
             this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseChildForm.Image = global::Sistema_Facturacion_Restaurantes.Properties.Resources.cross_out__2_;
             this.btnCloseChildForm.Location = new System.Drawing.Point(0, 0);
-            this.btnCloseChildForm.Margin = new System.Windows.Forms.Padding(4);
             this.btnCloseChildForm.Name = "btnCloseChildForm";
-            this.btnCloseChildForm.Size = new System.Drawing.Size(100, 98);
+            this.btnCloseChildForm.Size = new System.Drawing.Size(75, 80);
             this.btnCloseChildForm.TabIndex = 1;
             this.btnCloseChildForm.UseVisualStyleBackColor = true;
             this.btnCloseChildForm.Click += new System.EventHandler(this.btnCloseChildForm_Click);
@@ -400,10 +383,9 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("MS Outlook", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(479, 37);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(359, 30);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(96, 32);
+            this.lblTitle.Size = new System.Drawing.Size(79, 25);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "HOME";
             // 
@@ -412,34 +394,31 @@
             this.panelDesktopPane.BackColor = System.Drawing.SystemColors.Control;
             this.panelDesktopPane.Controls.Add(this.pictureBox1);
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPane.Location = new System.Drawing.Point(267, 98);
-            this.panelDesktopPane.Margin = new System.Windows.Forms.Padding(4);
+            this.panelDesktopPane.Location = new System.Drawing.Point(200, 80);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(1072, 738);
+            this.panelDesktopPane.Size = new System.Drawing.Size(804, 529);
             this.panelDesktopPane.TabIndex = 2;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Sistema_Facturacion_Restaurantes.Properties.Resources.imageLogo12;
-            this.pictureBox1.Location = new System.Drawing.Point(115, 103);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(86, 48);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(833, 533);
+            this.pictureBox1.Size = new System.Drawing.Size(625, 433);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // FormMainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1339, 836);
+            this.ClientSize = new System.Drawing.Size(1004, 609);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1261, 605);
+            this.MinimumSize = new System.Drawing.Size(950, 499);
             this.Name = "FormMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMainMenu";
@@ -479,6 +458,7 @@
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnReservar;
         private System.Windows.Forms.Button btnConfig;
+        private System.Windows.Forms.ToolTip ttButtonMensaje;
     }
 }
 

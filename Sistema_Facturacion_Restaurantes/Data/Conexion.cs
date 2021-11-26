@@ -8,6 +8,6 @@ namespace Sistema_Facturacion_Restaurantes.Data
 {
     class Conexion
     {
-        public static string Cn = "Data Source= localhost; Initial Catalog=Restaurantes; user=adminRestaurante; password =password01";
+        public static string Cn = @"Data Source= DESKTOP-JBS2MU8\PAVILION; Initial Catalog=Restaurantes; user=adminRestaurante; password =password01";
     }
 }

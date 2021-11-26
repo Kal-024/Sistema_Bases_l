@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sistema_Facturacion_Restaurantes.Reportes;
 
 namespace Sistema_Facturacion_Restaurantes
 {
@@ -27,6 +28,7 @@ namespace Sistema_Facturacion_Restaurantes
         {
             InitializeComponent();
 
+            ToolTipMensaje();
             NombreUsuario = NombredeUsuario;
             Rol = RolUsuario;
 
@@ -72,6 +74,13 @@ namespace Sistema_Facturacion_Restaurantes
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
+        //Mensajes para los botones de ventana
+        private void ToolTipMensaje()
+        {
+            this.ttButtonMensaje.SetToolTip(btnClientes, "Cerrar");
+            this.ttButtonMensaje.SetToolTip(btnMaximize, "Maximizar");
+            this.ttButtonMensaje.SetToolTip(btnMinimize, "Minimizar");
+        }
 
         //Métodos
         private Color SelectThemeColor()
@@ -258,10 +267,8 @@ namespace Sistema_Facturacion_Restaurantes
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new Forms.(), sender);    //Pendiente la parte de Caleb
+            OpenChildForm(new Reportes.FrmReportes(), sender);
         }
-
-
 
     }
 }
