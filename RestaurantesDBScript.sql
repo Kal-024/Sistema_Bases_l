@@ -16,15 +16,17 @@ CREATE TABLE LocalidadMunicipio
 (LocalidadID int primary key identity(1, 1),
 DepartamentoID int FOREIGN KEY REFERENCES Departamento(DepartamentoID),
 Municipio varchar(50))
-
-CREATE TABLE Sucursal
+go
+alter TABLE Sucursal
 (SucursalID int primary key identity(1,1),
 Nombre varchar(50),
 ResponsableID int,
 Telefono varchar(24),
 LocalidadID int not null FOREIGN KEY REFERENCES LocalidadMunicipio(LocalidadID),
-Direccion varchar(100))
-
+Direccion varchar(100),
+)
+go
+drop table Sucursal
 CREATE TABLE Empleado
 (EmpleadoID int primary key identity(1, 1),
 Cedula varchar(15),
@@ -1046,3 +1048,23 @@ WITH LOGIN = adminRestaurante
 
 
 Select * From Cliente
+
+go
+alter procedure ShowAllEmployee 
+as
+Select E.EmpleadoID, E.Nombres + ' '+ E.Apellidos as Nombres , E.Cedula , 
+E.Cargo ,E.Telefono ,E.Direccion, 
+(Select S.Nombre from Sucursal as S where SucursalID = E.SucursalID) as Sucursal , E.SucursalID  From Empleado as E
+
+GRANT EXEC ON ShowAllEmployee TO adminRestaurante
+
+
+Select * From Usuario
+
+insert into Usuario values()
+
+
+EXEC dbo.[Insertar usuario] 20, 'Celeste', 'Miranda', 'Recepcionista'
+Select * From Empleado
+
+delete from Usuario where EmpleadoID = 1

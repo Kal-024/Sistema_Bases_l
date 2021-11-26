@@ -19,8 +19,10 @@ namespace Sistema_Facturacion_Restaurantes.Forms
         // Para cuando vaya a actualizar
         public int OldPlatoID;
         public Boolean isUpdate = false;
-        public FrmComidaDeOrden()
+        string rol;
+        public FrmComidaDeOrden(string rolU)
         {
+            rol = rolU;
             InitializeComponent();
         }
 
@@ -107,7 +109,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
         private void btnComida_Click(object sender, EventArgs e)
         {
-            FormPlatos pc = new FormPlatos();
+            FormPlatos pc = new FormPlatos(rol);
             pc.AgregarPlatoAOrden = true;
             this.AddOwnedForm(pc);
             pc.Show();

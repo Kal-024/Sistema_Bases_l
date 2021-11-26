@@ -28,123 +28,113 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.dgvBebidas = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnAgregarAOrden = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.dgvBebidas = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).BeginInit();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.btnCancelar);
-            this.flowLayoutPanel1.Controls.Add(this.btnActualizar);
-            this.flowLayoutPanel1.Controls.Add(this.btnAgregar);
-            this.flowLayoutPanel1.Controls.Add(this.btnAgregarAOrden);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 412);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(754, 54);
-            this.flowLayoutPanel1.TabIndex = 34;
-            // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(652, 3);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(625, 405);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(99, 40);
+            this.btnCancelar.Size = new System.Drawing.Size(131, 48);
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Eliminar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(547, 3);
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(488, 405);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(99, 40);
+            this.btnActualizar.Size = new System.Drawing.Size(131, 48);
             this.btnActualizar.TabIndex = 16;
             this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(439, 3);
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(351, 405);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(102, 40);
+            this.btnAgregar.Size = new System.Drawing.Size(131, 48);
             this.btnAgregar.TabIndex = 15;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnAgregarAOrden
+            // 
+            this.btnAgregarAOrden.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAgregarAOrden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnAgregarAOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarAOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarAOrden.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarAOrden.Location = new System.Drawing.Point(27, 405);
+            this.btnAgregarAOrden.Name = "btnAgregarAOrden";
+            this.btnAgregarAOrden.Size = new System.Drawing.Size(170, 48);
+            this.btnAgregarAOrden.TabIndex = 18;
+            this.btnAgregarAOrden.Text = "Agregar a orden";
+            this.btnAgregarAOrden.UseVisualStyleBackColor = false;
+            this.btnAgregarAOrden.Click += new System.EventHandler(this.btnAgregarAOrden_Click);
             // 
             // dgvBebidas
             // 
+            this.dgvBebidas.AllowUserToResizeColumns = false;
+            this.dgvBebidas.AllowUserToResizeRows = false;
             this.dgvBebidas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBebidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBebidas.Location = new System.Drawing.Point(12, 45);
+            this.dgvBebidas.Location = new System.Drawing.Point(12, 13);
             this.dgvBebidas.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBebidas.Name = "dgvBebidas";
             this.dgvBebidas.RowHeadersWidth = 51;
-            this.dgvBebidas.Size = new System.Drawing.Size(754, 361);
+            this.dgvBebidas.Size = new System.Drawing.Size(754, 372);
             this.dgvBebidas.TabIndex = 33;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(13, 12);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 29);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Bebidas";
-            // 
-            // btnAgregarAOrden
-            // 
-            this.btnAgregarAOrden.Location = new System.Drawing.Point(290, 3);
-            this.btnAgregarAOrden.Name = "btnAgregarAOrden";
-            this.btnAgregarAOrden.Size = new System.Drawing.Size(143, 40);
-            this.btnAgregarAOrden.TabIndex = 18;
-            this.btnAgregarAOrden.Text = "Agregar a orden";
-            this.btnAgregarAOrden.UseVisualStyleBackColor = true;
-            this.btnAgregarAOrden.Click += new System.EventHandler(this.btnAgregarAOrden_Click);
-            // 
-            // FormReporting
+            // formBebidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 477);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dgvBebidas);
+            this.Controls.Add(this.btnAgregarAOrden);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormReporting";
+            this.Name = "formBebidas";
             this.Text = "Bebidas";
             this.Load += new System.EventHandler(this.FormReporting_Load);
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvBebidas;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAgregarAOrden;
     }
 }

@@ -43,6 +43,8 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.label6 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbSucursal = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtCedula
@@ -149,7 +151,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(95, 267);
+            this.btnGuardar.Location = new System.Drawing.Point(55, 300);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 35);
             this.btnGuardar.TabIndex = 12;
@@ -159,7 +161,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(227, 267);
+            this.btnCancelar.Location = new System.Drawing.Point(193, 300);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 35);
             this.btnCancelar.TabIndex = 13;
@@ -167,11 +169,30 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 247);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 17);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Sucursal:";
+            // 
+            // cmbSucursal
+            // 
+            this.cmbSucursal.FormattingEnabled = true;
+            this.cmbSucursal.Location = new System.Drawing.Point(95, 238);
+            this.cmbSucursal.Name = "cmbSucursal";
+            this.cmbSucursal.Size = new System.Drawing.Size(207, 24);
+            this.cmbSucursal.TabIndex = 15;
+            // 
             // FrmEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(345, 364);
+            this.Controls.Add(this.cmbSucursal);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label6);
@@ -210,5 +231,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.ComboBox cmbSucursal;
     }
 }

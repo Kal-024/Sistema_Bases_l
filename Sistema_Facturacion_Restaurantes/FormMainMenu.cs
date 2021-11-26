@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema_Facturacion_Restaurantes.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,7 +65,7 @@ namespace Sistema_Facturacion_Restaurantes
             btnCloseChildForm.Visible = false;
             //Ocultar los botones de ventana
             this.Text = String.Empty;
-            this.ControlBox = false;
+            //this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -74,9 +75,9 @@ namespace Sistema_Facturacion_Restaurantes
 
 
         //Métodos
-        private Color SelectThemeColor()
+        /*private Color SelectThemeColor()
         {
-            int index = random.Next(ThemeColor.ColorList.Count);
+            /*int index = random.Next(ThemeColor.ColorList.Count);
             while (tempIndex == index)
             {
                 index = random.Next(ThemeColor.ColorList.Count);
@@ -84,7 +85,7 @@ namespace Sistema_Facturacion_Restaurantes
             tempIndex = index;
             string color = ThemeColor.ColorList[index];
             return ColorTranslator.FromHtml(color);
-        }
+        }*/
 
         private void ActivateButton(object btnSender)
         {
@@ -93,17 +94,8 @@ namespace Sistema_Facturacion_Restaurantes
                 if (currentButton != (Button)btnSender)
                 {
                     DisableButton();
-                    Color color = SelectThemeColor();
-                    currentButton = (Button)btnSender;
-                    currentButton.BackColor = color;
-                    currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    panelTitleBar.BackColor = color;
-                    panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-                    ThemeColor.PrimaryColor = color;
-                    ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     btnCloseChildForm.Visible = true;
-                    
+
                 }
             }
         }
@@ -114,7 +106,7 @@ namespace Sistema_Facturacion_Restaurantes
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = Color.FromArgb(51,51,76);
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
                     previousBtn.ForeColor = Color.Gainsboro;
                     previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
@@ -136,7 +128,7 @@ namespace Sistema_Facturacion_Restaurantes
             this.panelDesktopPane.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitle.Text = childForm.Text;
+            //lblTitle.Text = childForm.Text;
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
@@ -146,17 +138,18 @@ namespace Sistema_Facturacion_Restaurantes
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
+            lblTitle.Text = "Ordenes";
             OpenChildForm(new Forms.FrmOrdenCatalogo(Rol), sender);
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormPlatos(), sender);
+            OpenChildForm(new Forms.FormPlatos(Rol), sender);
         }
 
         private void btnReporting_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.formBebidas(), sender);
+            OpenChildForm(new Forms.formBebidas(Rol), sender);
         }
 
         private void btnNotifications_Click(object sender, EventArgs e)
@@ -171,10 +164,8 @@ namespace Sistema_Facturacion_Restaurantes
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)
         {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
+            
+            activeForm.Close();
             Reset();
         }
 
@@ -218,11 +209,15 @@ namespace Sistema_Facturacion_Restaurantes
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FrmCliente(), sender);    //Pendiente pero no dificil de hacer
+            lblTitle.Text = "Clientes";
+            FrmClienteCatalogo fcc = new FrmClienteCatalogo(Rol,this);
+            fcc.btnSeleccionarCliente.Hide();
+            OpenChildForm(fcc, sender);   
         }
 
         private void btnReservar_Click(object sender, EventArgs e)
         {
+            lblTitle.Text = "Reservaciones";
             OpenChildForm(new Forms.frmReserva(Rol), sender);
         }
 
@@ -233,27 +228,34 @@ namespace Sistema_Facturacion_Restaurantes
 
         private void btnSucursal_Click(object sender, EventArgs e)
         {
+            lblTitle.Text = "Sucursales";
             OpenChildForm(new Forms.FormSucursal(Rol), sender);
         }
 
         private void btnPlatos_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormPlatos(), sender);
+            lblTitle.Text = "Platos";
+            OpenChildForm(new Forms.FormPlatos(Rol), sender);
         }
 
         private void btnBebidas_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.formBebidas(), sender);   //Pendiente no abre el correcto aún 
+            lblTitle.Text = "Bebidas";
+            OpenChildForm(new Forms.formBebidas(Rol), sender);   //Pendiente no abre el correctamente aún 
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new Forms.FrmEmpleadoCatalogo(), sender);     //Pendiente Fácil de Hacer
+            lblTitle.Text = "Empleados";
+           OpenChildForm(new Forms.FrmEmpleadoCatalogo(), sender);     
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FrmProveedorCatalogo(), sender);
+            lblTitle.Text = "Proveedores";
+            FrmProveedorCatalogo fpc = new FrmProveedorCatalogo();
+            fpc.btnSeleccionarProveedor.Hide();
+            OpenChildForm(fpc, sender);
         }
 
         private void btnReport_Click(object sender, EventArgs e)

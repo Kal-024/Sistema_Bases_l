@@ -79,6 +79,12 @@ namespace Sistema_Facturacion_Restaurantes.Controller
         {
             return new DComboxes().MostrarReservaForeignKey(reservaID);
         }
-        
+
+        public static int EliminarR(int iD, string tabla)
+        {
+            return new DComboxes().EliminarRegistro(iD,tabla);
+        }
+
+
     }
 }

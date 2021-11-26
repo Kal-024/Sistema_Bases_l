@@ -29,6 +29,11 @@ namespace Sistema_Facturacion_Restaurantes.Controller
             return new DEmpleado().MostrarEmpleadoPorSucursal(SucursalID);
         }
 
+        public static DataTable showallEmploye()
+        {
+            return new DEmpleado().showAllEmploye();
+        }
+
         public static string Actualizar(int EmpleadoID, string Cedula, string Nombres, string Apellidos, string Cargo, string Telefono, string Direccion, int SucursalID)
         {
             DEmpleado Obj = new DEmpleado();

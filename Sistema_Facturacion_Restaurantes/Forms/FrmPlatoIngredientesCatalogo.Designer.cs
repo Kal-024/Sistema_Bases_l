@@ -31,7 +31,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
         {
             this.label5 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
             this.dgvIngredientes = new System.Windows.Forms.DataGridView();
@@ -54,7 +54,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             // 
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.btnCancelar);
+            this.flowLayoutPanel1.Controls.Add(this.btnEliminar);
             this.flowLayoutPanel1.Controls.Add(this.btnAgregar);
             this.flowLayoutPanel1.Controls.Add(this.btnAtras);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
@@ -64,14 +64,14 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.flowLayoutPanel1.Size = new System.Drawing.Size(754, 54);
             this.flowLayoutPanel1.TabIndex = 40;
             // 
-            // btnCancelar
+            // btnEliminar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(652, 3);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(99, 40);
-            this.btnCancelar.TabIndex = 17;
-            this.btnCancelar.Text = "Eliminar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Location = new System.Drawing.Point(652, 3);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(99, 40);
+            this.btnEliminar.TabIndex = 17;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
@@ -130,7 +130,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvIngredientes;
         private System.Windows.Forms.Button btnAtras;

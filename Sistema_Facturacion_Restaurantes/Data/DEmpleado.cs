@@ -141,6 +141,37 @@ namespace Sistema_Facturacion_Restaurantes.Data
             return dtEmpleados;
         }
 
+
+        public DataTable showAllEmploye()
+        {
+            DataTable dtEmpleados = new DataTable("Empleados");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "ShowAllEmployee";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtEmpleados);
+
+            }
+            catch (Exception ex)
+            {
+                dtEmpleados = null;
+            }
+            return dtEmpleados;
+        }
+
+
+
+
+
+
+
         public string Actualizar(DEmpleado empleado)
         {
             string rpta = "";

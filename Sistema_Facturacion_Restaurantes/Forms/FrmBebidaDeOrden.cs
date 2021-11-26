@@ -19,8 +19,10 @@ namespace Sistema_Facturacion_Restaurantes.Forms
         // Para cuando vaya a actualizar
         public int OldBebidaID;
         public Boolean isUpdate = false;
-        public FrmBebidaDeOrden()
+        string rol;
+        public FrmBebidaDeOrden(string rolU)
         {
+            rol = rolU;
             InitializeComponent();
         }
 
@@ -107,7 +109,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
         private void btnBebida_Click(object sender, EventArgs e)
         {
-            formBebidas pc = new formBebidas();
+            formBebidas pc = new formBebidas(rol);
             pc.AgregarBebidaAOrden = true;
             this.AddOwnedForm(pc);
             pc.Show();

@@ -13,17 +13,47 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 {
     public partial class FormPlatos : System.Windows.Forms.Form
     {
+        String rol;
+
         public Boolean AgregarPlatoAOrden = false;
-        public FormPlatos()
+        public FormPlatos(string RolUsuario)
         {
+
+            rol = RolUsuario;
+
             InitializeComponent();
+            switch (rol)
+            {
+                case "Recepcionista":
+                    {
+                        btnAgregar.Enabled = false;
+                        btnActualizar.Enabled = false;
+                        btnEliminar.Enabled = false;
+                        break;
+                    }
+                case "Jefe Cocina":
+                    {
+                        btnAgregar.Enabled = false;
+                        btnActualizar.Enabled = false;
+                        //btnEliminar.Enabled = false;
+                        //btnEmpleados.Hide();
+                        break;
+                    }
+                case "Chef":
+                    {
+
+                        break;
+                    }
+
+            }
+
             this.dgvPlatos.DataSource = CPlato.MostrarPlato();
             this.dgvPlatos.Columns[0].Visible = false;
         }  
 
         private void FormCustomers_Load(object sender, EventArgs e)
         {
-            LoadTheme();
+            //LoadTheme();
             if (!AgregarPlatoAOrden)
                 btnAgregarPlatoAOrden.Hide(); // Oculto ese boton si no voy a agregar plato a la orden
         }
@@ -86,7 +116,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
             int PlatoID = (int)this.dgvPlatos.CurrentRow.Cells[0].Value;
 
-            FrmPlatoIngredientesCatalogo pic = new FrmPlatoIngredientesCatalogo(PlatoID);
+            FrmPlatoIngredientesCatalogo pic = new FrmPlatoIngredientesCatalogo(PlatoID,rol);
             pic.ShowDialog();
         }
 

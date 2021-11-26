@@ -14,9 +14,38 @@ namespace Sistema_Facturacion_Restaurantes.Forms
     public partial class FrmPlatoIngredientesCatalogo : Form
     {
         private int PlatoID;
-        public FrmPlatoIngredientesCatalogo(int PlatoID)
+        string rol;
+        public FrmPlatoIngredientesCatalogo(int PlatoID,string rolU)
         {
+            rol = rolU;
+
             InitializeComponent();
+
+            switch (rol)
+            {
+                case "Recepcionista":
+                    {
+                        btnAgregar.Enabled = false;
+                        btnEliminar.Enabled = false;
+
+                        break;
+                    }
+                case "Jefe Cocina":
+                    {
+                        //btnAgregar.Enabled = false;
+                        //btnActualizar.Enabled = false;
+                        //btnEliminar.Enabled = false;
+                        //btnEmpleados.Hide();
+                        break;
+                    }
+                case "Chef":
+                    {
+
+                        break;
+                    }
+
+            }
+
             this.PlatoID = PlatoID;
             this.dgvIngredientes.DataSource = CPlatoInsumo.MostrarInsumos(this.PlatoID);
             this.dgvIngredientes.Columns[0].Visible = false;

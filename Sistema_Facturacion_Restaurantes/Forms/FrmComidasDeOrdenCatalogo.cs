@@ -14,9 +14,10 @@ namespace Sistema_Facturacion_Restaurantes.Forms
     public partial class FrmComidasDeOrdenCatalogo : Form
     {
         public int OrdenID;
-
-        public FrmComidasDeOrdenCatalogo(int Orden)
+        string rol;
+        public FrmComidasDeOrdenCatalogo(int Orden,string rolU)
         {
+            rol = rolU;
             InitializeComponent();
             OrdenID = Orden;
             this.dgvComidas.DataSource = CComidasDeOrden.Mostrar(OrdenID);
@@ -25,7 +26,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            FrmComidaDeOrden co = new FrmComidaDeOrden();
+            FrmComidaDeOrden co = new FrmComidaDeOrden(rol);
             co.OrdenID = OrdenID;
             co.ShowDialog();
             this.dgvComidas.DataSource = CComidasDeOrden.Mostrar(OrdenID);
@@ -46,7 +47,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             int Cantidad = int.Parse(Convert.ToString(this.dgvComidas.CurrentRow.Cells[2].Value));
 
             // Llamada al form que contine los datos de entrada del 'objeto' Sucursal
-            FrmComidaDeOrden frmComidaDeOrden = new FrmComidaDeOrden();
+            FrmComidaDeOrden frmComidaDeOrden = new FrmComidaDeOrden(rol);
             frmComidaDeOrden.isUpdate = true;
             frmComidaDeOrden.fillSpaces(PlatoNombre, Cantidad);
             frmComidaDeOrden.OrdenID = OrdenID; // Esta es la orden que voy a actualizar. Seria equivalente a la variable editable que he usado en otros casos

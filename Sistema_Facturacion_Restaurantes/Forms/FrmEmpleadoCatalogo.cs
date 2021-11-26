@@ -22,6 +22,14 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.dgvEmpleados.Columns[0].Visible = false;
         }
 
+        public FrmEmpleadoCatalogo()
+        {
+            InitializeComponent();
+            this.dgvEmpleados.DataSource = CEmpleado.showallEmploye();
+            this.dgvEmpleados.Columns[0].Visible = false;
+            this.dgvEmpleados.Columns[7].Visible = false;
+        }
+
         private void btnSeleccionarCliente_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -29,12 +37,31 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            FrmEmpleado frmEmpleado = new FrmEmpleado();
-            frmEmpleado.isUpdate = false;
-            frmEmpleado.SucursalID = SucursalID;
-            frmEmpleado.ShowDialog();
-            this.dgvEmpleados.DataSource = CEmpleado.MostrarEmpleadoPorSucursal(SucursalID);
-            this.dgvEmpleados.Columns[0].Visible = false;
+
+            if (SucursalID == 0)
+            {
+                FrmEmpleado frmEmp = new FrmEmpleado();
+                frmEmp.isUpdate = false;
+                //frmEmp.SucursalID = (int)dgvEmpleados.CurrentRow.Cells[7].Value;
+                frmEmp.ShowDialog();
+                this.dgvEmpleados.DataSource = CEmpleado.showallEmploye();
+                this.dgvEmpleados.Columns[0].Visible = false;
+                this.dgvEmpleados.Columns[7].Visible = false;
+            }
+            else
+            {
+                FrmEmpleado frmEmpleado = new FrmEmpleado();
+                frmEmpleado.isUpdate = false;
+                //((KeyValuePair<int, string>)this.cmbSucursal.SelectedItem).Key
+                frmEmpleado.cmbSucursal.SelectedValue = SucursalID;
+                frmEmpleado.cmbSucursal.Enabled = false;
+                frmEmpleado.SucursalID = SucursalID;
+                frmEmpleado.ShowDialog();
+                this.dgvEmpleados.DataSource = CEmpleado.MostrarEmpleadoPorSucursal(SucursalID);
+                this.dgvEmpleados.Columns[0].Visible = false;
+
+            }
+
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -45,24 +72,51 @@ namespace Sistema_Facturacion_Restaurantes.Forms
                 return;
             }
 
-            // Respaldo de los datos iniciales
-            int EmpleadoID = (int)this.dgvEmpleados.CurrentRow.Cells[0].Value;
-            string Cedula = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[1].Value);
-            string Nombres = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[2].Value);
-            string Apellidos = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[3].Value);
-            string Cargo = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[4].Value);
-            string Telefono = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[5].Value);
-            string Direccion = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[6].Value);
+            if (SucursalID == 0)
+            {
+                int EmpleadoID = (int)this.dgvEmpleados.CurrentRow.Cells[0].Value;
+                string Cedula = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[2].Value);
+                string Nombres = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[1].Value);
+                string Apellidos = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[1].Value);
+                string Cargo = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[3].Value);
+                string Telefono = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[4].Value);
+                string Direccion = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[5].Value);
 
-            // Llamada al form que contine los datos de entrada del 'objeto' Sucursal
-            FrmEmpleado frmEmpleado = new FrmEmpleado();
-            frmEmpleado.isUpdate = true;
-            frmEmpleado.fillSpaces(Cedula, Nombres, Apellidos, Cargo, Telefono, Direccion);
-            frmEmpleado.EditableEmpledoID = EmpleadoID;
-            frmEmpleado.SucursalID = SucursalID;
-            frmEmpleado.ShowDialog();
-            this.dgvEmpleados.DataSource = CEmpleado.MostrarEmpleadoPorSucursal(SucursalID);
-            this.dgvEmpleados.Columns[0].Visible = false;
+
+                FrmEmpleado frmEmplead = new FrmEmpleado();
+                frmEmplead.isUpdate = true;
+                frmEmplead.fillSpaces(Cedula, Nombres, Apellidos, Cargo, Telefono, Direccion);
+                frmEmplead.EditableEmpledoID = EmpleadoID;
+                frmEmplead.SucursalID = SucursalID;
+                frmEmplead.ShowDialog();
+                this.dgvEmpleados.DataSource = CEmpleado.showallEmploye();
+                this.dgvEmpleados.Columns[0].Visible = false;
+                this.dgvEmpleados.Columns[7].Visible = false;
+            }
+            else
+            {
+                //Respaldo de los datos iniciales
+                int EmpleadoId = (int)this.dgvEmpleados.CurrentRow.Cells[0].Value;
+                string Cedula = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[1].Value);
+                string Nombres = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[2].Value);
+                string Apellidos = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[3].Value);
+                string Cargo = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[4].Value);
+                string Telefono = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[5].Value);
+                string Direccion = Convert.ToString(this.dgvEmpleados.CurrentRow.Cells[6].Value);
+
+                // Llamada al form que contine los datos de entrada del 'objeto' Sucursal
+                FrmEmpleado frmEmpleado = new FrmEmpleado();
+                frmEmpleado.isUpdate = true;
+                frmEmpleado.fillSpaces(Cedula, Nombres, Apellidos, Cargo, Telefono, Direccion);
+                frmEmpleado.EditableEmpledoID = EmpleadoId;
+                frmEmpleado.SucursalID = SucursalID;
+                frmEmpleado.ShowDialog();
+                this.dgvEmpleados.DataSource = CEmpleado.MostrarEmpleadoPorSucursal(SucursalID);
+                this.dgvEmpleados.Columns[0].Visible = false;
+
+            }
+
+
         }
 
         private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)

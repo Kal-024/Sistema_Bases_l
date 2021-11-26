@@ -38,7 +38,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
         private void FormOrders_Load(object sender, EventArgs e)
         {
-            LoadTheme();
+            //LoadTheme();
         }
 
         private void LoadTheme()
@@ -54,7 +54,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
                 }
             }
             //label4.ForeColor = ThemeColor.SecondaryColor;
-            label5.ForeColor = ThemeColor.PrimaryColor;
+            ///label5.ForeColor = ThemeColor.PrimaryColor;
         }
 
         private void cmbSucursal_SelectedIndexChanged(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             // Respaldo de los datos iniciales
             int OrdenID = (int)this.dgvOrdenes.CurrentRow.Cells[0].Value;
 
-            FrmComidasDeOrdenCatalogo co = new FrmComidasDeOrdenCatalogo(OrdenID);
+            FrmComidasDeOrdenCatalogo co = new FrmComidasDeOrdenCatalogo(OrdenID,rol);
             co.ShowDialog();
 
             dgvOrdenes.DataSource = CComboxes.CargarOrden(SucursalID);

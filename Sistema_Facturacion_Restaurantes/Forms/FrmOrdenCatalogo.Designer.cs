@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvOrdenes = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -42,66 +41,66 @@
             // 
             // dgvOrdenes
             // 
+            this.dgvOrdenes.AllowUserToResizeColumns = false;
+            this.dgvOrdenes.AllowUserToResizeRows = false;
             this.dgvOrdenes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOrdenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrdenes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrdenes.Location = new System.Drawing.Point(24, 89);
+            this.dgvOrdenes.Location = new System.Drawing.Point(24, 53);
             this.dgvOrdenes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOrdenes.Name = "dgvOrdenes";
             this.dgvOrdenes.RowHeadersWidth = 51;
-            this.dgvOrdenes.Size = new System.Drawing.Size(1009, 352);
+            this.dgvOrdenes.Size = new System.Drawing.Size(1009, 397);
             this.dgvOrdenes.TabIndex = 27;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 56);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 29);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Ordenes";
             // 
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Location = new System.Drawing.Point(880, 449);
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(891, 473);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(153, 48);
+            this.btnEliminar.Size = new System.Drawing.Size(131, 48);
             this.btnEliminar.TabIndex = 16;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Location = new System.Drawing.Point(719, 449);
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(752, 473);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(153, 48);
+            this.btnActualizar.Size = new System.Drawing.Size(131, 48);
             this.btnActualizar.TabIndex = 15;
             this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Location = new System.Drawing.Point(542, 449);
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(613, 473);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(153, 48);
+            this.btnAgregar.Size = new System.Drawing.Size(131, 48);
             this.btnAgregar.TabIndex = 14;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label10
@@ -126,27 +125,33 @@
             // btnComida
             // 
             this.btnComida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnComida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.btnComida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComida.Location = new System.Drawing.Point(24, 458);
+            this.btnComida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComida.ForeColor = System.Drawing.Color.White;
+            this.btnComida.Location = new System.Drawing.Point(49, 473);
             this.btnComida.Margin = new System.Windows.Forms.Padding(4);
             this.btnComida.Name = "btnComida";
             this.btnComida.Size = new System.Drawing.Size(131, 48);
             this.btnComida.TabIndex = 40;
             this.btnComida.Text = "Comidas";
-            this.btnComida.UseVisualStyleBackColor = true;
+            this.btnComida.UseVisualStyleBackColor = false;
             this.btnComida.Click += new System.EventHandler(this.btnComida_Click);
             // 
             // btnBebidas
             // 
             this.btnBebidas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBebidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.btnBebidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBebidas.Location = new System.Drawing.Point(196, 458);
+            this.btnBebidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBebidas.ForeColor = System.Drawing.Color.White;
+            this.btnBebidas.Location = new System.Drawing.Point(197, 473);
             this.btnBebidas.Margin = new System.Windows.Forms.Padding(4);
             this.btnBebidas.Name = "btnBebidas";
             this.btnBebidas.Size = new System.Drawing.Size(131, 48);
             this.btnBebidas.TabIndex = 41;
             this.btnBebidas.Text = "Bebidas";
-            this.btnBebidas.UseVisualStyleBackColor = true;
+            this.btnBebidas.UseVisualStyleBackColor = false;
             this.btnBebidas.Click += new System.EventHandler(this.btnBebidas_Click);
             // 
             // FrmOrdenCatalogo
@@ -159,7 +164,6 @@
             this.Controls.Add(this.cmbSucursal);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dgvOrdenes);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
@@ -177,7 +181,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvOrdenes;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnAgregar;

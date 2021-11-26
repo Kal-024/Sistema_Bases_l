@@ -403,5 +403,48 @@ namespace Sistema_Facturacion_Restaurantes.Data
             return dtOrdenes;
         }
 
+        public int EliminarRegistro(int iD, string tabla)
+        {
+            DataTable dtSucursales = new DataTable("Delete");
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {    // Cargando el conexión al servidor
+                SqlCon.ConnectionString = Conexion.Cn;
+                // Creando un objeto SQLCommand que llamará al procedimiento almacenado
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "DeleteAtTable";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter id = new SqlParameter();
+                id.ParameterName = " @Id";
+                id.SqlDbType = SqlDbType.Int;
+                id.Value = iD;
+                SqlCmd.Parameters.Add(id);
+
+                SqlParameter tablaC = new SqlParameter();
+                tablaC.ParameterName = "@Tabla";
+                tablaC.SqlDbType = SqlDbType.VarChar;
+                tablaC.Value = tabla;
+                SqlCmd.Parameters.Add(tablaC);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(dtSucursales);
+
+            }
+            catch (Exception ex)
+            {
+                dtSucursales = null;
+            }
+            return 0;
+        }
+
+
+
+
     }
+
+    
+    
 }

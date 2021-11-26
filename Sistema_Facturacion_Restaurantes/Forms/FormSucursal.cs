@@ -51,7 +51,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
         private void FormProducts_Load(object sender, EventArgs e)
         {
-            LoadTheme();
+            //LoadTheme();
 
             //Cargar la el dgvSucursal
             this.dgvSucursal.DataSource = CSucursal.MostrarSucursal();
@@ -72,7 +72,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
                 }
             }
             //label4.ForeColor = ThemeColor.SecondaryColor;
-            label5.ForeColor = ThemeColor.PrimaryColor;
+            //label5.ForeColor = ThemeColor.PrimaryColor;
         }
 
         private void cmbDepartamento_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,16 +96,34 @@ namespace Sistema_Facturacion_Restaurantes.Forms
                 return;
             }
 
-            if (MessageBox.Show("Esta seguro de que quiere borrar este registro?", "Eliminacion de registro", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
-            {
-                int SucursalID = (int)this.dgvSucursal.Rows[dgvSucursal.CurrentRow.Index].Cells[0].Value;
-                if (CSucursal.EliminarSucursal(SucursalID) == 0)
-                    MessageBox.Show("Sucursal eliminada de forma exitosa", "Sistema de Reservas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else
-                    MessageBox.Show("Sucursal no eliminada", "Sistema de Reservas", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.dgvSucursal.DataSource = CSucursal.MostrarSucursal();
-                this.dgvSucursal.Columns[0].Visible = false;
-            }
+            int SucursalID = (int)this.dgvSucursal.Rows[dgvSucursal.CurrentRow.Index].Cells[0].Value;
+
+            CComboxes.EliminarR(SucursalID, "Sucursal");
+            this.dgvSucursal.DataSource = CSucursal.MostrarSucursal();
+
+            //if (MessageBox.Show("Esta seguro de que quiere borrar este registro?", "Eliminacion de registro", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            //{
+            //    //int SucursalID = (int)this.dgvSucursal.Rows[dgvSucursal.CurrentRow.Index].Cells[0].Value;
+            //    if (CComboxes.EliminarR(SucursalID, "Sucursal") == 0)
+            //        MessageBox.Show("Sucursal eliminada de forma exitosa", "Sistema de Reservas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    else
+            //        MessageBox.Show("Sucursal no eliminada", "Sistema de Reservas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    this.dgvSucursal.DataSource = CSucursal.MostrarSucursal();
+            //    this.dgvSucursal.Columns[0].Visible = false;
+            //}
+
+
+
+            //if (MessageBox.Show("Esta seguro de que quiere borrar este registro?", "Eliminacion de registro", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            //{
+            //    int SucursalID = (int)this.dgvSucursal.Rows[dgvSucursal.CurrentRow.Index].Cells[0].Value;
+            //    if (CSucursal.EliminarSucursal(SucursalID) == 0)
+            //        MessageBox.Show("Sucursal eliminada de forma exitosa", "Sistema de Reservas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    else
+            //        MessageBox.Show("Sucursal no eliminada", "Sistema de Reservas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    this.dgvSucursal.DataSource = CSucursal.MostrarSucursal();
+            //    this.dgvSucursal.Columns[0].Visible = false;
+            //}
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

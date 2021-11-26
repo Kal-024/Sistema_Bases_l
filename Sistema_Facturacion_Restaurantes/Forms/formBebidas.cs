@@ -14,16 +14,43 @@ namespace Sistema_Facturacion_Restaurantes.Forms
     public partial class formBebidas : System.Windows.Forms.Form
     {
         public Boolean AgregarBebidaAOrden = false;
-        public formBebidas()
+        string rol;
+        public formBebidas(string rolU)
         {
+            rol = rolU;
             InitializeComponent();
+
+            switch (rol)
+            {
+                case "Recepcionista":
+                    {
+                        btnAgregar.Enabled = false;
+                        btnActualizar.Enabled = false;
+                        btnCancelar.Enabled = false;
+                        break;
+                    }
+                case "Jefe Cocina":
+                    {
+                        btnAgregar.Enabled = false;
+                        btnActualizar.Enabled = false;
+
+                        break;
+                    }
+                case "Chef":
+                    {
+
+                        break;
+                    }
+
+            }
+            
             this.dgvBebidas.DataSource = CBebida.MostrarBebida();
             this.dgvBebidas.Columns[0].Visible = false;
         }
 
         private void FormReporting_Load(object sender, EventArgs e)
         {
-            LoadTheme();
+            //LoadTheme();
             if(!AgregarBebidaAOrden)
                 btnAgregarAOrden.Hide(); // Oculto ese boton si no voy a agregar plato a la orden
         }
@@ -39,7 +66,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
                     btn.ForeColor = Color.White;
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
-                label5.ForeColor = ThemeColor.PrimaryColor;
+                //label5.ForeColor = ThemeColor.PrimaryColor;
             }
         }
 

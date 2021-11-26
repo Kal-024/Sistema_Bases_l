@@ -30,17 +30,17 @@ namespace Sistema_Facturacion_Restaurantes.Forms
         private void InitializeComponent()
         {
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSeleccionarProveedor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvProveedor
             // 
+            this.dgvProveedor.AllowUserToResizeColumns = false;
+            this.dgvProveedor.AllowUserToResizeRows = false;
             this.dgvProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -53,58 +53,63 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.dgvProveedor.Size = new System.Drawing.Size(764, 344);
             this.dgvProveedor.TabIndex = 19;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.btnCancelar);
-            this.flowLayoutPanel1.Controls.Add(this.btnActualizar);
-            this.flowLayoutPanel1.Controls.Add(this.btnAgregar);
-            this.flowLayoutPanel1.Controls.Add(this.btnSeleccionarProveedor);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 391);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(761, 51);
-            this.flowLayoutPanel1.TabIndex = 33;
-            // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(659, 3);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(628, 386);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(99, 40);
+            this.btnCancelar.Size = new System.Drawing.Size(131, 48);
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Eliminar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(554, 3);
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(491, 386);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(99, 40);
+            this.btnActualizar.Size = new System.Drawing.Size(131, 48);
             this.btnActualizar.TabIndex = 16;
             this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(446, 3);
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(354, 386);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(102, 40);
+            this.btnAgregar.Size = new System.Drawing.Size(131, 48);
             this.btnAgregar.TabIndex = 15;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnSeleccionarProveedor
             // 
-            this.btnSeleccionarProveedor.Location = new System.Drawing.Point(266, 3);
+            this.btnSeleccionarProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSeleccionarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnSeleccionarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarProveedor.ForeColor = System.Drawing.Color.White;
+            this.btnSeleccionarProveedor.Location = new System.Drawing.Point(22, 390);
             this.btnSeleccionarProveedor.Name = "btnSeleccionarProveedor";
-            this.btnSeleccionarProveedor.Size = new System.Drawing.Size(174, 40);
+            this.btnSeleccionarProveedor.Size = new System.Drawing.Size(216, 40);
             this.btnSeleccionarProveedor.TabIndex = 18;
             this.btnSeleccionarProveedor.Text = "Seleccionar proveedor";
-            this.btnSeleccionarProveedor.UseVisualStyleBackColor = true;
+            this.btnSeleccionarProveedor.UseVisualStyleBackColor = false;
             this.btnSeleccionarProveedor.Click += new System.EventHandler(this.btnSeleccionarProveedor_Click);
             // 
             // FrmProveedorCatalogo
@@ -112,23 +117,24 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 453);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.dgvProveedor);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnSeleccionarProveedor);
             this.Name = "FrmProveedorCatalogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Catalogo de proveedor";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.DataGridView dgvProveedor;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnSeleccionarProveedor;
+        public System.Windows.Forms.Button btnSeleccionarProveedor;
     }
 }

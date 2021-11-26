@@ -24,12 +24,26 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             cmbCargo.Items.Add("Responsable");
             cmbCargo.Items.Add("Recepcionista");
             cmbCargo.SelectedIndex = 0;
+
+            Dictionary<int, string> Sucursales = new Dictionary<int, string>();
+
+            foreach (DataRow row in CComboxes.CargarSucursal().Rows)
+            {
+                Sucursales.Add((int)row[1], (string)row[0]);
+            }
+            this.cmbSucursal.DataSource = new BindingSource(Sucursales, null);
+            this.cmbSucursal.DisplayMember = "Value";
+            this.cmbSucursal.ValueMember = "Key";
+
+            //cmbSucursal.SelectedIndex = SucursalID;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
+                SucursalID = ((KeyValuePair<int, string>)this.cmbSucursal.SelectedItem).Key;
+
                 string rpta = "";
                 if (isUpdate)
                 {
