@@ -31,18 +31,28 @@ namespace Sistema_Facturacion_Restaurantes.Reportes
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnScursal1 = new System.Windows.Forms.Button();
-            this.btnSucursal2 = new System.Windows.Forms.Button();
-            this.btnSucursal3 = new System.Windows.Forms.Button();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSet1 = new Sistema_Facturacion_Restaurantes.Reportes.DataSet1();
             this.MostrarOrdenBasicoPorSucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet1 = new Sistema_Facturacion_Restaurantes.Reportes.DataSet1();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSucursal3 = new System.Windows.Forms.Button();
+            this.btnSucursal2 = new System.Windows.Forms.Button();
+            this.btnScursal1 = new System.Windows.Forms.Button();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.MostrarOrdenBasicoPorSucursalTableAdapter = new Sistema_Facturacion_Restaurantes.Reportes.DataSet1TableAdapters.MostrarOrdenBasicoPorSucursalTableAdapter();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MostrarOrdenBasicoPorSucursalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // MostrarOrdenBasicoPorSucursalBindingSource
+            // 
+            this.MostrarOrdenBasicoPorSucursalBindingSource.DataMember = "MostrarOrdenBasicoPorSucursal";
+            this.MostrarOrdenBasicoPorSucursalBindingSource.DataSource = this.DataSet1;
+            // 
+            // DataSet1
+            // 
+            this.DataSet1.DataSetName = "DataSet1";
+            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -55,15 +65,15 @@ namespace Sistema_Facturacion_Restaurantes.Reportes
             this.panel1.Size = new System.Drawing.Size(177, 450);
             this.panel1.TabIndex = 0;
             // 
-            // btnScursal1
+            // btnSucursal3
             // 
-            this.btnScursal1.Location = new System.Drawing.Point(27, 35);
-            this.btnScursal1.Name = "btnScursal1";
-            this.btnScursal1.Size = new System.Drawing.Size(118, 41);
-            this.btnScursal1.TabIndex = 0;
-            this.btnScursal1.Text = "Sucursal #1";
-            this.btnScursal1.UseVisualStyleBackColor = true;
-            this.btnScursal1.Click += new System.EventHandler(this.btnScursal1_Click);
+            this.btnSucursal3.Location = new System.Drawing.Point(27, 167);
+            this.btnSucursal3.Name = "btnSucursal3";
+            this.btnSucursal3.Size = new System.Drawing.Size(118, 41);
+            this.btnSucursal3.TabIndex = 2;
+            this.btnSucursal3.Text = "Sucursal #3";
+            this.btnSucursal3.UseVisualStyleBackColor = true;
+            this.btnSucursal3.Click += new System.EventHandler(this.btnSucursal3_Click);
             // 
             // btnSucursal2
             // 
@@ -73,15 +83,17 @@ namespace Sistema_Facturacion_Restaurantes.Reportes
             this.btnSucursal2.TabIndex = 1;
             this.btnSucursal2.Text = "Sucursal #2";
             this.btnSucursal2.UseVisualStyleBackColor = true;
+            this.btnSucursal2.Click += new System.EventHandler(this.btnSucursal2_Click);
             // 
-            // btnSucursal3
+            // btnScursal1
             // 
-            this.btnSucursal3.Location = new System.Drawing.Point(27, 167);
-            this.btnSucursal3.Name = "btnSucursal3";
-            this.btnSucursal3.Size = new System.Drawing.Size(118, 41);
-            this.btnSucursal3.TabIndex = 2;
-            this.btnSucursal3.Text = "Sucursal #3";
-            this.btnSucursal3.UseVisualStyleBackColor = true;
+            this.btnScursal1.Location = new System.Drawing.Point(27, 35);
+            this.btnScursal1.Name = "btnScursal1";
+            this.btnScursal1.Size = new System.Drawing.Size(118, 41);
+            this.btnScursal1.TabIndex = 0;
+            this.btnScursal1.Text = "Sucursal #1";
+            this.btnScursal1.UseVisualStyleBackColor = true;
+            this.btnScursal1.Click += new System.EventHandler(this.btnScursal1_Click);
             // 
             // reportViewer1
             // 
@@ -95,16 +107,6 @@ namespace Sistema_Facturacion_Restaurantes.Reportes
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(623, 450);
             this.reportViewer1.TabIndex = 1;
-            // 
-            // DataSet1
-            // 
-            this.DataSet1.DataSetName = "DataSet1";
-            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // MostrarOrdenBasicoPorSucursalBindingSource
-            // 
-            this.MostrarOrdenBasicoPorSucursalBindingSource.DataMember = "MostrarOrdenBasicoPorSucursal";
-            this.MostrarOrdenBasicoPorSucursalBindingSource.DataSource = this.DataSet1;
             // 
             // MostrarOrdenBasicoPorSucursalTableAdapter
             // 
@@ -120,9 +122,9 @@ namespace Sistema_Facturacion_Restaurantes.Reportes
             this.Name = "FrmReportes";
             this.Text = "FrmReportes";
             this.Load += new System.EventHandler(this.FrmReportes_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MostrarOrdenBasicoPorSucursalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

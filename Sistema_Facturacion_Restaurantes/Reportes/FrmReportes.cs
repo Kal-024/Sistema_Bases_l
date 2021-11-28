@@ -33,5 +33,23 @@ namespace Sistema_Facturacion_Restaurantes.Reportes
 
             this.reportViewer1.RefreshReport();
         }
+
+        private void btnSucursal2_Click(object sender, EventArgs e)
+        {
+            var sucursalID = 2;
+            // TODO: esta línea de código carga datos en la tabla 'DataSet1.MostrarOrdenBasicoPorSucursal' Puede moverla o quitarla según sea necesario.
+            this.MostrarOrdenBasicoPorSucursalTableAdapter.Fill(this.DataSet1.MostrarOrdenBasicoPorSucursal, sucursalID);
+
+            this.reportViewer1.RefreshReport();
+        }
+
+        private void btnSucursal3_Click(object sender, EventArgs e)
+        {
+            var sucursalID = 3;
+            // TODO: esta línea de código carga datos en la tabla 'DataSet1.MostrarOrdenBasicoPorSucursal' Puede moverla o quitarla según sea necesario.
+            this.MostrarOrdenBasicoPorSucursalTableAdapter.Fill(this.DataSet1.MostrarOrdenBasicoPorSucursal, sucursalID);
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

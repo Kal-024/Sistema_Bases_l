@@ -72,7 +72,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-
+            
             if (dgvReservar.Rows.Count == 0 || dgvReservar.CurrentCell.RowIndex < 0)
             {
                 MessageBox.Show("Para actualizar un registro debe seleccionar una fila");
@@ -80,17 +80,17 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             }
 
             // Respaldo de los datos iniciales
-            int reservaID = (int)this.dgvReservar.CurrentRow.Cells[0].Value;
+            int reservaID = int.Parse(Convert.ToString(this.dgvReservar.CurrentRow.Cells[0].Value));
 
             DataTable tableF = CComboxes.MostrarReservaForeignKey(reservaID);
 
             int mesaID = (int)tableF.Rows[0][0];
             int clienteID = (int)tableF.Rows[0][1];
 
-            int cantidadA = (int)this.dgvReservar.CurrentRow.Cells[3].Value;
+            int cantidadA = int.Parse(Convert.ToString(this.dgvReservar.CurrentRow.Cells[3].Value));
             string fechaR = Convert.ToString(this.dgvReservar.CurrentRow.Cells[4].Value);
             string fechaL = Convert.ToString(this.dgvReservar.CurrentRow.Cells[5].Value);
-            int atencionE = (int)this.dgvReservar.CurrentRow.Cells[6].Value;
+            int atencionE = Convert.ToString(this.dgvReservar.CurrentRow.Cells[6].Value) == "No"? 0: 1;
 
             // Llamada al form que contine los datos de entrada del 'objeto' Sucursal
             frmSaveReserva frmSave = new frmSaveReserva(sucursalId, rol, mesaID);
@@ -102,5 +102,45 @@ namespace Sistema_Facturacion_Restaurantes.Forms
             this.dgvReservar.Columns[0].Visible = false;
         }
 
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (dgvReservar.Rows.Count == 0 || dgvReservar.CurrentCell.RowIndex < 0)
+            {
+                return;
+            }
+
+            DataTable filtro = new DataTable();
+            filtro.Columns.Add("ReservaID");
+            filtro.Columns.Add("Mesa");
+            filtro.Columns.Add("Cliente");
+            filtro.Columns.Add("Cantidad Asistente");
+            filtro.Columns.Add("Fecha Reserva");
+            filtro.Columns.Add("Fecha Llegada");
+            filtro.Columns.Add("Atencion especial");
+            string Clave = txtBuscar.Text.ToUpper();
+            int rows = CComboxes.CargarReserva(sucursalId).Rows.Count;
+
+            for (int i = 0; i < rows; i++)
+            {
+                // string array
+                string[] pro = CComboxes.CargarReserva(sucursalId).Rows[i].ItemArray.Select(x => x.ToString()).ToArray();
+                //MessageBox.Show(pro.Length + " " + pro[0].ToString());
+
+                if (pro[0].ToString().ToUpper().Contains(Clave) || pro[1].ToString().ToUpper().Contains(Clave)
+                    || pro[2].ToString().ToUpper().Contains(Clave) || pro[3].ToString().ToUpper().Contains(Clave)
+                    || pro[4].ToString().ToUpper().Contains(Clave) || pro[5].ToString().Contains(Clave)
+                    || pro[6].ToString().ToUpper().Contains(Clave))
+                    filtro.Rows.Add(pro);
+            }
+
+            if (filtro.Rows.Count > 0 && filtro != null)
+            {
+                dgvReservar.DataSource = filtro;
+            }
+            else
+            {
+                dgvReservar.DataSource = CComboxes.CargarReserva(sucursalId);
+            }
+        }
     }
 }

@@ -978,10 +978,10 @@ GO
 =======
 ------------------------------
 
-Create PROC MostrarReservaBasicoPorSucursal @SucursalID int
+ALTER PROC MostrarReservaBasicoPorSucursal @SucursalID int
 AS
 Select R.ReservaID,  M.Area+ ' ' + CONCAT(M.CantidadAsiento, ' asientos, ') +  S.Nombre  as Mesa, CONCAT(C.Nombres, ' '+C.Apellidos) as Cliente,
-R.CantidadAsistente,R.FechaReserva,R.FechaLlegada,R.AtencionEspecial
+R.CantidadAsistente,R.FechaReserva,R.FechaLlegada,IIF(R.AtencionEspecial = 0, 'No', 'Si') [Atencion Especial]
 From Reserva as R 
 inner join Mesa as M  on R.MesaID = M.MesaID 
 inner join Sucursal as S on M.SucursalID = S.SucursalID
@@ -1015,7 +1015,7 @@ Create procedure AgregarReserva @MesaID int, @ClienteID int , @CantidadA int , @
 as 
 insert into Reserva values (@MesaID, @ClienteID, @CantidadA, @fechaR, @fechaL,@AtencionE)
 
-GRANT EXEC ON LoadTableAvailableForSucursal TO adminRestaurante
+GRANT EXEC ON AgregarReserva TO adminRestaurante
 
 GO
 

@@ -24,7 +24,7 @@ namespace Sistema_Facturacion_Restaurantes.Forms
         public int EditableReservaID = 0;
 
 
-        SqlConnection cmd = new SqlConnection("Data Source = TV-236; Initial Catalog = Restaurantes; user=adminRestaurante; password =password01");
+        SqlConnection cmd = new SqlConnection(@"Data Source = DESKTOP-JBS2MU8\PAVILION; Initial Catalog = Restaurantes; user=adminRestaurante; password =password01");
 
 
         public frmSaveReserva(int sucursal, string rolUsuario, int mesaId)
