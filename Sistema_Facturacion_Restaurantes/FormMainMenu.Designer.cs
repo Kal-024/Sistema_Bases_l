@@ -84,7 +84,7 @@
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnConfig.Image = ((System.Drawing.Image)(resources.GetObject("btnConfig.Image")));
+            //this.btnConfig.Image = ((System.Drawing.Image)(resources.GetObject("btnConfig.Image")));
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfig.Location = new System.Drawing.Point(0, 930);
             this.btnConfig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -105,7 +105,7 @@
             this.btnReservar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReservar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReservar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReservar.Image = ((System.Drawing.Image)(resources.GetObject("btnReservar.Image")));
+           // this.btnReservar.Image = ((System.Drawing.Image)(resources.GetObject("btnReservar.Image")));
             this.btnReservar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReservar.Location = new System.Drawing.Point(0, 839);
             this.btnReservar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
@@ -126,7 +126,7 @@
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
+            //this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReport.Location = new System.Drawing.Point(0, 748);
             this.btnReport.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
@@ -147,7 +147,7 @@
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
+            //this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProveedores.Location = new System.Drawing.Point(0, 657);
             this.btnProveedores.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
@@ -168,7 +168,7 @@
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
+            //.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.Location = new System.Drawing.Point(0, 566);
             this.btnClientes.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
@@ -189,7 +189,7 @@
             this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleados.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
+            //this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
             this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmpleados.Location = new System.Drawing.Point(0, 475);
             this.btnEmpleados.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
@@ -210,7 +210,7 @@
             this.btnBebidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBebidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBebidas.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnBebidas.Image = ((System.Drawing.Image)(resources.GetObject("btnBebidas.Image")));
+            //this.btnBebidas.Image = ((System.Drawing.Image)(resources.GetObject("btnBebidas.Image")));
             this.btnBebidas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBebidas.Location = new System.Drawing.Point(0, 384);
             this.btnBebidas.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);

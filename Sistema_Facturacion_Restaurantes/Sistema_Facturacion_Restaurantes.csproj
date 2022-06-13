@@ -299,10 +299,6 @@
     <Compile Include="View\FrmInicioSesion.Designer.cs">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormMainMenu.resx">
-      <DependentUpon>FormMainMenu.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmBebidaDeOrden.resx">
       <DependentUpon>FrmBebidaDeOrden.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,9 +358,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmProveedorCatalogo.resx">
       <DependentUpon>FrmProveedorCatalogo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmReserva.resx">
-      <DependentUpon>frmReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSaveReserva.resx">
       <DependentUpon>frmSaveReserva.cs</DependentUpon>
